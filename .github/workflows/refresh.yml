@@ -57,6 +57,11 @@ jobs:
 
       - name: Deploy to Netlify
         if: steps.commit.outputs.pushed == 'true' || github.event_name == 'workflow_dispatch'
-        run: npx --yes netlify-cli@17 deploy --prod --dir=site --site="${{ vars.NETLIFY_SITE_ID }}" --message "data ${GITHUB_SHA::7}"
+        run: |
+          if [ -z "$NETLIFY_AUTH_TOKEN" ]; then
+            echo "::warning::NETLIFY_AUTH_TOKEN secret not set; data committed but not deployed"
+            exit 0
+          fi
+          npx --yes netlify-cli@17 deploy --prod --dir=site --site="${{ vars.NETLIFY_SITE_ID }}" --message "data ${GITHUB_SHA::7}"
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
