@@ -1,0 +1,54 @@
+{
+  "cycle": 2026,
+  "election_day": "2026-11-03",
+  "chart_start": "2026-06-01",
+
+  "thresholds": {
+    "in_play": 100000,
+    "big": 1000000,
+    "party_footprint": 1
+  },
+
+  "momentum_days": 7,
+
+  "hold_row_over": { "H": 5000000, "S": 25000000 },
+
+  "fail_if_unmatched_share_over": 0.02,
+  "fail_if_bulk_rows_under": 5000,
+  "committee_gap_flag": { "share": 0.10, "min_dollars": 50000 },
+
+  "party_committee_types": ["X", "Y"],
+  "super_pac_committee_types": ["O", "U", "V", "W"],
+  "dem_party_codes": ["DEM", "DFL"],
+  "rep_party_codes": ["REP"],
+
+  "schedule": {
+    "_comment": "Workflow fires at :07 and :37 every hour. These dates decide which firings do work. Edit only to change cadence.",
+    "half_hourly_from": "2026-10-15",
+    "half_hourly_until": "2026-11-03",
+    "daily_from": "2026-11-04",
+    "daily_hour_utc": 11,
+    "freeze_after": "2026-12-10",
+    "heartbeat_hour_utc": 11
+  },
+
+  "sources": {
+    "bulk_ie": "https://www.fec.gov/files/bulk-downloads/2026/independent_expenditure_2026.csv",
+    "bulk_committees": "https://www.fec.gov/files/bulk-downloads/2026/cm26.zip",
+    "bulk_candidates": "https://www.fec.gov/files/bulk-downloads/2026/cn26.zip",
+    "legislators": "https://unitedstates.github.io/congress-legislators/legislators-current.json",
+    "api_base": "https://api.open.fec.gov/v1"
+  },
+
+  "api": {
+    "efile_lookback_days": 3,
+    "processed_overlap_days": 7,
+    "min_remaining_calls": 15,
+    "max_calls_per_run": 800
+  },
+
+  "text": {
+    "coord_banner": "Party coordinated spending reported through {date}. Spending after Oct. 14 isn't disclosed until Dec. 3.",
+    "caveat": "Spending shows where parties and groups are placing bets, not why. Every number is a sum of FEC filings; nothing here is a forecast."
+  }
+}

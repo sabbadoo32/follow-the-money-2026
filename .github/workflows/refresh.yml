@@ -1,0 +1,62 @@
+name: Refresh tracker
+
+on:
+  schedule:
+    - cron: "7 * * * *"    # hourly slot
+    - cron: "37 * * * *"   # extra slot, used Oct 15 - Nov 3 (see ftm/config.json "schedule")
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Cadence gate
+        id: gate
+        run: python -m ftm.cadence
+        env:
+          SCHEDULE: ${{ github.event.schedule }}
+
+      - name: Tests
+        if: steps.gate.outputs.run == 'true'
+        run: python -m unittest -q
+
+      - name: Build data
+        if: steps.gate.outputs.run == 'true'
+        run: python -m ftm.run
+        env:
+          FEC_API_KEY: ${{ secrets.FEC_API_KEY }}
+
+      - name: Commit if anything changed
+        id: commit
+        if: steps.gate.outputs.run == 'true'
+        run: |
+          git config user.name "ftm-bot"
+          git config user.email "ftm-bot@users.noreply.github.com"
+          git add site state
+          if git diff --cached --quiet; then
+            echo "pushed=false" >> "$GITHUB_OUTPUT"
+          else
+            git commit -q -m "data: $(date -u +%Y-%m-%dT%H:%MZ)"
+            git push
+            echo "pushed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Deploy to Netlify
+        if: steps.commit.outputs.pushed == 'true' || github.event_name == 'workflow_dispatch'
+        run: npx --yes netlify-cli@17 deploy --prod --dir=site --site="${{ vars.NETLIFY_SITE_ID }}" --message "data ${GITHUB_SHA::7}"
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}

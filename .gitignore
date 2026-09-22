@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+build/
+site/.stage/
+.claude/
+.netlify/
+.DS_Store
