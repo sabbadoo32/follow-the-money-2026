@@ -129,6 +129,54 @@ def refresh_sched_f(api, today):
         return st["rows"], f"Schedule F: {e}"
 
 
+def refresh_candidate_reports(api, today):
+    """Raw e-filed House/Senate report summaries (F3), incremental by receipt date. Resumable."""
+    st = read_state("efile_f3.json.gz", {"since": CFG["candidate_reports"]["backfill_from"], "rows": []})
+    since = (date.fromisoformat(st["since"]) - timedelta(days=2)).isoformat()
+    keep = {r["file_number"]: r for r in st["rows"]}
+    note = None
+    try:
+        for x in api.pages("/efile/reports/house-senate/", min_receipt_date=since, sort="receipt_date"):
+            keep[x["file_number"]] = {k: x.get(k) for k in ("committee_id", "coverage_end_date", "total_receipts_ytd",
+                                                              "cash_on_hand_end_period", "file_number",
+                                                              "document_description", "report_type", "receipt_date")}
+        st["since"] = today
+    except sources.OutOfBudget as e:
+        note = f"candidate e-filed reports partial (resumes next run): {e}"
+    st["rows"] = list(keep.values())
+    write_state("efile_f3.json.gz", st)
+    return st["rows"], note
+
+
+def refresh_f6(api, today, committees):
+    """48-hour contribution notices (Form 6) for nominee committees. Each filing's raw .fec file is read once
+    and cached; amendments are resolved in core.live_f6."""
+    st = read_state("f6.json.gz", {"since": CFG["candidate_reports"]["f6_from"], "filings": {}})
+    if today < CFG["candidate_reports"]["f6_from"]:
+        return st["filings"], None
+    since = (date.fromisoformat(st["since"]) - timedelta(days=1)).isoformat()
+    note = None
+    try:
+        for f in api.pages("/efile/filings/", form_type="F6", min_receipt_date=since, sort="receipt_date"):
+            fn, cm = str(f["file_number"]), f.get("committee_id")
+            if fn in st["filings"] or cm not in committees:
+                continue
+            # items come from the raw filing itself (public, no API quota); the API only lists filings
+            url = f.get("fec_url") or f"https://docquery.fec.gov/dcdev/posted/{fn}.fec"
+            body, _ = sources.fetch(url)
+            items = core.parse_f6(body.decode("latin-1"))
+            chain = [str(a) for a in (f.get("amendment_chain") or []) if str(a) != fn]
+            if f.get("amends_file"):
+                chain.append(str(f["amends_file"]))
+            st["filings"][fn] = {"committee_id": cm, "amends": chain, "items": items,
+                                 "filed": core.parse_date(f.get("receipt_date"))}
+        st["since"] = today
+    except sources.OutOfBudget as e:
+        note = f"48-hour contribution notices partial (resumes next run): {e}"
+    write_state("f6.json.gz", st)
+    return st["filings"], note
+
+
 def confirm_big_rows(api, held, today):
     """A held row is released once processed data shows the same committee, candidate and amount."""
     st = read_state("confirmed.json", {"confirmed": [], "checked": {}})
@@ -158,9 +206,9 @@ def build(now: datetime, offline: Path | None = None):
 
     # reference + bulk (no key needed)
     if offline:
-        bulk_rows = list(csv.DictReader(open(offline / "ie.csv", encoding="latin-1")))
-        cm_lines = open(offline / "cm.txt", encoding="latin-1").read().splitlines()
-        cn_lines = open(offline / "cn.txt", encoding="latin-1").read().splitlines()
+        bulk_rows = list(csv.DictReader(io.StringIO((offline / "ie.csv").read_text(encoding="latin-1"))))
+        cm_lines = (offline / "cm.txt").read_text(encoding="latin-1").splitlines()
+        cn_lines = (offline / "cn.txt").read_text(encoding="latin-1").splitlines()
         legs = json.loads((offline / "leg.json").read_text())
         wb = offline / "weball.txt"
         summary_lines = wb.read_text(encoding="latin-1").splitlines() if wb.exists() else []
@@ -244,9 +292,22 @@ def build(now: datetime, offline: Path | None = None):
     summary = core.load_candidate_summary(summary_lines)
     nominees = core.pick_nominees(kept, races, candidates, summary, CFG,
                                   sitting_fec={f for leg in legs for f in leg["id"].get("fec", [])})
+    # fresher candidate money: raw e-filed reports and 48-hour notices (API key), else cached
+    nominee_cmtes = {c["committee_id"] for rc in nominees.values() for c in rc.values() if c.get("committee_id")}
+    if key and not offline:
+        f3_rows, n = refresh_candidate_reports(api, today)
+        notes += [n] if n else []
+        f6_filings, n = refresh_f6(api, today, nominee_cmtes)
+        notes += [n] if n else []
+        api_status["calls"] = api.calls
+    else:
+        f3_rows = read_state("efile_f3.json.gz", {"rows": []})["rows"]
+        f6_filings = read_state("f6.json.gz", {"filings": {}})["filings"]
+    core.apply_fresh_money(nominees, core.latest_reports(f3_rows), core.live_f6(f6_filings))
     for rid, r in roll.items():
         r["cand"] = nominees.get(rid, {})
         r["split_signal"] = core.split_signal(r, r["cand"], CFG["split_signal_min_gap"])
+        r["note"] = CFG["race_notes"].get(rid)
     head = core.headline(roll, CFG)
     cand_head = core.cand_headline(roll)
     throughs = sorted(x["through"] for r in roll.values() for x in r["cand"].values() if x.get("through"))
@@ -289,9 +350,10 @@ def race_csv_rows(roll):
             for k in ("party_ie", "party_coord", "outside", "super_pac", "total", "last_7d", "first_party_dollar", "side"):
                 row[f"{p.lower()}_{k}"] = r[p][k]
             c = r["cand"].get(p) or {}
-            for k in ("candidate_id", "name", "basis", "receipts", "coh", "from_party", "through"):
+            for k in ("candidate_id", "name", "basis", "receipts", "coh", "late_48h", "from_party", "through"):
                 row[f"{p.lower()}_nominee_{k}"] = c.get(k)
         row["split_signal"] = bool(r["split_signal"])
+        row["note"] = r.get("note") or ""
         yield row
 
 

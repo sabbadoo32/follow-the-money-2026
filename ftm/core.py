@@ -665,7 +665,7 @@ def split_signal(roll_race, cand, min_gap):
     if not d or not r or d["basis"] != "ie" or r["basis"] != "ie" or not d["reported"] or not r["reported"]:
         return None
     og = roll_race[DEM]["total"] - roll_race[REP]["total"]
-    cg = d["receipts"] - r["receipts"]
+    cg = (d["receipts"] + d.get("late_48h", 0)) - (r["receipts"] + r.get("late_48h", 0))
     if abs(og) < min_gap or abs(cg) < min_gap or (og > 0) == (cg > 0):
         return None
     return {"outside_leader": DEM if og > 0 else REP, "candidate_leader": DEM if cg > 0 else REP,
@@ -680,6 +680,7 @@ def cand_headline(rollups):
             c = [r["cand"][p] for r in rs if r.get("cand", {}).get(p)]
             h[f"{office}_{p}"] = {
                 "receipts": round(sum(x["receipts"] for x in c), 2), "coh": round(sum(x["coh"] for x in c), 2),
+                "late_48h": round(sum(x.get("late_48h", 0) for x in c), 2),
                 "from_party": round(sum(x["from_party"] for x in c), 2),
                 "nominees": len(c), "inferred": sum(1 for x in c if x["basis"] != "ie"),
                 "cand_lead_races": sum(1 for r in rs if r.get("cand", {}).get(p) and r["cand"][p]["receipts"] >
@@ -687,3 +688,67 @@ def cand_headline(rollups):
                 "split_favoring": sum(1 for r in rs if r.get("split_signal") and r["split_signal"]["candidate_leader"] == p),
             }
     return h
+
+
+def latest_reports(rows):
+    """Raw-filed F3 summaries -> {committee_id: newest report}. Later coverage wins; amendments win ties."""
+    out = {}
+    for x in rows:
+        cid, through = x.get("committee_id"), parse_date(x.get("coverage_end_date"))
+        if not cid or not through:
+            continue
+        rec = {"through": through, "receipts": money(x.get("total_receipts_ytd")),
+               "coh": money(x.get("cash_on_hand_end_period")), "file_number": int(x.get("file_number") or 0),
+               "report": x.get("document_description") or x.get("report_type"), "filed": parse_date(x.get("receipt_date"))}
+        old = out.get(cid)
+        if not old or (rec["through"], rec["file_number"]) > (old["through"], old["file_number"]):
+            out[cid] = rec
+    return out
+
+
+def parse_f6(text):
+    """Raw .fec text of a Form 6 (48-hour contribution notice) -> [{date, amount, from}].
+    Each F65 record is one contribution; the date is the first 8-digit field after the address,
+    and the amount follows it."""
+    items = []
+    for line in text.replace("\r", "").split("\n"):  # not splitlines(): it breaks on \x1c, the FEC field separator
+        f = line.split("\x1c") if "\x1c" in line else line.split(",")
+        f = [x.strip().strip('"') for x in f]
+        if not f or f[0].upper() != "F65":
+            continue
+        for i in range(10, len(f) - 1):
+            if re.fullmatch(r"\d{8}", f[i]):
+                d = f[i]
+                name = f[4] or " ".join(x for x in (f[6], f[5]) if x)
+                items.append({"date": f"{d[:4]}-{d[4:6]}-{d[6:]}", "amount": money(f[i + 1]), "from": name})
+                break
+    return items
+
+
+def live_f6(filings):
+    """48-hour contribution notices, amendments applied: {committee_id: [items]}."""
+    superseded = {str(a) for f in filings.values() for a in f.get("amends", [])}
+    out = defaultdict(list)
+    for fn, f in filings.items():
+        if fn not in superseded:
+            out[f["committee_id"]].extend(f["items"])
+    return out
+
+
+def apply_fresh_money(nominees, reports, f6_by_cmte):
+    """Update nominee money from raw e-filed reports (same day as filing, ahead of FEC processing),
+    then add 48-hour contribution notices dated after that report's coverage."""
+    for race in nominees.values():
+        for c in race.values():
+            cm = c.get("committee_id")
+            rep = reports.get(cm) if cm else None
+            if rep and (not c["reported"] or rep["through"] > (c["through"] or "")):
+                c.update(receipts=rep["receipts"], coh=rep["coh"], through=rep["through"], reported=True,
+                         money_source=f'raw e-filing ({rep["report"]})')
+            items = [i for i in f6_by_cmte.get(cm, []) if i["date"] and i["date"] > (c["through"] or "")]
+            c["late_48h"] = round(sum(i["amount"] for i in items), 2)
+            c["late_48h_count"] = len(items)
+            c["late_48h_through"] = max((i["date"] for i in items), default=None)
+            if items:
+                c["reported"] = True
+    return nominees

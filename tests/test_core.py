@@ -272,5 +272,100 @@ class CandidateMoney(unittest.TestCase):
         self.assertIsNone(core.split_signal(roll, n["H-MI-08"], 5_000_000))
 
 
+class FreshCandidateMoney(unittest.TestCase):
+    def nominees(self, **kw):
+        c = {"candidate_id": "H1", "name": "A", "basis": "ie", "reported": True, "committee_id": "C9",
+             "receipts": 1_000_000, "coh": 500_000, "through": "2026-06-30"}
+        c.update(kw)
+        return {"H-MI-08": {"DEM": c}}
+
+    def test_latest_report_prefers_later_coverage_then_amendment(self):
+        rows = [{"committee_id": "C9", "coverage_end_date": "2026-06-30", "total_receipts_ytd": 1, "file_number": 5},
+                {"committee_id": "C9", "coverage_end_date": "2026-09-30", "total_receipts_ytd": 2, "file_number": 6},
+                {"committee_id": "C9", "coverage_end_date": "2026-09-30", "total_receipts_ytd": 3, "file_number": 7}]
+        self.assertEqual(core.latest_reports(rows)["C9"]["receipts"], 3)
+
+    def test_newer_efile_report_overrides_older_summary(self):
+        n = self.nominees()
+        core.apply_fresh_money(n, {"C9": {"through": "2026-09-30", "receipts": 2_000_000, "coh": 900_000, "file_number": 1, "report": "Q3"}}, {})
+        self.assertEqual((n["H-MI-08"]["DEM"]["receipts"], n["H-MI-08"]["DEM"]["through"]), (2_000_000, "2026-09-30"))
+
+    def test_older_efile_report_ignored(self):
+        n = self.nominees(through="2026-07-29")
+        core.apply_fresh_money(n, {"C9": {"through": "2026-06-30", "receipts": 1, "coh": 1, "file_number": 1, "report": "Q2"}}, {})
+        self.assertEqual(n["H-MI-08"]["DEM"]["receipts"], 1_000_000)
+
+    def test_new_committee_first_report_marks_reported(self):
+        n = self.nominees(reported=False, receipts=0, coh=0, through=None)
+        core.apply_fresh_money(n, {"C9": {"through": "2026-09-30", "receipts": 4_000_000, "coh": 3_000_000, "file_number": 1, "report": "Q3"}}, {})
+        self.assertTrue(n["H-MI-08"]["DEM"]["reported"])
+
+    def test_parse_f6_raw_filing(self):
+        fs = "\x1c"
+        text = "\n".join([fs.join(["HDR", "FEC", "8.5"]),
+                          fs.join(["F6N", "C00843763", "", "McBride for Delaware Inc."]),
+                          fs.join(["F65", "C00843763", "16290867", "PAC", "FMC Corporation Good Government Program", "", "", "", "", "",
+                                   "2929 Walnut St", "", "Philadelphia", "PA", "191045054", "C00033704", "20260911", "5000.00", "", ""]),
+                          fs.join(["F65", "C00843763", "16290868", "IND", "", "DOE", "JANE", "", "", "",
+                                   "1 Main St", "", "Dover", "DE", "19901", "", "20260912", "3300.00", "", ""])])
+        items = core.parse_f6(text)
+        self.assertEqual([(i["date"], i["amount"]) for i in items], [("2026-09-11", 5000.0), ("2026-09-12", 3300.0)])
+        self.assertEqual(items[1]["from"], "JANE DOE")
+
+    def test_48h_only_counts_after_report_and_respects_amendments(self):
+        filings = {"1": {"committee_id": "C9", "amends": [], "items": [{"date": "2026-10-16", "amount": 5000}]},
+                   "2": {"committee_id": "C9", "amends": ["1"], "items": [{"date": "2026-10-16", "amount": 6000},
+                                                                          {"date": "2026-06-01", "amount": 999999}]}}
+        n = self.nominees(through="2026-10-14")
+        core.apply_fresh_money(n, {}, core.live_f6(filings))
+        c = n["H-MI-08"]["DEM"]
+        self.assertEqual((c["late_48h"], c["late_48h_count"], c["late_48h_through"]), (6000, 1, "2026-10-16"))
+
+
+class KeyedPathSmoke(unittest.TestCase):
+    """Runs build() down the API-key path against a fake OpenFEC, so wiring bugs surface before the key exists."""
+
+    def test_keyed_build_with_fake_api(self):
+        from unittest import mock
+        from ftm import sources
+        S = Path(__file__).parent / "fixtures"
+        tmp = Path(tempfile.mkdtemp())
+
+        class FakeAPI:
+            calls = 0
+            def __init__(self, *a, **k): pass
+            def get(self, path, **p):
+                FakeAPI.calls += 1
+                return {"results": [], "pagination": {"pages": 1, "last_indexes": None}}
+            def pages(self, path, **p):
+                FakeAPI.calls += 1
+                if path == "/efile/reports/house-senate/":
+                    yield {"committee_id": "CPCC1", "coverage_end_date": "2026-09-30", "total_receipts_ytd": 7_000_000,
+                           "cash_on_hand_end_period": 2_000_000, "file_number": 99, "document_description": "OCTOBER QUARTERLY 2026",
+                           "receipt_date": "2026-10-15"}
+                if path == "/efile/filings/":
+                    yield {"file_number": 500, "committee_id": "CPCC1", "receipt_date": "2026-10-20", "fec_url": "x"}
+
+        f65 = "\x1c".join(["F65", "CPCC1", "t", "IND", "", "DOE", "JO", "", "", "", "a", "", "c", "MI", "1", "", "20261019", "2500.00"])
+        with mock.patch.object(sources, "OpenFEC", FakeAPI), \
+             mock.patch.object(sources, "api_key", lambda: "k"), \
+             mock.patch.object(sources, "fetch", lambda url, **k: (f65.encode(), {})), \
+             mock.patch.object(sources, "bulk_ie", lambda u: ([{"cand_id": "H6MI08001", "cand_name": "SMITH, ANN", "spe_id": "C1", "spe_nam": "PAC ONE",
+                    "ele_type": "G", "can_office_state": "MI", "can_office_dis": "08", "can_office": "H", "cand_pty_aff": "DEM",
+                    "exp_amo": "100", "exp_date": "", "agg_amo": "", "sup_opp": "S", "pur": "TV", "pay": "X", "file_num": str(i),
+                    "amndt_ind": "N", "tran_id": f"T{i}", "image_num": "1", "receipt_dat": "20-OCT-26", "fec_election_yr": "2026",
+                    "prev_file_num": "", "dissem_dt": "19-OCT-26"} for i in range(6000)], "lm")), \
+             mock.patch.object(sources, "bulk_zip_lines", lambda u: ((
+                    ["H6MI08001|SMITH, ANN|DEM|2026|MI|H|08|C|C|CPCC1", "H6MI08002|JONES, BOB|REP|2026|MI|H|08|I|C|CPCC2"]
+                    if "cn26" in u else ["C1|PAC ONE|||||||U|O|"] if "cm26" in u else []), "lm")), \
+             mock.patch.object(sources, "legislators", lambda u: LEGS), \
+             mock.patch.object(run, "STATE", tmp):
+            b = run.build(datetime(2026, 10, 21, 12, tzinfo=timezone.utc))
+        shutil.rmtree(tmp)
+        c = b["roll"]["H-MI-08"]["cand"]["DEM"]
+        self.assertEqual((c["receipts"], c["through"], c["late_48h"]), (7_000_000, "2026-09-30", 2500))
+        self.assertGreater(FakeAPI.calls, 3)
+
+
 if __name__ == "__main__":
     unittest.main()

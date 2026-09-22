@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-09-22T23:35:14Z",
- "data_hash": "5417a0b36246cbdc",
+ "generated_at": "2026-09-22T23:40:08Z",
+ "data_hash": "2eb9d08437c4e0b7",
  "as_of": "2026-09-22",
  "bulk_last_modified": "Tue, 22 Sep 2026 10:14:17 GMT",
  "coord_through": null,
- "coord_banner": "Party coordinated spending reported through \u2014. Spending after Oct. 14 isn't disclosed until Dec. 3.",
+ "coord_banner": "Party coordinated spending reported through \u2014. Monthly party reports add September on Oct. 20 and Oct. 1-14 on Oct. 22; spending after Oct. 14 isn't disclosed until Dec. 3.",
  "caveat": "Spending shows where parties and groups are placing bets, not why. Every number is a sum of FEC filings; nothing here is a forecast.",
  "headline": {
   "H_DEM": {
@@ -56,6 +56,7 @@
   "H_DEM": {
    "receipts": 326371150.7,
    "coh": 166846757.89,
+   "late_48h": 0,
    "from_party": 217178.39,
    "nominees": 116,
    "inferred": 30,
@@ -65,6 +66,7 @@
   "H_REP": {
    "receipts": 299299213.57,
    "coh": 159905702.74,
+   "late_48h": 0,
    "from_party": 177886.0,
    "nominees": 113,
    "inferred": 34,
@@ -74,6 +76,7 @@
   "S_DEM": {
    "receipts": 319648876.59,
    "coh": 131321625.68,
+   "late_48h": 0,
    "from_party": 155833.23,
    "nominees": 23,
    "inferred": 8,
@@ -83,6 +86,7 @@
   "S_REP": {
    "receipts": 171308286.91,
    "coh": 100749372.03,
+   "late_48h": 0,
    "from_party": 1240050.0,
    "nominees": 23,
    "inferred": 2,

@@ -70,6 +70,8 @@ tr.row{cursor:pointer}
 tr.row:hover td{background:var(--line2)}
 .tag{display:inline-block;font:600 10px/1 var(--sans);letter-spacing:.04em;text-transform:uppercase;padding:3px 5px;border-radius:4px;margin-left:6px;vertical-align:1px;border:1px solid var(--line);color:var(--ink2)}
 .tag.sig{background:var(--line2);border-color:var(--ink2);color:var(--ink)}
+.tag.note{background:var(--dem-soft);border-color:var(--line);color:var(--ink)}
+.racenote{font-size:13px;color:var(--ink);background:var(--line2);border-left:3px solid var(--ink2);padding:8px 10px;border-radius:4px;margin:4px 0 10px}
 .tag.warn{background:var(--warn-bg);border-color:var(--warn-line);color:var(--warn-ink)}
 .split{display:flex;height:6px;border-radius:3px;overflow:hidden;background:var(--line2);margin-top:5px;gap:2px}
 .split span{display:block;height:100%}
@@ -133,6 +135,11 @@ footer p{margin:0 0 8px}
   </div>
 </section>
 
+<section id="notesSec" hidden>
+  <h2>Race notes</h2>
+  <div id="notes"></div>
+</section>
+
 <section>
   <h2>Races</h2>
   <div class="controls">
@@ -180,7 +187,7 @@ footer p{margin:0 0 8px}
 <footer id="footer">
   <p id="caveat"></p>
   <p><b>How it's counted.</b> Spending <i>for</i> a Democrat or <i>against</i> a Republican helps Democrats, and the reverse helps Republicans. Primaries, 2024 leftovers and third-party candidates are dropped. "Party" means party committees by FEC committee type (X/Y); everything else is outside money. <b>Offense</b> is money helping a party in a seat the other party holds now. Races where redistricting makes the holder unclear are tagged and left out of offense share. Amended filings replace the originals; a notice that later shows up on a periodic report is counted once. Single items above $5M (House) or $25M (Senate) are held until the FEC's processed data confirms them.</p>
-  <p><b>Candidate money.</b> Party committees can now route money through coordinated spending, and candidates buy TV at the lowest unit rate, so outside money alone can understate a party. Each race shows its nominees' own fundraising and cash on hand, cycle to date, from the FEC's candidate summary file. The nominee is the candidate general-election outside money targets most (at least $10K). Otherwise it's the top fundraiser, marked as inferred. A <b>split</b> tag means outside money favors one party while nominee fundraising favors the other, each by at least $250K; it only fires when both nominees were identified from general-election spending. Candidate money is kept out of offense share: it shows where donors are betting, not where party strategists are.</p>
+  <p><b>Candidate money.</b> Party committees can now route money through coordinated spending, and candidates buy TV at the lowest unit rate, so outside money alone can understate a party. Each race shows its nominees' own fundraising and cash on hand, cycle to date, from the FEC's candidate summary file. The nominee is the candidate general-election outside money targets most (at least $10K). Otherwise it's the top fundraiser, marked as inferred. A <b>split</b> tag means outside money favors one party while nominee fundraising favors the other, each by at least $250K; it only fires when both nominees were identified from general-election spending and both have a report on file. With an API key, nominee totals update from raw e-filed reports the day they're filed (ahead of FEC processing), and from Oct. 15 to Nov. 1 large contributions ($1,000+) from 48-hour notices are added on top of the last report. Races with a <b>note</b> tag have context the filings alone don't show. Candidate money is kept out of offense share: it shows where donors are betting, not where party strategists are.</p>
   <p id="sources">Sources: FEC bulk independent-expenditure file (24/48-hour notices), OpenFEC raw e-filings and Schedule F, FEC candidate and committee masters, congress-legislators.</p>
 </footer>
 </div>
@@ -202,7 +209,7 @@ async function load() {
     const bust = `?t=${Math.floor(Date.now()/300000)}`;
     const [meta, races, alerts, series] = await Promise.all(["meta","races","alerts","series"].map(f => fetch(`data/${f}.json${bust}`).then(r => { if (!r.ok) throw new Error(f); return r.json(); })));
     DATA = {meta, races: races.races, alerts: alerts.alerts, series: series.series};
-    renderHeader(); renderTiles(); renderFeed(); renderChart(); renderTable();
+    renderHeader(); renderTiles(); renderFeed(); renderChart(); renderNotes(); renderTable();
   } catch (e) {
     $("#stamp").innerHTML = `<div class="err">Data didn't load (${esc(e.message)}). The last published files may be missing; try again shortly.</div>`;
   }
@@ -237,6 +244,7 @@ function renderTiles() {
       <span class="k">Total helping</span><span class="v dem">${fmt(d.total)}</span><span class="v rep">${fmt(r.total)}</span>
       <span class="k">Last 7 days</span><span class="v dem">${fmt(d.last_7d)}</span><span class="v rep">${fmt(r.last_7d)}</span>
       <span class="k">Nominees raised (cycle)</span><span class="v dem">${fmt(ch[`${o}_DEM`].receipts)}</span><span class="v rep">${fmt(ch[`${o}_REP`].receipts)}</span>
+      ${ch[`${o}_DEM`].late_48h || ch[`${o}_REP`].late_48h ? `<span class="k">+ 48-hour notices since last report</span><span class="v dem">${fmt(ch[`${o}_DEM`].late_48h)}</span><span class="v rep">${fmt(ch[`${o}_REP`].late_48h)}</span>` : ""}
       <span class="k">Nominees' cash on hand</span><span class="v dem">${fmt(ch[`${o}_DEM`].coh)}</span><span class="v rep">${fmt(ch[`${o}_REP`].coh)}</span>
       <span class="k">Split-signal races (nominee out-raises, outside $ trails)</span><span class="v dem">${ch[`${o}_DEM`].split_favoring}</span><span class="v rep">${ch[`${o}_REP`].split_favoring}</span>
       <span class="note">Offense share = dollars helping a party in seats the other party holds ÷ all its dollars (holder-uncertain seats excluded: ${fmt(d.excluded_uncertain_dollars)} D, ${fmt(r.excluded_uncertain_dollars)} R).</span>
@@ -309,6 +317,13 @@ function renderChart() {
   hit.addEventListener("mouseleave", hide); hit.addEventListener("touchend", hide);
 }
 
+function renderNotes() {
+  const rs = DATA.races.filter(r => r.note);
+  if (!rs.length) return;
+  $("#notesSec").hidden = false;
+  $("#notes").innerHTML = rs.map(r => `<div class="racenote"><b>${esc(raceName(r))}:</b> ${esc(r.note)}</div>`).join("");
+}
+
 function filtered() {
   const q = state.q.trim().toLowerCase();
   let rs = DATA.races.filter(r =>
@@ -333,11 +348,12 @@ function renderTable() {
       : `<span class="tag">${r.open_seat ? "open · " : ""}${r.holder_party === "DEM" ? "D" : r.holder_party === "REP" ? "R" : "?"} seat</span>`;
     const sig = r.split_signal ? `<span class="tag sig" title="Outside money favors ${r.split_signal.outside_leader}; nominee fundraising favors ${r.split_signal.candidate_leader}">split</span>` : "";
     const cd = (r.cand || {}).DEM, cr = (r.cand || {}).REP;
-    const nom = c => !c ? "—" : c.reported === false ? (c.committee_id ? "new, no report yet" : "no report") : `${fmt(c.receipts)}${c.basis !== "ie" ? "*" : ""}`;
+    const nom = c => !c ? "—" : c.reported === false ? (c.committee_id ? "new, no report yet" : "no report") : `${fmt(c.receipts + (c.late_48h || 0))}${c.basis !== "ie" ? "*" : ""}`;
+    const note = r.note ? `<span class="tag note" title="${esc(r.note)}">note</span>` : "";
     const side = (s) => s.side ? `<span class="sub2">${s.side}</span>` : "";
     const cell = s => `${fmt(s.total)}<span class="sub2">${fmt(s.party_ie + s.party_coord)} · ${fmt(s.outside)}</span>${side(s)}`;
     const row = `<tr class="row" data-id="${r.race_id}" aria-expanded="${state.open.has(r.race_id)}">
-      <td class="race">${esc(raceName(r))}${holder}${sig}
+      <td class="race">${esc(raceName(r))}${holder}${sig}${note}
         <div class="split" aria-hidden="true"><span style="width:${d.total/tot*100}%;background:var(--dem)"></span><span style="width:${p.total/tot*100}%;background:var(--rep)"></span></div></td>
       <td>${cell(d)}</td><td>${cell(p)}</td>
       <td><span class="dem">${nom(cd)}</span> · <span class="rep">${nom(cr)}</span><span class="sub2">cash ${cd ? fmt(cd.coh) : "—"} · ${cr ? fmt(cr.coh) : "—"}</span></td>
@@ -353,11 +369,11 @@ function detail(r) {
   const cands = r.candidates.map(c => li(`<span class="${(c.party||"").toLowerCase()}">●</span> ${esc(c.name)}`, `<a href="https://www.fec.gov/data/candidate/${c.candidate_id}/?cycle=2026" target="_blank" rel="noopener">${c.candidate_id}</a>`)).join("");
   const basisNote = {ie: "", receipts: " <span class='muted'>(inferred)</span>", name_collision: " <span class='muted'>(namesake, uncertain)</span>"};
   const noms = ["DEM", "REP"].map(p => (r.cand || {})[p]).filter(Boolean).map(c => li(
-    `<span class="${c === (r.cand || {}).DEM ? "dem" : "rep"}">●</span> ${esc(c.name)}${basisNote[c.basis] || ""}<span class="sub2">${c.reported === false ? (c.committee_id ? `committee ${esc(c.committee_id)} registered, but no report due yet (first: Q3, due Oct. 15)` : "no fundraising report on file under this ID") : `raised ${fmt(c.receipts)} · cash ${fmt(c.coh)} · through ${esc(c.through || "—")}`}</span>`,
+    `<span class="${c === (r.cand || {}).DEM ? "dem" : "rep"}">●</span> ${esc(c.name)}${basisNote[c.basis] || ""}<span class="sub2">${c.reported === false ? (c.committee_id ? `committee ${esc(c.committee_id)} registered, but no report due yet (first: Q3, due Oct. 15)` : "no fundraising report on file under this ID") : `raised ${fmt(c.receipts)} · cash ${fmt(c.coh)} · through ${esc(c.through || "—")}${c.money_source ? ` · ${esc(c.money_source)}` : ""}${c.late_48h ? `<br>+ ${fmt(c.late_48h)} in ${c.late_48h_count} large contributions (48-hour notices) through ${esc(c.late_48h_through)}` : ""}`}</span>`,
     `<a href="https://www.fec.gov/data/candidate/${c.candidate_id}/?cycle=2026&tab=raising" target="_blank" rel="noopener">filings</a>`)).join("") || `<li class="muted">No filings yet</li>`;
   const sp = r.top_spenders.map(s => li(`<span class="${s.helps.toLowerCase()}">●</span> <a href="https://www.fec.gov/data/committee/${s.committee_id}/?cycle=2026&tab=spending" target="_blank" rel="noopener">${esc(s.name)}</a> <span class="muted">${s.class.replace("_"," ")}</span>`, fmt(s.amount))).join("");
   const it = r.top_items.map(x => li(`${esc(x.date || "")} · ${esc(x.committee_name)}${x.kind === "coord" ? " <span class='muted'>(coordinated)</span>" : ""}`, x.image_number ? `<a href="https://docquery.fec.gov/cgi-bin/fecimg/?${x.image_number}" target="_blank" rel="noopener">${fmt(x.amount)}</a>` : fmt(x.amount))).join("");
-  return `<tr class="detail"><td colspan="6"><div class="cols">
+  return `<tr class="detail"><td colspan="6">${r.note ? `<div class="racenote"><b>Note:</b> ${esc(r.note)}</div>` : ""}<div class="cols">
     <div><h4>Nominees' own money</h4><ul>${noms}</ul>
     <h4 style="margin-top:12px">Candidates targeted</h4><ul>${cands}</ul>${r.holder_name ? `<p class="muted" style="font-size:12px">Seat held by ${esc(r.holder_name)}${r.holder_uncertain ? ` · ${esc(r.uncertain_reason)}` : ""}</p>` : ""}<p style="font-size:13px"><a href="${fecRace(r)}" target="_blank" rel="noopener">Race on fec.gov →</a></p></div>
     <div><h4>Top spenders</h4><ul>${sp}</ul></div>
