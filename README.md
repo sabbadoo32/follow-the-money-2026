@@ -54,6 +54,10 @@ Without `FEC_API_KEY` the tracker still works, but only from the daily bulk noti
   - **Split signal:** outside money favors one party and nominee receipts favor the other, each by ≥ $250K. Both nominees must be identified from general-election spending. Also emitted as an alert.
 - **Alerts:** first $100K, first party-committee dollar and first $1M per race and party. They're dated by the data (`crossed_on`) and stamped with the run that first saw them (`detected_at`).
 
+## Explainers
+
+`site/learn.js` holds the glossary: every definition behind the page's "?" tooltips and dotted-underline terms, plus the glossary section. Edit definitions there. The "How the money works" primer (vehicle comparison and disclosure calendar) is static HTML in `site/index.html`. Contribution limits quoted are the FEC's 2025-26 figures.
+
 ## Local
 
 ```bash

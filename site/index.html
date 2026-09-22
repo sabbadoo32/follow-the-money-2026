@@ -89,7 +89,35 @@ footer{margin-top:36px;color:var(--ink2);font-size:13px;max-width:820px}
 footer p{margin:0 0 8px}
 .empty{padding:24px;text-align:center;color:var(--muted)}
 .err{padding:14px;border:1px solid var(--rep);border-radius:8px;color:var(--rep)}
+.i{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;margin-left:5px;padding:0;border-radius:50%;border:1px solid var(--muted);background:transparent;color:var(--ink2);font:600 10px/1 var(--sans);cursor:help;vertical-align:1px;position:relative}
+.i::after{content:"";position:absolute;inset:-8px}
+.i:hover,.i:focus-visible{border-color:var(--ink);color:var(--ink);outline:none}
+.term{border-bottom:1px dotted var(--muted);cursor:help}
+.term:focus-visible{outline:2px solid var(--dem);outline-offset:2px}
+#pop{position:absolute;z-index:50;display:none;max-width:320px;width:max-content;background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:13px;line-height:1.45;box-shadow:0 8px 28px rgba(0,0,0,.18)}
+#pop p{margin:4px 0 6px;color:var(--ink2)}
+#pop a{font-size:12px}
+.primer{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:0 16px}
+.primer>summary{cursor:pointer;padding:14px 0;font-weight:600;font-size:16px;list-style:none;display:flex;justify-content:space-between;gap:12px}
+.primer>summary::-webkit-details-marker{display:none}
+.primer>summary::after{content:"Show";font-weight:400;font-size:13px;color:var(--ink2)}
+.primer[open]>summary::after{content:"Hide"}
+.primer .body{padding:0 0 16px;max-width:900px}
+.primer h3{font-size:15px;margin:18px 0 6px}
+.primer p{margin:0 0 10px;color:var(--ink2)}
+.primer ol{margin:0 0 10px;padding-left:20px;color:var(--ink2)}
+.primer li{margin-bottom:4px}
+.cmp{overflow-x:auto;border:1px solid var(--line);border-radius:8px;margin:8px 0 12px}
+.cmp table th,.cmp table td{text-align:left;font-size:13px;vertical-align:top;position:static}
+.cmp table th{background:var(--bg)}
+.cmp table td:first-child{font-weight:600;white-space:nowrap}
+dl.gloss{display:grid;grid-template-columns:minmax(160px,220px) 1fr;gap:8px 18px;margin:0}
+dl.gloss dt{font-weight:600;scroll-margin-top:16px}
+dl.gloss dd{margin:0;color:var(--ink2)}
+dl.gloss dt:target,dl.gloss dt:target+dd{background:var(--warn-bg)}
 @media (max-width:820px){
+  dl.gloss{grid-template-columns:1fr}
+  dl.gloss dd{margin-bottom:8px}
   .tiles,.grid2{grid-template-columns:1fr}
   .detail .cols{grid-template-columns:1fr}
   th.hide-sm,td.hide-sm{display:none}
@@ -113,21 +141,67 @@ footer p{margin:0 0 8px}
 
 <div class="tiles" id="tiles"></div>
 
+<details class="primer" id="primer">
+  <summary>New to campaign finance? How the money works (3-minute read)</summary>
+  <div class="body">
+    <p>A federal campaign is paid for by several kinds of organizations at once. Each has different rules on who can give, how much, whether it can work with the candidate, and when the public finds out. This page tracks all of them from FEC filings. Tap any <span class="i" aria-hidden="true" style="cursor:default">?</span> or dotted-underlined term for a definition.</p>
+
+    <h3>The five vehicles</h3>
+    <div class="cmp"><table>
+      <thead><tr><th>Vehicle</th><th>Who can give, and how much</th><th>Can it work with the candidate?</th><th>How fast the public sees it</th><th>On this page</th></tr></thead>
+      <tbody>
+        <tr><td><span class="term" tabindex="0" data-t="candidate_committee">Candidate committee</span></td><td>Individuals $3,500 per election; PACs $5,000; no corporations or unions</td><td>It <i>is</i> the candidate</td><td>Quarterly reports; large gifts within 48 hours in the last 20 days</td><td>"Nominees raised"</td></tr>
+        <tr><td><span class="term" tabindex="0" data-t="party_committee">Party committee</span></td><td>Limited contributions from individuals and PACs</td><td>Yes, through <span class="term" tabindex="0" data-t="coordinated">coordinated spending</span>, now unlimited after <span class="term" tabindex="0" data-t="nrsc"><i>NRSC v. FEC</i></span></td><td>Independent spending: 24/48 hours. Coordinated: only on regular reports, weeks later</td><td>"Party"</td></tr>
+        <tr><td><span class="term" tabindex="0" data-t="super_pac">Super PAC</span></td><td>Anyone, unlimited: individuals, corporations, unions</td><td>No. It must stay independent</td><td>Spending: 24/48 hours. Donors: monthly or quarterly</td><td>"Outside"</td></tr>
+        <tr><td><span class="term" tabindex="0" data-t="traditional_pac">Traditional PAC</span></td><td>$5,000 a year per individual</td><td>It can give to candidates; its independent spending can't be coordinated</td><td>Same as super PACs</td><td>"Outside"</td></tr>
+        <tr><td><span class="term" tabindex="0" data-t="nonprofit">501(c) nonprofit</span></td><td>Anyone, unlimited, often undisclosed</td><td>No</td><td>Spending: 24/48 hours. Donors: usually never</td><td>"Outside"</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>Why the party numbers look small</h3>
+    <p>Parties used to do much of their spending as <span class="term" tabindex="0" data-t="independent_expenditure">independent expenditures</span>, which are reported within a day or two. Since the Supreme Court's June 2026 ruling in <span class="term" tabindex="0" data-t="nrsc"><i>NRSC v. FEC</i></span>, parties can spend without limit <i>in coordination</i> with their candidates. That spending shows up only on the party's regular reports. So party money can look like it's drying up when it's really moving somewhere that's reported later. The yellow banner at the top gives the date that coordinated-spending data runs through.</p>
+
+    <h3>Why candidate money matters too</h3>
+    <p>Outside groups and campaigns buy the same ads at different prices. Stations must sell candidates airtime at the <span class="term" tabindex="0" data-t="lowest_unit_charge">lowest unit charge</span>, while super PACs pay market rates that spike before Election Day. A party that routes support through its candidates, instead of through super PACs, looks weaker on outside-money charts than it really is. That's why each race shows the nominees' own fundraising beside outside money. Races where the two point in opposite directions carry a <span class="term" tabindex="0" data-t="split_signal">split</span> tag.</p>
+
+    <h3>When the public finds out</h3>
+    <div class="cmp"><table>
+      <thead><tr><th>Money</th><th>Disclosed</th><th>Final-weeks gap</th></tr></thead>
+      <tbody>
+        <tr><td>Outside spending (IEs)</td><td>Within 48 hours (at $10,000+), then within 24 hours from Oct. 15 (at $1,000+)</td><td>Almost none, which is why it's this tracker's backbone</td></tr>
+        <tr><td>Party coordinated spending</td><td>Monthly reports; pre-general report due Oct. 22 (through Oct. 14)</td><td>Oct. 15 onward isn't disclosed until Dec. 3</td></tr>
+        <tr><td>Candidate fundraising</td><td>Quarterly (Q3 due Oct. 15); pre-general due Oct. 22</td><td>Only <span class="term" tabindex="0" data-t="f6">48-hour notices</span> of gifts of $1,000+ from Oct. 15 to Nov. 1</td></tr>
+        <tr><td>Super PAC donors</td><td>Monthly or quarterly</td><td>Late donors may not show up until after the election</td></tr>
+        <tr><td>Nonprofit donors</td><td>Usually never</td><td>—</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>How to read this tracker</h3>
+    <ol>
+      <li><b>Start with the header.</b> <span class="term" tabindex="0" data-t="offense_share">Offense share</span> tells you whether each party is attacking or defending. <span class="term" tabindex="0" data-t="races_in_play">Races in play</span> tells you how wide each party's map is.</li>
+      <li><b>Watch the new-races feed.</b> A first $100K, a first party dollar or a new split signal often means a race just joined someone's target list.</li>
+      <li><b>Sort the table by "Last 7 days"</b> to see where money is moving now.</li>
+      <li><b>Open a race</b> to see who is spending, the nominees' own money, and links to the original filings on fec.gov.</li>
+      <li><b>Remember what's missing.</b> Spending shows where groups are placing bets, not why, and not how well the ads work.</li>
+    </ol>
+  </div>
+</details>
+
 <section>
   <div class="grid2">
     <div class="card">
       <div class="controls" style="justify-content:space-between">
-        <h2 style="margin:0;font-size:18px">Cumulative spending by party helped</h2>
+        <h2 style="margin:0;font-size:18px">Cumulative spending by party helped<button type="button" class="i" data-t="helps" aria-label="What is Helps Dems / Helps Reps?">?</button></h2>
         <div class="seg" id="chartSeg" role="group" aria-label="Chamber">
           <button data-v="H" aria-pressed="true">House</button><button data-v="S" aria-pressed="false">Senate</button><button data-v="HS" aria-pressed="false">Both</button>
         </div>
       </div>
-      <div class="legend"><span><i style="background:var(--dem)"></i>Helps Democrats</span><span><i style="background:var(--rep)"></i>Helps Republicans</span><span class="muted">by date shown to the public</span></div>
+      <div class="legend"><span><i style="background:var(--dem)"></i>Helps Democrats</span><span><i style="background:var(--rep)"></i>Helps Republicans</span><span class="muted">by date shown to the public<button type="button" class="i" data-t="dissemination_date" aria-label="What is Dissemination date?">?</button></span></div>
       <div id="chart"><div id="tip"></div></div>
     </div>
     <div class="card">
       <div class="controls" style="justify-content:space-between">
-        <h2 style="margin:0;font-size:18px">New races</h2>
+        <h2 style="margin:0;font-size:18px">New races<button type="button" class="i" data-t="alerts" aria-label="What is New-race alerts?">?</button></h2>
         <a href="rss.xml" class="muted" style="font-size:13px">RSS</a>
       </div>
       <ul class="feed" id="feed"></ul>
@@ -136,12 +210,12 @@ footer p{margin:0 0 8px}
 </section>
 
 <section id="notesSec" hidden>
-  <h2>Race notes</h2>
+  <h2>Race notes<button type="button" class="i" data-t="race_note" aria-label="What is Race note?">?</button></h2>
   <div id="notes"></div>
 </section>
 
 <section>
-  <h2>Races</h2>
+  <h2>Races<button type="button" class="i" data-t="support_oppose" aria-label="What is Support / oppose?">?</button></h2>
   <div class="controls">
     <div class="seg" id="chamberSeg" role="group" aria-label="Chamber">
       <button data-v="" aria-pressed="true">All</button><button data-v="H" aria-pressed="false">House</button><button data-v="S" aria-pressed="false">Senate</button>
@@ -153,11 +227,11 @@ footer p{margin:0 0 8px}
       <option value="">Offense &amp; defense</option>
       <option value="DEM:offense">Dem offense</option><option value="DEM:defense">Dem defense</option>
       <option value="REP:offense">Rep offense</option><option value="REP:defense">Rep defense</option>
-    </select>
+    </select><button type="button" class="i" data-t="offense" aria-label="What is Offense and defense?">?</button>
     <select id="signal" aria-label="Signal">
       <option value="">All races</option><option value="split">Split signal only</option>
       <option value="split:DEM">Split: candidates favor Dems</option><option value="split:REP">Split: candidates favor Reps</option>
-    </select>
+    </select><button type="button" class="i" data-t="split_signal" aria-label="What is Split signal?">?</button>
     <select id="sort" aria-label="Sort">
       <option value="total">Sort: total</option><option value="cand_gap">Sort: nominee fundraising gap</option><option value="last_7d">Sort: last 7 days</option><option value="first_party">Sort: first party dollar (newest)</option>
     </select>
@@ -166,14 +240,19 @@ footer p{margin:0 0 8px}
   <div class="tablewrap">
     <table>
       <thead><tr>
-        <th>Race</th><th>Helps Dems<span class="sub2">party · outside</span></th><th>Helps Reps<span class="sub2">party · outside</span></th>
-        <th>Nominees raised<span class="sub2">D · R, cycle to date</span></th>
-        <th class="hide-sm">Last 7 days</th><th class="hide-sm">First party $<span class="sub2">D · R</span></th>
+        <th>Race<button type="button" class="i" data-t="holder" aria-label="What is Seat holder?">?</button></th><th>Helps Dems<button type="button" class="i" data-t="helps" aria-label="What is Helps Dems / Helps Reps?">?</button><span class="sub2">party · outside<button type="button" class="i" data-t="party_vs_outside" aria-label="What is Party vs. outside?">?</button></span></th><th>Helps Reps<span class="sub2">party · outside</span></th>
+        <th>Nominees raised<button type="button" class="i" data-t="receipts" aria-label="What is Nominees raised?">?</button><span class="sub2">D · R · cash on hand<button type="button" class="i" data-t="coh" aria-label="What is Cash on hand?">?</button></span></th>
+        <th class="hide-sm">Last 7 days<button type="button" class="i" data-t="momentum" aria-label="What is Last 7 days?">?</button></th><th class="hide-sm">First party <button type="button" class="i" data-t="first_party_dollar" aria-label="What is First party dollar?">?</button><span class="sub2">D · R</span></th>
       </tr></thead>
       <tbody id="tbody"><tr><td colspan="6" class="empty">Loading…</td></tr></tbody>
     </table>
   </div>
   <p class="muted" style="font-size:12px" id="tableNote"></p>
+</section>
+
+<section>
+  <h2>Glossary</h2>
+  <dl class="gloss" id="glossary"></dl>
 </section>
 
 <section class="downloads">
@@ -192,6 +271,7 @@ footer p{margin:0 0 8px}
 </footer>
 </div>
 
+<script src="learn.js"></script>
 <script>
 (() => {
 const $ = s => document.querySelector(s);
@@ -209,7 +289,7 @@ async function load() {
     const bust = `?t=${Math.floor(Date.now()/300000)}`;
     const [meta, races, alerts, series] = await Promise.all(["meta","races","alerts","series"].map(f => fetch(`data/${f}.json${bust}`).then(r => { if (!r.ok) throw new Error(f); return r.json(); })));
     DATA = {meta, races: races.races, alerts: alerts.alerts, series: series.series};
-    renderHeader(); renderTiles(); renderFeed(); renderChart(); renderNotes(); renderTable();
+    renderHeader(); renderTiles(); renderFeed(); renderChart(); renderNotes(); renderTable(); renderGlossary();
   } catch (e) {
     $("#stamp").innerHTML = `<div class="err">Data didn't load (${esc(e.message)}). The last published files may be missing; try again shortly.</div>`;
   }
@@ -224,10 +304,10 @@ function renderHeader() {
   const b = $("#banner");
   b.hidden = false;
   b.innerHTML = m.coord_through
-    ? `<b>Blind spot:</b> ${esc(m.coord_banner)}`
-    : `<b>Blind spot:</b> Party coordinated spending (Schedule F) isn't ingested yet. After <i>NRSC v. FEC</i>, parties can shift money there, and anything after Oct. 14 isn't disclosed until Dec. 3.`;
+    ? `<b>Blind spot:</b> ${esc(m.coord_banner).replace("Party coordinated spending", term("coordinated", "Party coordinated spending"))}`
+    : `<b>Blind spot:</b> ${term("coordinated", "Party coordinated spending")} (${term("schedule_f", "Schedule F")}) isn't ingested yet. After ${term("nrsc", "<i>NRSC v. FEC</i>")}, parties can shift money there, and anything after Oct. 14 isn't disclosed until Dec. 3.`;
   const cb = $("#candBanner");
-  if (m.cand_through) { cb.hidden = false; cb.innerHTML = `<b>Candidate money lags:</b> ${esc(m.cand_banner)}`; }
+  if (m.cand_through) { cb.hidden = false; cb.innerHTML = `<b>Candidate money lags:</b> ${withTip(esc(m.cand_banner), "periodic").replace("48-hour notices", term("f6", "48-hour notices"))}`; }
   $("#caveat").textContent = m.caveat;
   if (m.notes && m.notes.length) $("#sources").insertAdjacentHTML("afterend", m.notes.map(n => `<p class="muted">${esc(n)}</p>`).join(""));
 }
@@ -238,15 +318,15 @@ function renderTiles() {
     const d = h[`${o}_DEM`], r = h[`${o}_REP`];
     return `<div class="chamber"><h2>${label}</h2><div class="kv">
       <span></span><span class="h dem">Dems</span><span class="h rep">Reps</span>
-      <span class="k">Offense share</span><span class="v dem">${pct(d.offense_share)}</span><span class="v rep">${pct(r.offense_share)}</span>
-      <span class="k">Races in play (≥ ${fmt(DATA.meta.thresholds.in_play)})</span><span class="v dem">${d.races_in_play}</span><span class="v rep">${r.races_in_play}</span>
-      <span class="k">Party committee footprint</span><span class="v dem">${d.party_footprint}</span><span class="v rep">${r.party_footprint}</span>
-      <span class="k">Total helping</span><span class="v dem">${fmt(d.total)}</span><span class="v rep">${fmt(r.total)}</span>
-      <span class="k">Last 7 days</span><span class="v dem">${fmt(d.last_7d)}</span><span class="v rep">${fmt(r.last_7d)}</span>
-      <span class="k">Nominees raised (cycle)</span><span class="v dem">${fmt(ch[`${o}_DEM`].receipts)}</span><span class="v rep">${fmt(ch[`${o}_REP`].receipts)}</span>
-      ${ch[`${o}_DEM`].late_48h || ch[`${o}_REP`].late_48h ? `<span class="k">+ 48-hour notices since last report</span><span class="v dem">${fmt(ch[`${o}_DEM`].late_48h)}</span><span class="v rep">${fmt(ch[`${o}_REP`].late_48h)}</span>` : ""}
-      <span class="k">Nominees' cash on hand</span><span class="v dem">${fmt(ch[`${o}_DEM`].coh)}</span><span class="v rep">${fmt(ch[`${o}_REP`].coh)}</span>
-      <span class="k">Split-signal races (nominee out-raises, outside $ trails)</span><span class="v dem">${ch[`${o}_DEM`].split_favoring}</span><span class="v rep">${ch[`${o}_REP`].split_favoring}</span>
+      <span class="k">${withTip(`Offense share`, "offense_share")}</span><span class="v dem">${pct(d.offense_share)}</span><span class="v rep">${pct(r.offense_share)}</span>
+      <span class="k">${withTip(`Races in play (≥ ${fmt(DATA.meta.thresholds.in_play)})`, "races_in_play")}</span><span class="v dem">${d.races_in_play}</span><span class="v rep">${r.races_in_play}</span>
+      <span class="k">${withTip(`Party committee footprint`, "party_footprint")}</span><span class="v dem">${d.party_footprint}</span><span class="v rep">${r.party_footprint}</span>
+      <span class="k">${withTip(`Total helping`, "helps")}</span><span class="v dem">${fmt(d.total)}</span><span class="v rep">${fmt(r.total)}</span>
+      <span class="k">${withTip(`Last 7 days`, "momentum")}</span><span class="v dem">${fmt(d.last_7d)}</span><span class="v rep">${fmt(r.last_7d)}</span>
+      <span class="k">${withTip(`Nominees raised (cycle)`, "receipts")}</span><span class="v dem">${fmt(ch[`${o}_DEM`].receipts)}</span><span class="v rep">${fmt(ch[`${o}_REP`].receipts)}</span>
+      ${ch[`${o}_DEM`].late_48h || ch[`${o}_REP`].late_48h ? `<span class="k">${withTip(`+ 48-hour notices since last report`, "f6")}</span><span class="v dem">${fmt(ch[`${o}_DEM`].late_48h)}</span><span class="v rep">${fmt(ch[`${o}_REP`].late_48h)}</span>` : ""}
+      <span class="k">${withTip(`Nominees' cash on hand`, "coh")}</span><span class="v dem">${fmt(ch[`${o}_DEM`].coh)}</span><span class="v rep">${fmt(ch[`${o}_REP`].coh)}</span>
+      <span class="k">${withTip(`Split-signal races (nominee out-raises, outside $ trails)`, "split_signal")}</span><span class="v dem">${ch[`${o}_DEM`].split_favoring}</span><span class="v rep">${ch[`${o}_REP`].split_favoring}</span>
       <span class="note">Offense share = dollars helping a party in seats the other party holds ÷ all its dollars (holder-uncertain seats excluded: ${fmt(d.excluded_uncertain_dollars)} D, ${fmt(r.excluded_uncertain_dollars)} R).</span>
     </div></div>`;
   };
@@ -344,13 +424,13 @@ function renderTable() {
   if (!rs.length) { body.innerHTML = `<tr><td colspan="6" class="empty">No races match these filters.</td></tr>`; $("#tableNote").textContent = ""; return; }
   body.innerHTML = rs.map(r => {
     const d = r.DEM, p = r.REP, tot = r.total || 1;
-    const holder = r.holder_uncertain ? `<span class="tag warn" title="${esc(r.uncertain_reason)}">holder uncertain</span>`
+    const holder = r.holder_uncertain ? `<span class="tag warn" title="${esc(r.uncertain_reason)}">holder uncertain</span>${tip("holder_uncertain")}`
       : `<span class="tag">${r.open_seat ? "open · " : ""}${r.holder_party === "DEM" ? "D" : r.holder_party === "REP" ? "R" : "?"} seat</span>`;
-    const sig = r.split_signal ? `<span class="tag sig" title="Outside money favors ${r.split_signal.outside_leader}; nominee fundraising favors ${r.split_signal.candidate_leader}">split</span>` : "";
+    const sig = r.split_signal ? `<span class="tag sig" title="Outside money favors ${r.split_signal.outside_leader}; nominee fundraising favors ${r.split_signal.candidate_leader}">split</span>${tip("split_signal")}` : "";
     const cd = (r.cand || {}).DEM, cr = (r.cand || {}).REP;
     const nom = c => !c ? "—" : c.reported === false ? (c.committee_id ? "new, no report yet" : "no report") : `${fmt(c.receipts + (c.late_48h || 0))}${c.basis !== "ie" ? "*" : ""}`;
     const note = r.note ? `<span class="tag note" title="${esc(r.note)}">note</span>` : "";
-    const side = (s) => s.side ? `<span class="sub2">${s.side}</span>` : "";
+    const side = (s) => s.side ? `<span class="sub2">${term("offense", s.side)}</span>` : "";
     const cell = s => `${fmt(s.total)}<span class="sub2">${fmt(s.party_ie + s.party_coord)} · ${fmt(s.outside)}</span>${side(s)}`;
     const row = `<tr class="row" data-id="${r.race_id}" aria-expanded="${state.open.has(r.race_id)}">
       <td class="race">${esc(raceName(r))}${holder}${sig}${note}
@@ -367,17 +447,18 @@ function renderTable() {
 function detail(r) {
   const li = (a, b) => `<li><span>${a}</span><span>${b}</span></li>`;
   const cands = r.candidates.map(c => li(`<span class="${(c.party||"").toLowerCase()}">●</span> ${esc(c.name)}`, `<a href="https://www.fec.gov/data/candidate/${c.candidate_id}/?cycle=2026" target="_blank" rel="noopener">${c.candidate_id}</a>`)).join("");
-  const basisNote = {ie: "", receipts: " <span class='muted'>(inferred)</span>", name_collision: " <span class='muted'>(namesake, uncertain)</span>"};
+  const basisNote = {ie: "", receipts: ` <span class='muted'>(${term("nominee_inferred", "inferred")})</span>`, name_collision: ` <span class='muted'>(${term("nominee", "namesake, uncertain")})</span>`};
+  const cls = {super_pac: term("super_pac", "super PAC"), party: term("party_committee", "party"), other: term("nonprofit", "other")};
   const noms = ["DEM", "REP"].map(p => (r.cand || {})[p]).filter(Boolean).map(c => li(
-    `<span class="${c === (r.cand || {}).DEM ? "dem" : "rep"}">●</span> ${esc(c.name)}${basisNote[c.basis] || ""}<span class="sub2">${c.reported === false ? (c.committee_id ? `committee ${esc(c.committee_id)} registered, but no report due yet (first: Q3, due Oct. 15)` : "no fundraising report on file under this ID") : `raised ${fmt(c.receipts)} · cash ${fmt(c.coh)} · through ${esc(c.through || "—")}${c.money_source ? ` · ${esc(c.money_source)}` : ""}${c.late_48h ? `<br>+ ${fmt(c.late_48h)} in ${c.late_48h_count} large contributions (48-hour notices) through ${esc(c.late_48h_through)}` : ""}`}</span>`,
+    `<span class="${c === (r.cand || {}).DEM ? "dem" : "rep"}">●</span> ${esc(c.name)}${basisNote[c.basis] || ""}<span class="sub2">${c.reported === false ? (c.committee_id ? `committee ${esc(c.committee_id)} registered, but no report due yet (first: Q3, due Oct. 15)` : "no fundraising report on file under this ID") : `raised ${fmt(c.receipts)} · cash ${fmt(c.coh)} · through ${esc(c.through || "—")}${c.money_source ? ` · ${esc(c.money_source)}` : ""}${c.late_48h ? `<br>+ ${fmt(c.late_48h)} in ${c.late_48h_count} large contributions (${term("f6", "48-hour notices")}) through ${esc(c.late_48h_through)}` : ""}`}</span>`,
     `<a href="https://www.fec.gov/data/candidate/${c.candidate_id}/?cycle=2026&tab=raising" target="_blank" rel="noopener">filings</a>`)).join("") || `<li class="muted">No filings yet</li>`;
-  const sp = r.top_spenders.map(s => li(`<span class="${s.helps.toLowerCase()}">●</span> <a href="https://www.fec.gov/data/committee/${s.committee_id}/?cycle=2026&tab=spending" target="_blank" rel="noopener">${esc(s.name)}</a> <span class="muted">${s.class.replace("_"," ")}</span>`, fmt(s.amount))).join("");
-  const it = r.top_items.map(x => li(`${esc(x.date || "")} · ${esc(x.committee_name)}${x.kind === "coord" ? " <span class='muted'>(coordinated)</span>" : ""}`, x.image_number ? `<a href="https://docquery.fec.gov/cgi-bin/fecimg/?${x.image_number}" target="_blank" rel="noopener">${fmt(x.amount)}</a>` : fmt(x.amount))).join("");
+  const sp = r.top_spenders.map(s => li(`<span class="${s.helps.toLowerCase()}">●</span> <a href="https://www.fec.gov/data/committee/${s.committee_id}/?cycle=2026&tab=spending" target="_blank" rel="noopener">${esc(s.name)}</a> <span class="muted">${cls[s.class] || esc(s.class)}</span>`, fmt(s.amount))).join("");
+  const it = r.top_items.map(x => li(`${esc(x.date || "")} · ${esc(x.committee_name)}${x.kind === "coord" ? ` <span class='muted'>(${term("coordinated", "coordinated")})</span>` : ""}`, x.image_number ? `<a href="https://docquery.fec.gov/cgi-bin/fecimg/?${x.image_number}" target="_blank" rel="noopener">${fmt(x.amount)}</a>` : fmt(x.amount))).join("");
   return `<tr class="detail"><td colspan="6">${r.note ? `<div class="racenote"><b>Note:</b> ${esc(r.note)}</div>` : ""}<div class="cols">
-    <div><h4>Nominees' own money</h4><ul>${noms}</ul>
+    <div><h4>Nominees' own money${tip("nominee")}</h4><ul>${noms}</ul>
     <h4 style="margin-top:12px">Candidates targeted</h4><ul>${cands}</ul>${r.holder_name ? `<p class="muted" style="font-size:12px">Seat held by ${esc(r.holder_name)}${r.holder_uncertain ? ` · ${esc(r.uncertain_reason)}` : ""}</p>` : ""}<p style="font-size:13px"><a href="${fecRace(r)}" target="_blank" rel="noopener">Race on fec.gov →</a></p></div>
-    <div><h4>Top spenders</h4><ul>${sp}</ul></div>
-    <div><h4>Largest items (links to filing image)</h4><ul>${it}</ul></div>
+    <div><h4>Top spenders${tip("outside_money")}</h4><ul>${sp}</ul></div>
+    <div><h4>Largest items (links to filing image)${tip("schedule_e")}</h4><ul>${it}</ul></div>
   </div></td></tr>`;
 }
 
