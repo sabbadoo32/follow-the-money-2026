@@ -333,7 +333,7 @@ function renderTable() {
       : `<span class="tag">${r.open_seat ? "open · " : ""}${r.holder_party === "DEM" ? "D" : r.holder_party === "REP" ? "R" : "?"} seat</span>`;
     const sig = r.split_signal ? `<span class="tag sig" title="Outside money favors ${r.split_signal.outside_leader}; nominee fundraising favors ${r.split_signal.candidate_leader}">split</span>` : "";
     const cd = (r.cand || {}).DEM, cr = (r.cand || {}).REP;
-    const nom = c => c ? `${fmt(c.receipts)}${c.basis !== "ie" ? "*" : ""}` : "—";
+    const nom = c => !c ? "—" : c.reported === false ? "no report" : `${fmt(c.receipts)}${c.basis !== "ie" ? "*" : ""}`;
     const side = (s) => s.side ? `<span class="sub2">${s.side}</span>` : "";
     const cell = s => `${fmt(s.total)}<span class="sub2">${fmt(s.party_ie + s.party_coord)} · ${fmt(s.outside)}</span>${side(s)}`;
     const row = `<tr class="row" data-id="${r.race_id}" aria-expanded="${state.open.has(r.race_id)}">
@@ -353,7 +353,7 @@ function detail(r) {
   const cands = r.candidates.map(c => li(`<span class="${(c.party||"").toLowerCase()}">●</span> ${esc(c.name)}`, `<a href="https://www.fec.gov/data/candidate/${c.candidate_id}/?cycle=2026" target="_blank" rel="noopener">${c.candidate_id}</a>`)).join("");
   const basisNote = {ie: "", receipts: " <span class='muted'>(inferred)</span>", name_collision: " <span class='muted'>(namesake, uncertain)</span>"};
   const noms = ["DEM", "REP"].map(p => (r.cand || {})[p]).filter(Boolean).map(c => li(
-    `<span class="${c === (r.cand || {}).DEM ? "dem" : "rep"}">●</span> ${esc(c.name)}${basisNote[c.basis] || ""}<span class="sub2">raised ${fmt(c.receipts)} · cash ${fmt(c.coh)} · through ${esc(c.through || "—")}</span>`,
+    `<span class="${c === (r.cand || {}).DEM ? "dem" : "rep"}">●</span> ${esc(c.name)}${basisNote[c.basis] || ""}<span class="sub2">${c.reported === false ? "no fundraising report on file under this ID" : `raised ${fmt(c.receipts)} · cash ${fmt(c.coh)} · through ${esc(c.through || "—")}`}</span>`,
     `<a href="https://www.fec.gov/data/candidate/${c.candidate_id}/?cycle=2026&tab=raising" target="_blank" rel="noopener">filings</a>`)).join("") || `<li class="muted">No filings yet</li>`;
   const sp = r.top_spenders.map(s => li(`<span class="${s.helps.toLowerCase()}">●</span> <a href="https://www.fec.gov/data/committee/${s.committee_id}/?cycle=2026&tab=spending" target="_blank" rel="noopener">${esc(s.name)}</a> <span class="muted">${s.class.replace("_"," ")}</span>`, fmt(s.amount))).join("");
   const it = r.top_items.map(x => li(`${esc(x.date || "")} · ${esc(x.committee_name)}${x.kind === "coord" ? " <span class='muted'>(coordinated)</span>" : ""}`, x.image_number ? `<a href="https://docquery.fec.gov/cgi-bin/fecimg/?${x.image_number}" target="_blank" rel="noopener">${fmt(x.amount)}</a>` : fmt(x.amount))).join("");

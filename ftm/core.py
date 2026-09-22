@@ -647,7 +647,7 @@ def pick_nominees(kept, races, candidates, summary, cfg, sitting_fec=frozenset()
                 cid, basis = max(funded, key=lambda c: summary[c]["receipts"]), "receipts"
             s = summary.get(cid, {})
             out.setdefault(rid, {})[p] = {
-                "candidate_id": cid, "name": candidates[cid]["name"], "basis": basis,
+                "candidate_id": cid, "name": candidates[cid]["name"], "basis": basis, "reported": cid in summary,
                 "receipts": s.get("receipts", 0.0), "coh": s.get("coh", 0.0), "indiv": s.get("indiv", 0.0),
                 "from_party": s.get("from_party", 0.0), "through": s.get("through")}
     return out
@@ -660,7 +660,7 @@ def split_signal(roll_race, cand, min_gap):
     min_gap on both measures, so noise and primary losers can't trip it.
     """
     d, r = cand.get(DEM), cand.get(REP)
-    if not d or not r or d["basis"] != "ie" or r["basis"] != "ie":
+    if not d or not r or d["basis"] != "ie" or r["basis"] != "ie" or not d["reported"] or not r["reported"]:
         return None
     og = roll_race[DEM]["total"] - roll_race[REP]["total"]
     cg = d["receipts"] - r["receipts"]

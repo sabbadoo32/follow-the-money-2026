@@ -261,6 +261,8 @@ class CandidateMoney(unittest.TestCase):
         self.assertEqual((sig["outside_leader"], sig["candidate_leader"]), ("REP", "DEM"))
         n["H-MI-08"]["REP"]["basis"] = "receipts"
         self.assertIsNone(core.split_signal(roll, n["H-MI-08"], 250_000))
+        n["H-MI-08"]["REP"].update(basis="ie", reported=False)  # no summary row reads as $0; must not flag
+        self.assertIsNone(core.split_signal(roll, n["H-MI-08"], 250_000))
 
     def test_no_split_when_both_agree_or_gap_small(self):
         kept, rs, n = self.run_([row(amount=900_000, transaction_id="a"),
