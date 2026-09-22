@@ -26,6 +26,9 @@ Each working run: tests, then `python -m ftm.run`, then a commit of `site/` and 
 | Intraday notices and F3X items | OpenFEC `/schedules/schedule_e/efile/` (last 3 days) | **yes** | every run |
 | Periodic-report Schedule E | OpenFEC `/schedules/schedule_e/` (`is_notice=false`) | **yes** | backfill resumes across runs, then nightly; cached in `state/` |
 | Party coordinated (Schedule F) | OpenFEC `/schedules/schedule_f/` | **yes** | nightly; cached in `state/` |
+| Nominee report summaries, raw (same day as filing) | OpenFEC `/efile/reports/house-senate/` | **yes** | every run, incremental; newer coverage replaces the bulk summary |
+| 48-hour contribution notices (Form 6) | OpenFEC `/efile/filings/?form_type=F6` to list; items parsed from each raw `.fec` file | **yes** (list only) | every run from Oct. 10; only contributions dated after the nominee's last report count |
+| Race notes (editorial context) | `race_notes` in `ftm/config.json` | no | hand-edited |
 | Primary calendar (efile general vs. primary) | OpenFEC `/election-dates/` | **yes** | nightly |
 
 Without `FEC_API_KEY` the tracker still works, but only from the daily bulk notices. The page says so.
