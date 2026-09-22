@@ -71,6 +71,7 @@ def load_candidates(lines):
         out[f[0]] = {
             "candidate_id": f[0], "name": f[1], "party": f[2], "election_yr": f[3],
             "state": f[4], "office": f[5], "district": norm_district(f[6]), "ici": f[7], "status": f[8],
+            "pcc": f[9] if len(f) > 9 else "",
         }
     return out
 
@@ -648,6 +649,7 @@ def pick_nominees(kept, races, candidates, summary, cfg, sitting_fec=frozenset()
             s = summary.get(cid, {})
             out.setdefault(rid, {})[p] = {
                 "candidate_id": cid, "name": candidates[cid]["name"], "basis": basis, "reported": cid in summary,
+                "committee_id": candidates[cid].get("pcc") or None,
                 "receipts": s.get("receipts", 0.0), "coh": s.get("coh", 0.0), "indiv": s.get("indiv", 0.0),
                 "from_party": s.get("from_party", 0.0), "through": s.get("through")}
     return out
