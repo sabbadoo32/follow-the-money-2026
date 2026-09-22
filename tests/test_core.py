@@ -210,5 +210,65 @@ class FailureLeavesLastGoodData(unittest.TestCase):
             shutil.rmtree(tmp)
 
 
+class CandidateMoney(unittest.TestCase):
+    SUMMARY = {"H6MI08001": {"receipts": 3_000_000, "coh": 1_000_000, "indiv": 0, "from_party": 0, "through": "2026-06-30"},
+               "H6MI08002": {"receipts": 1_000_000, "coh": 400_000, "indiv": 0, "from_party": 5000, "through": "2026-06-30"},
+               "H6MI08004": {"receipts": 9_000_000, "coh": 0, "indiv": 0, "from_party": 0, "through": "2026-03-31"}}
+
+    def cands(self, loser=False, twin=False):
+        c = dict(CANDS)
+        if loser:  # a primary loser who out-raised the nominee
+            c["H6MI08004"] = {**CANDS["H6MI08001"], "candidate_id": "H6MI08004", "name": "RICH, LOSER"}
+        if twin:
+            c["H6MI08004"] = {**CANDS["H6MI08001"], "candidate_id": "H6MI08004", "name": "SMITH, OTHER"}
+        return c
+
+    def run_(self, rows, cands):
+        rs = core.build_races(cands, LEGS, 2026, CFG)
+        rows, _ = core.dedupe(rows)
+        kept, _ = core.attribute(rows, cands, CMTES, rs, CFG)
+        return kept, rs, core.pick_nominees(kept, rs, cands, self.SUMMARY, CFG)
+
+    def test_summary_parse(self):
+        f = ["H1"] + [""] * 4 + ["123.5", "0", "100", "0", "0", "23.5"] + ["0"] * 6 + ["50"] + [""] * 8 + ["7", "06/30/2026"]
+        s = core.load_candidate_summary(["|".join(f)])
+        self.assertEqual((s["H1"]["receipts"], s["H1"]["coh"], s["H1"]["from_party"], s["H1"]["through"]), (123.5, 23.5, 7, "2026-06-30"))
+
+    def test_nominee_is_ie_target_not_top_fundraiser(self):
+        _, _, n = self.run_([row(amount=50_000)], self.cands(loser=True))
+        self.assertEqual((n["H-MI-08"]["DEM"]["candidate_id"], n["H-MI-08"]["DEM"]["basis"]), ("H6MI08001", "ie"))
+
+    def test_below_floor_falls_back_to_receipts(self):
+        _, _, n = self.run_([row(amount=500)], self.cands(loser=True))
+        self.assertEqual((n["H-MI-08"]["DEM"]["candidate_id"], n["H-MI-08"]["DEM"]["basis"]), ("H6MI08004", "receipts"))
+
+    def test_namesake_dominant_ie_target_kept_not_bigger_war_chest(self):
+        # SC 2026 pattern: the new nominee shares a last name with a better-funded predecessor
+        _, _, n = self.run_([row(amount=50_000)], self.cands(twin=True))
+        self.assertEqual((n["H-MI-08"]["DEM"]["candidate_id"], n["H-MI-08"]["DEM"]["basis"]), ("H6MI08001", "ie"))
+
+    def test_namesake_split_ie_flagged(self):
+        _, _, n = self.run_([row(amount=50_000, transaction_id="a"),
+                             row(candidate_id="H6MI08004", candidate_name="SMITH, OTHER", amount=40_000, transaction_id="b")],
+                            self.cands(twin=True))
+        self.assertEqual(n["H-MI-08"]["DEM"]["basis"], "name_collision")
+
+    def test_split_signal(self):
+        kept, rs, n = self.run_([row(amount=50_000, transaction_id="a"),
+                                 row(candidate_id="H6MI08002", amount=900_000, transaction_id="b")], self.cands())
+        roll = core.rollup(kept, rs, CFG, "2026-09-22")["H-MI-08"]
+        sig = core.split_signal(roll, n["H-MI-08"], 250_000)
+        self.assertEqual((sig["outside_leader"], sig["candidate_leader"]), ("REP", "DEM"))
+        n["H-MI-08"]["REP"]["basis"] = "receipts"
+        self.assertIsNone(core.split_signal(roll, n["H-MI-08"], 250_000))
+
+    def test_no_split_when_both_agree_or_gap_small(self):
+        kept, rs, n = self.run_([row(amount=900_000, transaction_id="a"),
+                                 row(candidate_id="H6MI08002", amount=50_000, transaction_id="b")], self.cands())
+        roll = core.rollup(kept, rs, CFG, "2026-09-22")["H-MI-08"]
+        self.assertIsNone(core.split_signal(roll, n["H-MI-08"], 250_000))
+        self.assertIsNone(core.split_signal(roll, n["H-MI-08"], 5_000_000))
+
+
 if __name__ == "__main__":
     unittest.main()

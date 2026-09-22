@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-09-22T22:12:29Z",
- "data_hash": "bb71b9174482ad72",
+ "generated_at": "2026-09-22T23:29:03Z",
+ "data_hash": "bed5ccece7042c28",
  "as_of": "2026-09-22",
  "bulk_last_modified": "Tue, 22 Sep 2026 10:14:17 GMT",
  "coord_through": null,
@@ -52,6 +52,46 @@
    "coord_total": 0.0
   }
  },
+ "cand_headline": {
+  "H_DEM": {
+   "receipts": 326371150.7,
+   "coh": 166846757.89,
+   "from_party": 217178.39,
+   "nominees": 116,
+   "inferred": 30,
+   "cand_lead_races": 57,
+   "split_favoring": 12
+  },
+  "H_REP": {
+   "receipts": 299299213.57,
+   "coh": 159905702.74,
+   "from_party": 177886.0,
+   "nominees": 113,
+   "inferred": 34,
+   "cand_lead_races": 59,
+   "split_favoring": 9
+  },
+  "S_DEM": {
+   "receipts": 319648876.59,
+   "coh": 131321625.68,
+   "from_party": 155833.23,
+   "nominees": 23,
+   "inferred": 8,
+   "cand_lead_races": 11,
+   "split_favoring": 8
+  },
+  "S_REP": {
+   "receipts": 171308286.91,
+   "coh": 100749372.03,
+   "from_party": 1240050.0,
+   "nominees": 23,
+   "inferred": 2,
+   "cand_lead_races": 12,
+   "split_favoring": 1
+  }
+ },
+ "cand_through": "2026-06-30",
+ "cand_banner": "Candidate fundraising is reported through 2026-06-30 for most nominees. Q3 reports (through Sept. 30) are due Oct. 15, pre-general reports Oct. 22; after that only 48-hour notices of $1,000+ contributions (Oct. 15 to Nov. 1).",
  "thresholds": {
   "in_play": 100000,
   "big": 1000000,

@@ -11,6 +11,9 @@
 
   "momentum_days": 7,
 
+  "split_signal_min_gap": 250000,
+  "nominee_min_ie": 10000,
+
   "hold_row_over": { "H": 5000000, "S": 25000000 },
 
   "fail_if_unmatched_share_over": 0.02,
@@ -36,6 +39,7 @@
     "bulk_ie": "https://www.fec.gov/files/bulk-downloads/2026/independent_expenditure_2026.csv",
     "bulk_committees": "https://www.fec.gov/files/bulk-downloads/2026/cm26.zip",
     "bulk_candidates": "https://www.fec.gov/files/bulk-downloads/2026/cn26.zip",
+    "bulk_candidate_summary": "https://www.fec.gov/files/bulk-downloads/2026/weball26.zip",
     "legislators": "https://unitedstates.github.io/congress-legislators/legislators-current.json",
     "api_base": "https://api.open.fec.gov/v1"
   },
@@ -49,6 +53,7 @@
 
   "text": {
     "coord_banner": "Party coordinated spending reported through {date}. Spending after Oct. 14 isn't disclosed until Dec. 3.",
+    "cand_banner": "Candidate fundraising is reported through {date} for most nominees. Q3 reports (through Sept. 30) are due Oct. 15, pre-general reports Oct. 22; after that only 48-hour notices of $1,000+ contributions (Oct. 15 to Nov. 1).",
     "caveat": "Spending shows where parties and groups are placing bets, not why. Every number is a sum of FEC filings; nothing here is a forecast."
   }
 }

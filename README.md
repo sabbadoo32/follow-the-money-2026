@@ -21,6 +21,7 @@ Each working run: tests, then `python -m ftm.run`, then a commit of `site/` and 
 |---|---|---|---|
 | 24/48-hour IE notices (backbone) | FEC bulk `independent_expenditure_2026.csv` | no | FEC updates daily at ~10 UTC; the whole cycle is rebuilt from scratch every run |
 | Candidates, committees | FEC bulk `cn26.zip`, `cm26.zip` | no | every run |
+| Nominee fundraising (receipts, cash on hand) | FEC bulk `weball26.zip` (all-candidates summary) | no | every run; FEC updates daily, candidates report quarterly + pre-general |
 | Seat holders | congress-legislators `legislators-current.json` | no | every run |
 | Intraday notices and F3X items | OpenFEC `/schedules/schedule_e/efile/` (last 3 days) | **yes** | every run |
 | Periodic-report Schedule E | OpenFEC `/schedules/schedule_e/` (`is_notice=false`) | **yes** | backfill resumes across runs, then nightly; cached in `state/` |
@@ -43,6 +44,11 @@ Without `FEC_API_KEY` the tracker still works, but only from the daily bulk noti
   - A blank candidate ID is recovered only on a unique last-name match within the race.
   - The build fails if more than 2% of dollars are unmatched or if the bulk file looks truncated.
   - Dissemination dates after today are pinned to today.
+- **Candidate money:** kept separate from offense share. It shows where donors are betting, where outside money shows where strategists are.
+  - **Nominee:** the candidate that general-election outside money targets most, if at least `nominee_min_ie` ($10K). FEC summaries carry no primary results.
+  - **Fallback:** with no such spending, the top fundraiser, marked `receipts` (inferred; can be a primary loser).
+  - **Namesakes:** two same-party candidates with one last name → the seated member if one matches. Otherwise the targeted one, if it draws ≥90% of the namesakes' outside dollars, else `name_collision`. Never "bigger war chest": in SC 2026 Lindsey Graham died and Darline Graham is the nominee, so his old receipts would pick the wrong person.
+  - **Split signal:** outside money favors one party and nominee receipts favor the other, each by ≥ $250K. Both nominees must be identified from general-election spending. Also emitted as an alert.
 - **Alerts:** first $100K, first party-committee dollar and first $1M per race and party. They're dated by the data (`crossed_on`) and stamped with the run that first saw them (`detected_at`).
 
 ## Local

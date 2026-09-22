@@ -162,12 +162,15 @@ def build(now: datetime, offline: Path | None = None):
         cm_lines = open(offline / "cm.txt", encoding="latin-1").read().splitlines()
         cn_lines = open(offline / "cn.txt", encoding="latin-1").read().splitlines()
         legs = json.loads((offline / "leg.json").read_text())
+        wb = offline / "weball.txt"
+        summary_lines = wb.read_text(encoding="latin-1").splitlines() if wb.exists() else []
         bulk_lm = "offline"
     else:
         S = CFG["sources"]
         bulk_rows, bulk_lm = sources.bulk_ie(S["bulk_ie"])
         cm_lines, _ = sources.bulk_zip_lines(S["bulk_committees"])
         cn_lines, _ = sources.bulk_zip_lines(S["bulk_candidates"])
+        summary_lines, _ = sources.bulk_zip_lines(S["bulk_candidate_summary"])
         legs = sources.legislators(S["legislators"])
     if len(bulk_rows) < CFG["fail_if_bulk_rows_under"]:
         raise CheckFailed(f"bulk IE file has {len(bulk_rows)} rows (< {CFG['fail_if_bulk_rows_under']}); refusing to publish")
@@ -238,7 +241,16 @@ def build(now: datetime, offline: Path | None = None):
     roll = core.rollup(kept, races, CFG, today)
     if any(r["total"] > 1_000_000_000 for r in roll.values()):
         raise CheckFailed("a race total exceeds $1B — impossible value slipped past the hold")
+    summary = core.load_candidate_summary(summary_lines)
+    nominees = core.pick_nominees(kept, races, candidates, summary, CFG,
+                                  sitting_fec={f for leg in legs for f in leg["id"].get("fec", [])})
+    for rid, r in roll.items():
+        r["cand"] = nominees.get(rid, {})
+        r["split_signal"] = core.split_signal(r, r["cand"], CFG["split_signal_min_gap"])
     head = core.headline(roll, CFG)
+    cand_head = core.cand_headline(roll)
+    throughs = sorted(x["through"] for r in roll.values() for x in r["cand"].values() if x.get("through"))
+    cand_through = throughs[len(throughs) // 2] if throughs else None  # median nominee report date
     series = core.daily_series(kept, CFG["chart_start"], today)
 
     coord_party = [r for r in kept if r["kind"] == "coord"]
@@ -249,6 +261,7 @@ def build(now: datetime, offline: Path | None = None):
         "buckets": buckets, "dstats": dstats, "gaps": gaps_holder.get("gaps", []), "notes": notes,
         "api": api_status, "bulk_last_modified": bulk_lm, "bulk_rows": len(bulk_rows),
         "coord_through": coord_through, "unmatched_share": unmatched_share,
+        "cand_head": cand_head, "cand_through": cand_through, "summary_rows": len(summary),
     }
 
 
@@ -275,6 +288,10 @@ def race_csv_rows(roll):
         for p in core.PARTIES:
             for k in ("party_ie", "party_coord", "outside", "super_pac", "total", "last_7d", "first_party_dollar", "side"):
                 row[f"{p.lower()}_{k}"] = r[p][k]
+            c = r["cand"].get(p) or {}
+            for k in ("candidate_id", "name", "basis", "receipts", "coh", "from_party", "through"):
+                row[f"{p.lower()}_nominee_{k}"] = c.get(k)
+        row["split_signal"] = bool(r["split_signal"])
         yield row
 
 
@@ -282,8 +299,12 @@ def rss(alerts, now_iso):
     items = []
     names = {"first_100k": "crossed $100K", "first_1m": "crossed $1M", "first_party_dollar": "first party-committee dollar"}
     for a in [a for a in alerts if not a.get("retracted")][:50]:
-        title = f'{a["race_id"]}: pro-{a["party"]} spending {names[a["type"]]}'
-        desc = f'Crossed on {a["crossed_on"]} (dissemination date). Triggering filer: {a.get("by") or "n/a"}.'
+        if a["type"] == "split_signal":
+            title = f'{a["race_id"]}: split signal: outside money favors {a["outside_leader"]}, candidate fundraising favors {a["party"]}'
+            desc = f'Flagged {a["crossed_on"]}. Compares general-election outside spending with nominees\' cycle-to-date receipts.'
+        else:
+            title = f'{a["race_id"]}: pro-{a["party"]} spending {names[a["type"]]}'
+            desc = f'Crossed on {a["crossed_on"]} (dissemination date). Triggering filer: {a.get("by") or "n/a"}.'
         guid = f'{a["race_id"]}-{a["party"]}-{a["type"]}'
         pub = datetime.fromisoformat(a["detected_at"].replace("Z", "+00:00")).strftime("%a, %d %b %Y %H:%M:%S +0000")
         items.append(f"<item><title>{escape(title)}</title><description>{escape(desc)}</description>"
@@ -316,7 +337,11 @@ def publish(b, out: Path, now: datetime):
     data = out / "data"
     prev_alerts_path = data / "alerts.json"
     prev = json.loads(prev_alerts_path.read_text())["alerts"] if prev_alerts_path.exists() else []
-    alerts = core.merge_alerts(prev, core.crossings(b["kept"], CFG), now_iso, first_run=not prev_alerts_path.exists())
+    current = core.crossings(b["kept"], CFG) + [
+        {"race_id": r["race_id"], "party": r["split_signal"]["candidate_leader"], "type": "split_signal", "threshold": None,
+         "crossed_on": b["today"], "by": None, "outside_leader": r["split_signal"]["outside_leader"]}
+        for r in b["roll"].values() if r["split_signal"]]
+    alerts = core.merge_alerts(prev, current, now_iso, first_run=not prev_alerts_path.exists())
 
     races_out = sorted(b["roll"].values(), key=lambda r: -r["total"])
     files = {
@@ -340,6 +365,9 @@ def publish(b, out: Path, now: datetime):
         "coord_banner": CFG["text"]["coord_banner"].format(date=b["coord_through"] or "—"),
         "caveat": CFG["text"]["caveat"],
         "headline": b["head"],
+        "cand_headline": b["cand_head"],
+        "cand_through": b["cand_through"],
+        "cand_banner": CFG["text"]["cand_banner"].format(date=b["cand_through"] or "—"),
         "thresholds": CFG["thresholds"],
         "api": b["api"],
         "counts": {

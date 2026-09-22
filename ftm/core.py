@@ -595,3 +595,93 @@ def committee_gaps(rows, cfg):
             out.append({"committee_id": cid, "name": rs[0]["committee_name"], "notice_total": round(n, 2),
                         "periodic_total": round(p, 2), "through": through})
     return sorted(out, key=lambda x: -abs(x["notice_total"] - x["periodic_total"]))
+
+
+# ---------------------------------------------------------------- candidate money
+
+def load_candidate_summary(lines):
+    """weball26.txt (all-candidates summary) -> {cand_id: cycle-to-date money}."""
+    out = {}
+    for line in lines:
+        f = line.rstrip("\n").split("|")
+        if len(f) < 28:
+            continue
+        out[f[0]] = {"receipts": money(f[5]), "disbursements": money(f[7]), "coh": money(f[10]),
+                     "indiv": money(f[17]), "from_party": money(f[26]), "through": parse_date(f[27])}
+    return out
+
+
+def pick_nominees(kept, races, candidates, summary, cfg, sitting_fec=frozenset()):
+    """Per race and party, the general-election nominee and their committee money.
+
+    FEC summaries carry no primary results, so the nominee is the candidate general-election
+    outside money targets most, if at least nominee_min_ie (basis 'ie'; a floor so a few
+    miscoded dollars can't crown the wrong person). With no such spending, fall back to the top fundraiser
+    (basis 'receipts'), which can be a primary loser and is marked as inferred.
+    """
+    ie = defaultdict(float)
+    for r in kept:
+        if r["kind"] == "ie":
+            ie[(r["race_id"], r["candidate_party"], r["candidate_id"])] += r["amount"]
+    out = {}
+    for rid, race in races.items():
+        for p in PARTIES:
+            ids = [c for c in race["candidate_ids"] if party_code(candidates[c]["party"], cfg) == p]
+            targeted = [c for c in ids if ie.get((rid, p, c), 0) >= cfg["nominee_min_ie"]]
+            if targeted:
+                cid, basis = max(targeted, key=lambda c: ie[(rid, p, c)]), "ie"
+                # namesakes: filers can mix up their IDs. Never fall back to receipts here, since an
+                # old war chest can outlast its candidate (SC 2026: Lindsey Graham died; Darline Graham is the nominee).
+                twins = [c for c in ids if last_name(candidates[c]["name"]) == last_name(candidates[cid]["name"])]
+                if len(twins) > 1:
+                    seated = [c for c in twins if c in sitting_fec]
+                    twin_ie = sum(ie.get((rid, p, c), 0) for c in twins)
+                    if len(seated) == 1:
+                        cid = seated[0]
+                    elif ie[(rid, p, cid)] < 0.9 * twin_ie:
+                        basis = "name_collision"
+            else:
+                funded = [c for c in ids if c in summary]
+                if not funded:
+                    continue
+                cid, basis = max(funded, key=lambda c: summary[c]["receipts"]), "receipts"
+            s = summary.get(cid, {})
+            out.setdefault(rid, {})[p] = {
+                "candidate_id": cid, "name": candidates[cid]["name"], "basis": basis,
+                "receipts": s.get("receipts", 0.0), "coh": s.get("coh", 0.0), "indiv": s.get("indiv", 0.0),
+                "from_party": s.get("from_party", 0.0), "through": s.get("through")}
+    return out
+
+
+def split_signal(roll_race, cand, min_gap):
+    """Outside money favors one party while candidate fundraising favors the other.
+
+    Needs both nominees identified from general-election spending, and a gap of at least
+    min_gap on both measures, so noise and primary losers can't trip it.
+    """
+    d, r = cand.get(DEM), cand.get(REP)
+    if not d or not r or d["basis"] != "ie" or r["basis"] != "ie":
+        return None
+    og = roll_race[DEM]["total"] - roll_race[REP]["total"]
+    cg = d["receipts"] - r["receipts"]
+    if abs(og) < min_gap or abs(cg) < min_gap or (og > 0) == (cg > 0):
+        return None
+    return {"outside_leader": DEM if og > 0 else REP, "candidate_leader": DEM if cg > 0 else REP,
+            "outside_gap": round(abs(og), 2), "candidate_gap": round(abs(cg), 2)}
+
+
+def cand_headline(rollups):
+    h = {}
+    for office in ("H", "S"):
+        rs = [r for r in rollups.values() if r["office"] == office]
+        for p in PARTIES:
+            c = [r["cand"][p] for r in rs if r.get("cand", {}).get(p)]
+            h[f"{office}_{p}"] = {
+                "receipts": round(sum(x["receipts"] for x in c), 2), "coh": round(sum(x["coh"] for x in c), 2),
+                "from_party": round(sum(x["from_party"] for x in c), 2),
+                "nominees": len(c), "inferred": sum(1 for x in c if x["basis"] != "ie"),
+                "cand_lead_races": sum(1 for r in rs if r.get("cand", {}).get(p) and r["cand"][p]["receipts"] >
+                                       (r["cand"].get(REP if p == DEM else DEM) or {}).get("receipts", 0)),
+                "split_favoring": sum(1 for r in rs if r.get("split_signal") and r["split_signal"]["candidate_leader"] == p),
+            }
+    return h
