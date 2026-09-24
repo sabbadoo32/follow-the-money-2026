@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-09-23T13:35:53Z",
- "data_hash": "574b7f5321c177bb",
- "as_of": "2026-09-23",
+ "generated_at": "2026-09-24T01:19:44Z",
+ "data_hash": "2ca511b7c670a099",
+ "as_of": "2026-09-24",
  "bulk_last_modified": "Wed, 23 Sep 2026 10:14:23 GMT",
  "coord_through": null,
  "coord_banner": "Party coordinated spending reported through \u2014. Monthly party reports add September on Oct. 20 and Oct. 1-14 on Oct. 22; spending after Oct. 14 isn't disclosed until Dec. 3.",
@@ -15,7 +15,7 @@
    "races_in_play": 53,
    "party_footprint": 0,
    "total": 58027943.08,
-   "last_7d": 5749130.98,
+   "last_7d": 4494157.69,
    "coord_total": 0.0
   },
   "H_REP": {
@@ -26,7 +26,7 @@
    "races_in_play": 58,
    "party_footprint": 1,
    "total": 63846149.78,
-   "last_7d": 5677133.26,
+   "last_7d": 3899105.38,
    "coord_total": 0.0
   },
   "S_DEM": {
@@ -37,7 +37,7 @@
    "races_in_play": 13,
    "party_footprint": 0,
    "total": 120093657.98,
-   "last_7d": 10866132.25,
+   "last_7d": 4850832.12,
    "coord_total": 0.0
   },
   "S_REP": {
@@ -48,7 +48,7 @@
    "races_in_play": 17,
    "party_footprint": 0,
    "total": 290745681.88,
-   "last_7d": 28502325.45,
+   "last_7d": 20451796.01,
    "coord_total": 0.0
   }
  },
