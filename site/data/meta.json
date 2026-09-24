@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-09-24T01:19:44Z",
- "data_hash": "2ca511b7c670a099",
+ "generated_at": "2026-09-24T07:33:23Z",
+ "data_hash": "8f85a07c40de0f43",
  "as_of": "2026-09-24",
  "bulk_last_modified": "Wed, 23 Sep 2026 10:14:23 GMT",
  "coord_through": null,
@@ -64,8 +64,8 @@
    "split_favoring": 12
   },
   "H_REP": {
-   "receipts": 305110780.7,
-   "coh": 162910263.19,
+   "receipts": 305132297.84,
+   "coh": 162930780.33,
    "late_48h": 0,
    "from_party": 177886.0,
    "nominees": 115,
