@@ -33,6 +33,9 @@ header{display:flex;justify-content:space-between;align-items:baseline;gap:12px;
 h1{font-size:26px;letter-spacing:-.02em;margin:0}
 .tag{color:var(--ink2);font-size:14px;margin:2px 0 0}
 .num{font:13px var(--mono);color:var(--muted);white-space:nowrap}
+.hdr-right{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.home{border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:999px;padding:5px 14px;font:600 13px var(--sans);cursor:pointer;min-height:32px}
+.home:hover{border-color:var(--ink2)}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px}
 .bar{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--ink2);margin-bottom:12px}
 .chips{font:600 14px var(--mono);color:var(--chip)}
@@ -75,7 +78,7 @@ footer{margin-top:22px;font-size:13px;color:var(--muted)}
 <div class="wrap">
   <header>
     <div><h1>Smart Money</h1><p class="tag">Think like the insiders.</p></div>
-    <span class="num" id="num"></span>
+    <div class="hdr-right"><span class="num" id="num"></span><button class="home" id="home" aria-label="Home: start screen">Home</button></div>
   </header>
   <main class="card" id="app" aria-live="polite"><p>Loading today's round…</p></main>
   <footer>Built on live FEC filings from the <a href="../">Follow the Money 2026 tracker</a>. New round every day at midnight Eastern. Nonpartisan: questions alternate between the parties.</footer>
@@ -104,9 +107,30 @@ async function start() {
   }
   $("#num").textContent = `#${P.number} · ${new Date(P.day + "T12:00").toLocaleDateString([], {month: "short", day: "numeric"})}`;
   st = store.get(`sm_${P.day}`, {i: 0, answers: [], wagers: [], done: false});
+  $("#home").onclick = home;
   if (st.done) return end();
   if (st.i === 0 && !st.answers.length) return intro();
   question();
+}
+
+// Home: back to the start screen. Resume, start over, or replay; only the first finish counts toward stats.
+function home() {
+  if (!P) return;
+  const started = st.answers.length > 0;
+  if (!started) return intro();
+  const buttons = st.done
+    ? `<button class="primary" id="h1">See my result</button><button class="secondary" id="h2">Play again (practice)</button>`
+    : `<button class="primary" id="h1">Resume at question ${st.i + 1}</button><button class="secondary" id="h2">Start over</button>`;
+  $("#app").innerHTML = `<div class="intro">
+    <p>${st.done ? "You've finished today's round." : `You're ${st.answers.length} of ${P.questions.length} questions in.`}
+    ${st.done ? "Replays are for practice: your stats and streak keep your first score." : "Starting over clears this round's answers."}</p>
+    ${buttons}</div>`;
+  $("#h1").onclick = st.done ? end : question;
+  $("#h2").onclick = () => {
+    st = {i: 0, answers: [], wagers: [], done: false, replay: st.done || !!st.replay};
+    store.set(`sm_${P.day}`, st);
+    question();
+  };
 }
 
 function intro() {
@@ -192,7 +216,7 @@ const fmtChips = c => (c > 0 ? "+" : c < 0 ? "−" : "") + Math.abs(c);
 function shareText() {
   const c = chipsNow();
   const grid = P.questions.map((q, i) => st.answers[i] === q.answer ? "🟩" : "🟧").join("");
-  return `Smart Money #${P.number}: ${rankOf(c)}\n${fmtChips(c)} chips\n${grid}\nThink like the insiders: ${SITE}`;
+  return `Smart Money #${P.number}${st.replay ? " (replay)" : ""}: ${rankOf(c)}\n${fmtChips(c)} chips\n${grid}\nThink like the insiders: ${SITE}`;
 }
 
 function end() {
