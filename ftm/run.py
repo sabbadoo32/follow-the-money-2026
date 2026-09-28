@@ -92,8 +92,8 @@ def refresh_processed(api, today):
         st["resume"] = None
         st["complete_on"] = today
         st["cursor"] = (date.fromisoformat(today) - timedelta(days=CFG["api"]["processed_overlap_days"])).isoformat()
-    except sources.OutOfBudget as e:
-        note = f"processed Schedule E partial (resumes next run): {e}"
+    except Exception as e:  # budget or API error: keep progress, resume next run, never fail the build
+        note = f"processed Schedule E partial (resumes next run): {str(e)[:120]}"
     write_state("processed_e.json.gz", st)
     return list(st["rows"].values()), note
 
@@ -130,19 +130,30 @@ def refresh_sched_f(api, today):
 
 
 def refresh_candidate_reports(api, today):
-    """Raw e-filed House/Senate report summaries (F3), incremental by receipt date. Resumable."""
+    """Raw e-filed House/Senate report summaries (F3), pulled in 7-day receipt-date windows.
+
+    Windows keep page depth shallow (deep pages on this endpoint return HTTP 500), and progress
+    is saved after every window, so a failure resumes where it stopped instead of from July."""
     st = read_state("efile_f3.json.gz", {"since": CFG["candidate_reports"]["backfill_from"], "rows": []})
-    since = (date.fromisoformat(st["since"]) - timedelta(days=2)).isoformat()
     keep = {r["file_number"]: r for r in st["rows"]}
+    start = date.fromisoformat(st["since"]) - timedelta(days=2)  # overlap catches late-indexed filings
+    end = date.fromisoformat(today)
     note = None
-    try:
-        for x in api.pages("/efile/reports/house-senate/", min_receipt_date=since, sort="receipt_date"):
-            keep[x["file_number"]] = {k: x.get(k) for k in ("committee_id", "coverage_end_date", "total_receipts_ytd",
-                                                              "cash_on_hand_end_period", "file_number",
-                                                              "document_description", "report_type", "receipt_date")}
-        st["since"] = today
-    except sources.OutOfBudget as e:
-        note = f"candidate e-filed reports partial (resumes next run): {e}"
+    while start <= end:
+        stop = min(start + timedelta(days=6), end)
+        try:
+            for x in api.pages("/efile/reports/house-senate/", min_receipt_date=start.isoformat(),
+                               max_receipt_date=(stop + timedelta(days=1)).isoformat(), sort="receipt_date"):
+                keep[x["file_number"]] = {k: x.get(k) for k in ("committee_id", "coverage_end_date", "total_receipts_ytd",
+                                                                  "cash_on_hand_end_period", "file_number",
+                                                                  "document_description", "report_type", "receipt_date")}
+        except Exception as e:  # optional layer: degrade, keep what's done, resume next run
+            note = f"candidate e-filed reports stopped at {start} (resumes next run): {str(e)[:120]}"
+            break
+        st["since"] = stop.isoformat()
+        st["rows"] = list(keep.values())
+        write_state("efile_f3.json.gz", st)
+        start = stop + timedelta(days=1)
     st["rows"] = list(keep.values())
     write_state("efile_f3.json.gz", st)
     return st["rows"], note
@@ -171,8 +182,8 @@ def refresh_f6(api, today, committees):
             st["filings"][fn] = {"committee_id": cm, "amends": chain, "items": items,
                                  "filed": core.parse_date(f.get("receipt_date"))}
         st["since"] = today
-    except sources.OutOfBudget as e:
-        note = f"48-hour contribution notices partial (resumes next run): {e}"
+    except Exception as e:  # budget or API error: keep cached filings, resume next run
+        note = f"48-hour contribution notices partial (resumes next run): {str(e)[:120]}"
     write_state("f6.json.gz", st)
     return st["filings"], note
 

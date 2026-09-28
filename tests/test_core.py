@@ -399,5 +399,34 @@ class SmartMoneyGame(unittest.TestCase):
                 self.assertEqual(q["answer"], 1 if race["holder_party"] == helped else 0)
 
 
+class OptionalLayerFailure(unittest.TestCase):
+    """A 500 from an optional API layer degrades that layer; it never fails the build (Sept 28 incident)."""
+
+    def test_candidate_reports_500_keeps_progress_and_notes(self):
+        from unittest import mock
+        tmp = Path(tempfile.mkdtemp())
+
+        class Boom(Exception):
+            pass
+
+        class FakeAPI:
+            calls = []
+
+            def pages(self, path, **p):
+                FakeAPI.calls.append(p.get("min_receipt_date"))
+                if len(FakeAPI.calls) == 3:
+                    raise Boom("HTTP Error 500: Internal Server Error")
+                yield {"committee_id": "C9", "coverage_end_date": "2026-09-30", "total_receipts_ytd": 5,
+                       "file_number": len(FakeAPI.calls), "receipt_date": p.get("min_receipt_date")}
+
+        with mock.patch.object(run, "STATE", tmp):
+            rows, note = run.refresh_candidate_reports(FakeAPI(), "2026-07-28")
+            saved = run.read_state("efile_f3.json.gz", {})
+        shutil.rmtree(tmp)
+        self.assertEqual(len(rows), 2)                      # two windows done before the 500
+        self.assertIn("resumes next run", note)
+        self.assertEqual(saved["since"], "2026-07-12")      # windows 6/29-7/5 and 7/6-7/12 done; resumes there
+
+
 if __name__ == "__main__":
     unittest.main()
