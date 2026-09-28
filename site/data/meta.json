@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-09-27T13:53:51Z",
- "data_hash": "6b516a5fb4ed6eab",
- "as_of": "2026-09-27",
+ "generated_at": "2026-09-28T00:41:05Z",
+ "data_hash": "2cca1367779b0ab5",
+ "as_of": "2026-09-28",
  "bulk_last_modified": "Sun, 27 Sep 2026 10:14:08 GMT",
  "coord_through": null,
  "coord_banner": "Party coordinated spending reported through \u2014. Monthly party reports add September on Oct. 20 and Oct. 1-14 on Oct. 22; spending after Oct. 14 isn't disclosed until Dec. 3.",
@@ -15,7 +15,7 @@
    "races_in_play": 63,
    "party_footprint": 0,
    "total": 92678436.59,
-   "last_7d": 35596864.82,
+   "last_7d": 34563254.0,
    "coord_total": 0.0
   },
   "H_REP": {
@@ -26,7 +26,7 @@
    "races_in_play": 68,
    "party_footprint": 1,
    "total": 110975508.75,
-   "last_7d": 48614433.07,
+   "last_7d": 45729844.99,
    "coord_total": 0.0
   },
   "S_DEM": {
@@ -37,7 +37,7 @@
    "races_in_play": 13,
    "party_footprint": 0,
    "total": 163412803.78,
-   "last_7d": 45980761.94,
+   "last_7d": 45425902.17,
    "coord_total": 0.0
   },
   "S_REP": {
@@ -48,7 +48,7 @@
    "races_in_play": 17,
    "party_footprint": 0,
    "total": 363654125.91,
-   "last_7d": 80107714.51,
+   "last_7d": 73380443.1,
    "coord_total": 0.0
   }
  },
@@ -124,7 +124,7 @@
   "excluded_not_congress_dollars": 14504820058.42,
   "excluded_unmatched_dollars": 1427210.02,
   "excluded_held_dollars": 14053862227.68,
-  "dedupe_future_dates_pinned_to_today": 110,
+  "dedupe_future_dates_pinned_to_today": 66,
   "dedupe_superseded_amendments": 1487,
   "dedupe_same_transaction": 0,
   "dedupe_notice_repeated_in_periodic": 0
