@@ -582,7 +582,8 @@ def committee_gaps(rows, cfg):
     flag = cfg["committee_gap_flag"]
     by = defaultdict(list)
     for r in rows:
-        if r["kind"] == "ie":
+        # general election only: primary spending is excluded from totals, so its gaps are noise here
+        if r["kind"] == "ie" and (r.get("election_type") or "G")[:1] == "G":
             by[r["committee_id"]].append(r)
     out = []
     for cid, rs in by.items():
