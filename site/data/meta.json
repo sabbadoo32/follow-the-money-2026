@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-09-28T00:41:05Z",
- "data_hash": "2cca1367779b0ab5",
+ "generated_at": "2026-09-28T06:46:04Z",
+ "data_hash": "a463ed339fba46b6",
  "as_of": "2026-09-28",
  "bulk_last_modified": "Sun, 27 Sep 2026 10:14:08 GMT",
  "coord_through": null,
@@ -54,8 +54,8 @@
  },
  "cand_headline": {
   "H_DEM": {
-   "receipts": 335584118.1,
-   "coh": 172736044.64,
+   "receipts": 335574463.06,
+   "coh": 172735512.08,
    "late_48h": 0,
    "from_party": 222809.79,
    "nominees": 124,
