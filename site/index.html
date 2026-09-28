@@ -25,6 +25,7 @@ a{color:inherit}
 header h1{font-size:28px;letter-spacing:-.02em;margin:0 0 4px}
 .sub{color:var(--ink2);margin:0 0 14px;max-width:760px}
 .stamp{font:12px var(--mono);color:var(--muted)}
+.playcta{margin:0 0 12px}.playcta a{display:inline-block;background:var(--ink);color:var(--bg);text-decoration:none;padding:8px 12px;border-radius:8px;font-size:14px}
 .stamp.stale{color:var(--rep)}
 .banner{margin:16px 0;padding:10px 14px;border:1px solid var(--warn-line);background:var(--warn-bg);color:var(--warn-ink);border-radius:8px;font-size:14px}
 .banner b{font-weight:600}
@@ -133,6 +134,7 @@ dl.gloss dt:target,dl.gloss dt:target+dd{background:var(--warn-bg)}
 <div class="wrap">
 <header>
   <h1>Follow the Money: 2026</h1>
+  <p class="playcta"><a href="play/"><b>Play Smart Money</b>: a 90-second daily game built on this data. Think like the insiders. →</a></p>
   <p class="sub">Where outside money is going in House and Senate general elections, which party it helps, and whether each party is defending its own seats or attacking the other side's. Every number is a sum of FEC filings.</p>
   <div class="stamp" id="stamp">Loading…</div>
   <div class="banner" id="banner" hidden></div>
@@ -290,6 +292,7 @@ async function load() {
     const [meta, races, alerts, series] = await Promise.all(["meta","races","alerts","series"].map(f => fetch(`data/${f}.json${bust}`).then(r => { if (!r.ok) throw new Error(f); return r.json(); })));
     DATA = {meta, races: races.races, alerts: alerts.alerts, series: series.series};
     renderHeader(); renderTiles(); renderFeed(); renderChart(); renderNotes(); renderTable(); renderGlossary();
+    openRaceFromHash();
   } catch (e) {
     $("#stamp").innerHTML = `<div class="err">Data didn't load (${esc(e.message)}). The last published files may be missing; try again shortly.</div>`;
   }
@@ -395,6 +398,14 @@ function renderChart() {
   const hide = () => { tip.style.display = "none"; xh.style.display = cd.style.display = cr.style.display = "none"; };
   hit.addEventListener("mousemove", show); hit.addEventListener("touchmove", show, {passive:true});
   hit.addEventListener("mouseleave", hide); hit.addEventListener("touchend", hide);
+}
+
+// #race=S-AK (links from the Smart Money game) opens that race in the table
+function openRaceFromHash() {
+  const m = location.hash.match(/^#race=([A-Z]-[A-Z]{2}(?:-\d{2})?)$/);
+  if (!m || !DATA.races.some(r => r.race_id === m[1])) return;
+  state.q = m[1]; $("#q").value = m[1]; state.open.add(m[1]); renderTable();
+  document.querySelector(`tr.row[data-id="${m[1]}"]`)?.scrollIntoView({block: "center"});
 }
 
 function renderNotes() {

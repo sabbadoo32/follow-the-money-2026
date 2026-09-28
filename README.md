@@ -54,6 +54,15 @@ Without `FEC_API_KEY` the tracker still works, but only from the daily bulk noti
   - **Split signal:** outside money favors one party and nominee receipts favor the other, each by ≥ $250K. Both nominees must be identified from general-election spending. Also emitted as an alert.
 - **Alerts:** first $100K, first party-committee dollar and first $1M per race and party. They're dated by the data (`crossed_on`) and stamped with the run that first saw them (`detected_at`).
 
+## Smart Money (the game)
+
+`site/play/` is a daily 10-question game ("Smart Money: think like the insiders").
+- **Puzzle:** `ftm/game.py` builds each day's puzzle from the rollup plus a fixed bank of campaign-finance rules.
+- **Question mix:** offense or defense, which race drew more money, who a group is helping, split signals, and rules.
+- **One puzzle per day:** it's written once per US Eastern day to `site/data/game/<date>.json` (copied to `today.json`) and never changed after, so everyone plays the same set.
+- **In the browser:** players bet 1-3 chips per answer. Results, streaks and bests stay in the player's browser.
+- **Sharing:** the result grid uses green and orange, never red, so a wrong answer doesn't read as a party. There's a LinkedIn share button, and `og.png` is the link preview.
+
 ## Explainers
 
 `site/learn.js` holds the glossary: every definition behind the page's "?" tooltips and dotted-underline terms, plus the glossary section. Edit definitions there. The "How the money works" primer (vehicle comparison and disclosure calendar) is static HTML in `site/index.html`. Contribution limits quoted are the FEC's 2025-26 figures.

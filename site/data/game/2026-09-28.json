@@ -1,0 +1,128 @@
+{
+ "day": "2026-09-28",
+ "number": 1,
+ "questions": [
+  {
+   "kind": "bigger_bet",
+   "prompt": "Which race has drawn more outside money so far in the general election?",
+   "options": [
+    "MI's 4th District",
+    "FL's 13th District"
+   ],
+   "answer": 0,
+   "why": "MI's 4th District: $8.1M. FL's 13th District: $1.2M.",
+   "glossary": "helps",
+   "race_id": "H-MI-04"
+  },
+  {
+   "kind": "rules",
+   "prompt": "Can a corporation give unlimited money to a super PAC?",
+   "options": [
+    "Yes",
+    "No"
+   ],
+   "answer": 0,
+   "why": "Since Citizens United and SpeechNow.org (2010), corporations, unions and individuals can give super PACs unlimited sums.",
+   "glossary": "super_pac",
+   "race_id": null
+  },
+  {
+   "kind": "bigger_bet",
+   "prompt": "Which race has drawn more outside money so far in the general election?",
+   "options": [
+    "AK Senate",
+    "TX's 35th District"
+   ],
+   "answer": 0,
+   "why": "AK Senate: $28.6M. TX's 35th District: $2.7M.",
+   "glossary": "helps",
+   "race_id": "S-AK"
+  },
+  {
+   "kind": "rules",
+   "prompt": "How often do House and Senate campaigns file their regular reports in an election year?",
+   "options": [
+    "Monthly",
+    "Quarterly, plus pre- and post-election",
+    "Only after the election"
+   ],
+   "answer": 1,
+   "why": "Candidate committees file quarterly, plus 12 days before and 30 days after each election. Monthly filing is only an option for PACs and parties.",
+   "glossary": "periodic",
+   "race_id": null
+  },
+  {
+   "kind": "who_helps",
+   "prompt": "Club for Growth Action (a super PAC) has spent $598K in MI's 7th District House race. Which party is it helping?",
+   "options": [
+    "Democrats",
+    "Republicans"
+   ],
+   "answer": 1,
+   "why": "Its spending supports the Republican or attacks their opponent. Every group's filings list who it backs or opposes.",
+   "glossary": "support_oppose",
+   "race_id": "H-MI-07"
+  },
+  {
+   "kind": "offense_defense",
+   "prompt": "Groups helping Republicans have spent $328K in OH's 7th District House race. Are Republicans playing offense or defense?",
+   "options": [
+    "Offense",
+    "Defense"
+   ],
+   "answer": 1,
+   "why": "Republicans hold this seat now, so money helping Republicans here is defense.",
+   "glossary": "offense",
+   "race_id": "H-OH-07"
+  },
+  {
+   "kind": "offense_defense",
+   "prompt": "Groups helping Republicans have spent $1.2M in MI's 8th District House race. Are Republicans playing offense or defense?",
+   "options": [
+    "Offense",
+    "Defense"
+   ],
+   "answer": 0,
+   "why": "Democrats hold this seat now, so money helping Republicans here is offense.",
+   "glossary": "offense",
+   "race_id": "H-MI-08"
+  },
+  {
+   "kind": "who_helps",
+   "prompt": "HMP (a super PAC) has spent $1.8M in MI's 4th District House race. Which party is it helping?",
+   "options": [
+    "Democrats",
+    "Republicans"
+   ],
+   "answer": 0,
+   "why": "Its spending supports the Democrat or attacks their opponent. Every group's filings list who it backs or opposes.",
+   "glossary": "support_oppose",
+   "race_id": "H-MI-04"
+  },
+  {
+   "kind": "rules",
+   "prompt": "What's the most one person can give a House candidate for the 2026 general election?",
+   "options": [
+    "$3,500",
+    "$10,000",
+    "Unlimited"
+   ],
+   "answer": 0,
+   "why": "The 2025-26 limit is $3,500 per election; the primary and general each count as separate elections.",
+   "glossary": "candidate_committee",
+   "race_id": null
+  },
+  {
+   "kind": "split",
+   "prompt": "In AZ's 6th District House race, outside money favors Republicans by $710K. Whose nominee has raised more?",
+   "options": [
+    "The Democrat (Mendoza)",
+    "The Republican (Ciscomani)"
+   ],
+   "answer": 0,
+   "why": "Outside money and candidate money point opposite ways here: the Democrat leads fundraising by $1.2M.",
+   "glossary": "split_signal",
+   "race_id": "H-AZ-06"
+  }
+ ]
+}

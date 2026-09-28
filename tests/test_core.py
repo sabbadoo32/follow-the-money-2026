@@ -367,5 +367,37 @@ class KeyedPathSmoke(unittest.TestCase):
         self.assertGreater(FakeAPI.calls, 3)
 
 
+class SmartMoneyGame(unittest.TestCase):
+    def races(self):
+        out = []
+        for i, (st, hp) in enumerate([("MI", "REP"), ("OH", "DEM"), ("TX", "REP"), ("GA", "DEM"), ("NC", "REP"), ("ME", "REP")]):
+            out.append({"race_id": f"H-{st}-0{i + 1}", "office": "H", "state": st, "district": f"0{i + 1}",
+                        "holder_party": hp, "holder_uncertain": False, "total": 1_000_000 * (i + 1),
+                        "DEM": {"total": 400_000 * (i + 1)}, "REP": {"total": 600_000 * (i + 1)},
+                        "top_spenders": [{"name": f"Dem Group {i}", "helps": "DEM", "class": "super_pac", "amount": 300_000},
+                                         {"name": f"Rep Group {i}", "helps": "REP", "class": "super_pac", "amount": 300_000}],
+                        "cand": {"DEM": {"name": "SMITH, A"}, "REP": {"name": "JONES, B"}},
+                        "split_signal": {"outside_leader": "REP", "candidate_leader": "DEM", "outside_gap": 500_000, "candidate_gap": 900_000} if i == 2 else None})
+        return out
+
+    def test_deterministic_ten_valid_questions(self):
+        from ftm import game
+        a, b = game.make_puzzle(self.races(), "2026-09-28"), game.make_puzzle(self.races(), "2026-09-28")
+        self.assertEqual(a, b)
+        self.assertEqual((a["number"], len(a["questions"])), (1, 10))
+        for q in a["questions"]:
+            self.assertIn(q["answer"], range(len(q["options"])))
+            self.assertTrue(q["prompt"] and q["why"] and q["glossary"])
+        self.assertNotEqual(a["questions"], game.make_puzzle(self.races(), "2026-09-29")["questions"])
+
+    def test_offense_defense_answer_follows_holder(self):
+        from ftm import game
+        for q in game.make_puzzle(self.races(), "2026-09-28")["questions"]:
+            if q["kind"] == "offense_defense":
+                race = next(r for r in self.races() if r["race_id"] == q["race_id"])
+                helped = "DEM" if "Democrats" in q["prompt"].split(" have spent")[0] else "REP"
+                self.assertEqual(q["answer"], 1 if race["holder_party"] == helped else 0)
+
+
 if __name__ == "__main__":
     unittest.main()

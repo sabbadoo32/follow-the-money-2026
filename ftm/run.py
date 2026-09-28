@@ -19,7 +19,7 @@ from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from xml.sax.saxutils import escape
 
-from . import core, sources
+from . import core, game, sources
 
 ROOT = Path(__file__).resolve().parent.parent
 STATE = ROOT / "state"
@@ -394,6 +394,14 @@ def write_sqlite(path, b, alerts):
     con.close()
 
 
+def eastern_day(now: datetime) -> str:
+    try:
+        from zoneinfo import ZoneInfo
+        return now.astimezone(ZoneInfo("America/New_York")).date().isoformat()
+    except Exception:  # no tz database: EDT is UTC-4 through Nov 1
+        return (now - timedelta(hours=4)).date().isoformat()
+
+
 def publish(b, out: Path, now: datetime):
     now_iso = now.strftime("%Y-%m-%dT%H:%M:%SZ")
     data = out / "data"
@@ -456,6 +464,14 @@ def publish(b, out: Path, now: datetime):
         for name in files:
             os.replace(stage / name, data / name)
         os.replace(stage / "rss.xml", out / "rss.xml")
+    # Smart Money game: one puzzle per US Eastern day, frozen once written so everyone plays the same set
+    gdir = data / "game"
+    gdir.mkdir(parents=True, exist_ok=True)
+    gday = eastern_day(now)
+    gfile = gdir / f"{gday}.json"
+    if not gfile.exists():
+        gfile.write_text(json.dumps(game.make_puzzle(list(b["roll"].values()), gday), indent=1))
+    (gdir / "today.json").write_text(gfile.read_text())
     hb = data / "heartbeat.txt"
     if now.hour >= CFG["schedule"]["heartbeat_hour_utc"] and (not hb.exists() or hb.read_text().strip() != b["today"]):
         hb.write_text(b["today"] + "\n")
