@@ -13,3 +13,9 @@
   [headers.values]
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
+
+# The game moved from /play/ to /smart-money/; keep old links working.
+[[redirects]]
+  from = "/play/*"
+  to = "/smart-money/"
+  status = 301

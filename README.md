@@ -56,7 +56,7 @@ Without `FEC_API_KEY` the tracker still works, but only from the daily bulk noti
 
 ## Smart Money (the game)
 
-`site/play/` is a daily 10-question game ("Smart Money: think like the insiders").
+`site/smart-money/` (old `/play/` links redirect) is a daily 10-question game ("Smart Money: think like the insiders").
 - **Puzzle:** `ftm/game.py` builds each day's puzzle from the rollup plus a fixed bank of campaign-finance rules.
 - **Question mix:** offense or defense, which race drew more money, who a group is helping, split signals, and rules.
 - **One puzzle per day:** it's written once per US Eastern day to `site/data/game/<date>.json` (copied to `today.json`) and never changed after, so everyone plays the same set.
