@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-09-28T19:34:05Z",
- "data_hash": "cdf4f3f1804b441d",
+ "generated_at": "2026-09-28T19:48:07Z",
+ "data_hash": "360d63bf773f99a0",
  "as_of": "2026-09-28",
  "bulk_last_modified": "Mon, 28 Sep 2026 10:14:16 GMT",
  "coord_through": "2026-08-28",
@@ -113,7 +113,7 @@
   "sched_f": {
    "rows": 585
   },
-  "calls": 239
+  "calls": 35
  },
  "counts": {
   "bulk_rows": 20169,
@@ -314,7 +314,5 @@
    "through": "2026-05-28"
   }
  ],
- "notes": [
-  "candidate e-filed reports stopped at 2026-07-13 (resumes next run): HTTP Error 500: Internal Server Error"
- ]
+ "notes": []
 }
