@@ -402,31 +402,28 @@ class SmartMoneyGame(unittest.TestCase):
 class OptionalLayerFailure(unittest.TestCase):
     """A 500 from an optional API layer degrades that layer; it never fails the build (Sept 28 incident)."""
 
-    def test_candidate_reports_500_keeps_progress_and_notes(self):
+    def test_candidate_reports_batches_by_committee_and_survives_a_500(self):
         from unittest import mock
         tmp = Path(tempfile.mkdtemp())
 
-        class Boom(Exception):
-            pass
-
         class FakeAPI:
-            calls = []
+            batches = []
 
             def pages(self, path, **p):
-                FakeAPI.calls.append(p.get("min_receipt_date"))
-                if len(FakeAPI.calls) == 3:
-                    raise Boom("HTTP Error 500: Internal Server Error")
-                yield {"committee_id": "C9", "coverage_end_date": "2026-09-30", "total_receipts_ytd": 5,
-                       "file_number": len(FakeAPI.calls), "receipt_date": p.get("min_receipt_date")}
+                FakeAPI.batches.append(list(p["committee_id"]))
+                if len(FakeAPI.batches) == 2:
+                    raise RuntimeError("HTTP Error 500: Internal Server Error")
+                for c in p["committee_id"]:
+                    yield {"committee_id": c, "coverage_end_date": "2026-09-30", "total_receipts_ytd": 5,
+                           "file_number": int(c[1:]), "receipt_date": "2026-10-15"}
 
+        cmtes = {f"C{n:08d}" for n in range(100)}
         with mock.patch.object(run, "STATE", tmp):
-            rows, note = run.refresh_candidate_reports(FakeAPI(), "2026-07-28")
-            saved = run.read_state("efile_f3.json.gz", {})
+            rows, note = run.refresh_candidate_reports(FakeAPI(), "2026-10-16", cmtes)
         shutil.rmtree(tmp)
-        self.assertEqual(len(rows), 2)                      # two windows done before the 500
-        self.assertIn("resumes next run", note)
-        self.assertEqual(saved["since"], "2026-07-12")      # windows 6/29-7/5 and 7/6-7/12 done; resumes there
-
+        self.assertEqual([len(b) for b in FakeAPI.batches], [40, 40, 20])  # never one giant scan
+        self.assertEqual(len(rows), 60)                                      # batches 1 and 3 landed
+        self.assertIn("1 batch(es) failed", note)
 
 if __name__ == "__main__":
     unittest.main()

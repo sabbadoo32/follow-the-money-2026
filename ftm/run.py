@@ -129,31 +129,26 @@ def refresh_sched_f(api, today):
         return st["rows"], f"Schedule F: {e}"
 
 
-def refresh_candidate_reports(api, today):
-    """Raw e-filed House/Senate report summaries (F3), pulled in 7-day receipt-date windows.
+def refresh_candidate_reports(api, today, committees):
+    """Raw e-filed report summaries (F3) for nominee committees only, 40 committees per call.
 
-    Windows keep page depth shallow (deep pages on this endpoint return HTTP 500), and progress
-    is saved after every window, so a failure resumes where it stopped instead of from July."""
-    st = read_state("efile_f3.json.gz", {"since": CFG["candidate_reports"]["backfill_from"], "rows": []})
+    Asking by committee keeps every result set small. Paging through all House/Senate reports
+    hit HTTP 500s on deep pages around the July 15 quarterly (Sept. 28), and Oct. 15 would too.
+    A failed batch is skipped with a note; the rest still land."""
+    st = read_state("efile_f3.json.gz", {"rows": []})
     keep = {r["file_number"]: r for r in st["rows"]}
-    start = date.fromisoformat(st["since"]) - timedelta(days=2)  # overlap catches late-indexed filings
-    end = date.fromisoformat(today)
-    note = None
-    while start <= end:
-        stop = min(start + timedelta(days=6), end)
+    note, failed = None, 0
+    ids = sorted(c for c in committees if c)
+    for i in range(0, len(ids), 40):
         try:
-            for x in api.pages("/efile/reports/house-senate/", min_receipt_date=start.isoformat(),
-                               max_receipt_date=(stop + timedelta(days=1)).isoformat(), sort="receipt_date"):
+            for x in api.pages("/efile/reports/house-senate/", committee_id=ids[i:i + 40],
+                               min_receipt_date=CFG["candidate_reports"]["backfill_from"], sort="receipt_date"):
                 keep[x["file_number"]] = {k: x.get(k) for k in ("committee_id", "coverage_end_date", "total_receipts_ytd",
                                                                   "cash_on_hand_end_period", "file_number",
                                                                   "document_description", "report_type", "receipt_date")}
-        except Exception as e:  # optional layer: degrade, keep what's done, resume next run
-            note = f"candidate e-filed reports stopped at {start} (resumes next run): {str(e)[:120]}"
-            break
-        st["since"] = stop.isoformat()
-        st["rows"] = list(keep.values())
-        write_state("efile_f3.json.gz", st)
-        start = stop + timedelta(days=1)
+        except Exception as e:  # optional layer: skip this batch, keep the rest
+            failed += 1
+            note = f"candidate e-filed reports: {failed} batch(es) failed this run, retried next run ({str(e)[:100]})"
     st["rows"] = list(keep.values())
     write_state("efile_f3.json.gz", st)
     return st["rows"], note
@@ -306,7 +301,7 @@ def build(now: datetime, offline: Path | None = None):
     # fresher candidate money: raw e-filed reports and 48-hour notices (API key), else cached
     nominee_cmtes = {c["committee_id"] for rc in nominees.values() for c in rc.values() if c.get("committee_id")}
     if key and not offline:
-        f3_rows, n = refresh_candidate_reports(api, today)
+        f3_rows, n = refresh_candidate_reports(api, today, nominee_cmtes)
         notes += [n] if n else []
         f6_filings, n = refresh_f6(api, today, nominee_cmtes)
         notes += [n] if n else []
