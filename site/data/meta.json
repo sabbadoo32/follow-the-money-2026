@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-09-29T15:44:08Z",
- "data_hash": "d4fe6fe489cb9ebd",
+ "generated_at": "2026-09-29T20:42:46Z",
+ "data_hash": "ad4548586ff0dd37",
  "as_of": "2026-09-29",
  "bulk_last_modified": "Tue, 29 Sep 2026 10:14:21 GMT",
  "coord_through": "2026-08-28",
@@ -9,46 +9,46 @@
  "headline": {
   "H_DEM": {
    "offense_share": 0.7444,
-   "offense_dollars": 71345217.22,
-   "counted_dollars": 95844686.55,
+   "offense_dollars": 71368318.22,
+   "counted_dollars": 95878582.55,
    "excluded_uncertain_dollars": 3101449.09,
    "races_in_play": 66,
    "party_footprint": 36,
-   "total": 98946135.64,
-   "last_7d": 9283963.18,
+   "total": 98980031.64,
+   "last_7d": 9311355.18,
    "coord_total": 1863983.0
   },
   "H_REP": {
-   "offense_share": 0.3386,
+   "offense_share": 0.3383,
    "offense_dollars": 35159678.65,
-   "counted_dollars": 103838525.61,
+   "counted_dollars": 103925502.61,
    "excluded_uncertain_dollars": 8994983.57,
    "races_in_play": 71,
    "party_footprint": 10,
-   "total": 112833509.18,
-   "last_7d": 40765301.64,
+   "total": 112920486.18,
+   "last_7d": 40852278.64,
    "coord_total": 863098.0
   },
   "S_DEM": {
-   "offense_share": 0.7933,
-   "offense_dollars": 134282490.63,
-   "counted_dollars": 169270596.01,
+   "offense_share": 0.7949,
+   "offense_dollars": 135557609.63,
+   "counted_dollars": 170527227.8,
    "excluded_uncertain_dollars": 0,
    "races_in_play": 14,
    "party_footprint": 8,
-   "total": 169270596.01,
-   "last_7d": 12676075.26,
+   "total": 170527227.8,
+   "last_7d": 13883821.26,
    "coord_total": 4398114.0
   },
   "S_REP": {
-   "offense_share": 0.1959,
+   "offense_share": 0.1945,
    "offense_dollars": 83725541.33,
-   "counted_dollars": 427349401.83,
+   "counted_dollars": 430417345.83,
    "excluded_uncertain_dollars": 0,
    "races_in_play": 18,
    "party_footprint": 7,
-   "total": 427349401.83,
-   "last_7d": 59869859.88,
+   "total": 430417345.83,
+   "last_7d": 62937803.88,
    "coord_total": 2230476.0
   }
  },
@@ -104,7 +104,7 @@
  "api": {
   "key": true,
   "efile": {
-   "rows": 600,
+   "rows": 688,
    "filed_since": "2026-09-26"
   },
   "processed": {
@@ -113,28 +113,28 @@
   "sched_f": {
    "rows": 585
   },
-  "calls": 29
+  "calls": 30
  },
  "counts": {
   "bulk_rows": 20322,
-  "expenditures": 7670,
+  "expenditures": 7728,
   "races": 184,
-  "excluded_primary_or_other": 12600,
+  "excluded_primary_or_other": 12618,
   "excluded_other_cycle": 256,
-  "excluded_third_party": 222,
+  "excluded_third_party": 224,
   "excluded_not_congress": 694,
   "excluded_unmatched": 97,
   "excluded_held": 6,
-  "excluded_primary_or_other_dollars": 10855853358.85,
+  "excluded_primary_or_other_dollars": 10858155895.35,
   "excluded_other_cycle_dollars": 3588964.92,
-  "excluded_third_party_dollars": 18689253.68,
+  "excluded_third_party_dollars": 18747746.68,
   "excluded_not_congress_dollars": 14527497036.93,
   "excluded_unmatched_dollars": 1843158.34,
   "excluded_held_dollars": 14000000000.0,
-  "dedupe_future_dates_pinned_to_today": 141,
-  "dedupe_superseded_amendments": 15137,
+  "dedupe_future_dates_pinned_to_today": 147,
+  "dedupe_superseded_amendments": 15148,
   "dedupe_same_transaction": 581,
-  "dedupe_notice_repeated_in_periodic": 1780
+  "dedupe_notice_repeated_in_periodic": 1779
  },
  "unmatched_share": 0.0023,
  "committee_gaps": [
@@ -151,6 +151,13 @@
    "notice_total": 4777.5,
    "periodic_total": 146314.77,
    "through": "2025-10-20"
+  },
+  {
+   "committee_id": "C00835041",
+   "name": "Forward Blue PAC",
+   "notice_total": 116719.0,
+   "periodic_total": 200387.0,
+   "through": "2026-07-25"
   },
   {
    "committee_id": "C00897314",
