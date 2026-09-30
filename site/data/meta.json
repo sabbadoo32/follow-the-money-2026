@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-09-30T00:22:15Z",
- "data_hash": "799599db8745c83e",
+ "generated_at": "2026-09-30T06:38:42Z",
+ "data_hash": "60a2cd65454c8218",
  "as_of": "2026-09-30",
  "bulk_last_modified": "Tue, 29 Sep 2026 10:14:21 GMT",
  "coord_through": "2026-08-28",
@@ -9,24 +9,24 @@
  "headline": {
   "H_DEM": {
    "offense_share": 0.7436,
-   "offense_dollars": 71612712.58,
-   "counted_dollars": 96304604.91,
+   "offense_dollars": 71627012.58,
+   "counted_dollars": 96318904.91,
    "excluded_uncertain_dollars": 3156383.09,
    "races_in_play": 66,
    "party_footprint": 40,
-   "total": 99460988.0,
-   "last_7d": 7906042.9,
+   "total": 99475288.0,
+   "last_7d": 7920342.9,
    "coord_total": 2323147.0
   },
   "H_REP": {
-   "offense_share": 0.3395,
+   "offense_share": 0.3392,
    "offense_dollars": 35750133.65,
-   "counted_dollars": 105317016.61,
+   "counted_dollars": 105381366.61,
    "excluded_uncertain_dollars": 9202378.57,
    "races_in_play": 72,
    "party_footprint": 11,
-   "total": 114519395.18,
-   "last_7d": 7637506.0,
+   "total": 114583745.18,
+   "last_7d": 7701856.0,
    "coord_total": 863253.0
   },
   "S_DEM": {
@@ -41,20 +41,20 @@
    "coord_total": 5478314.0
   },
   "S_REP": {
-   "offense_share": 0.1947,
+   "offense_share": 0.1946,
    "offense_dollars": 84149799.33,
-   "counted_dollars": 432311551.83,
+   "counted_dollars": 432357101.83,
    "excluded_uncertain_dollars": 0,
    "races_in_play": 18,
    "party_footprint": 7,
-   "total": 432311551.83,
-   "last_7d": 26294675.22,
+   "total": 432357101.83,
+   "last_7d": 26340225.22,
    "coord_total": 2175238.0
   }
  },
  "cand_headline": {
   "H_DEM": {
-   "receipts": 402090724.98,
+   "receipts": 402090912.17,
    "coh": 193072935.62,
    "late_48h": 0,
    "from_party": 252179.61,
@@ -74,7 +74,7 @@
    "split_favoring": 10
   },
   "S_DEM": {
-   "receipts": 354026091.91,
+   "receipts": 354033441.91,
    "coh": 140525136.16,
    "late_48h": 0,
    "from_party": 162676.23,
@@ -104,7 +104,7 @@
  "api": {
   "key": true,
   "efile": {
-   "rows": 542,
+   "rows": 546,
    "filed_since": "2026-09-27"
   },
   "processed": {
@@ -113,11 +113,11 @@
   "sched_f": {
    "rows": 619
   },
-  "calls": 41
+  "calls": 29
  },
  "counts": {
   "bulk_rows": 20322,
-  "expenditures": 7843,
+  "expenditures": 7847,
   "races": 187,
   "excluded_primary_or_other": 12618,
   "excluded_other_cycle": 257,
