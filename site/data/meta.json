@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-10-02T18:22:08Z",
- "data_hash": "65381f5a84f8a7e2",
+ "generated_at": "2026-10-02T22:56:32Z",
+ "data_hash": "f03a387e3da0b894",
  "as_of": "2026-10-02",
  "bulk_last_modified": "Fri, 02 Oct 2026 10:13:50 GMT",
  "coord_through": "2026-08-28",
@@ -8,69 +8,69 @@
  "caveat": "Spending shows where parties and groups are placing bets, not why. Every number is a sum of FEC filings; nothing here is a forecast.",
  "headline": {
   "H_DEM": {
-   "offense_share": 0.7413,
-   "offense_dollars": 92067679.23,
-   "counted_dollars": 124195420.55,
-   "excluded_uncertain_dollars": 3545606.27,
-   "races_in_play": 70,
+   "offense_share": 0.7445,
+   "offense_dollars": 94632866.81,
+   "counted_dollars": 127111657.13,
+   "excluded_uncertain_dollars": 3831496.27,
+   "races_in_play": 74,
    "party_footprint": 60,
-   "total": 127741026.82,
-   "last_7d": 29364552.37,
+   "total": 130943153.4,
+   "last_7d": 32522883.37,
    "coord_total": 3083617.0
   },
   "H_REP": {
-   "offense_share": 0.3364,
-   "offense_dollars": 42372426.76,
-   "counted_dollars": 125976552.47,
+   "offense_share": 0.3361,
+   "offense_dollars": 42368984.76,
+   "counted_dollars": 126055610.47,
    "excluded_uncertain_dollars": 12668752.59,
    "races_in_play": 74,
    "party_footprint": 11,
-   "total": 138645305.06,
-   "last_7d": 27886913.47,
+   "total": 138724363.06,
+   "last_7d": 27965971.47,
    "coord_total": 869043.0
   },
   "S_DEM": {
-   "offense_share": 0.7765,
-   "offense_dollars": 170411452.71,
-   "counted_dollars": 219451183.15,
+   "offense_share": 0.7848,
+   "offense_dollars": 178802521.53,
+   "counted_dollars": 227842251.97,
    "excluded_uncertain_dollars": 0,
-   "races_in_play": 15,
+   "races_in_play": 16,
    "party_footprint": 10,
-   "total": 219451183.15,
-   "last_7d": 50127774.85,
+   "total": 227842251.97,
+   "last_7d": 57737532.67,
    "coord_total": 5583404.0
   },
   "S_REP": {
-   "offense_share": 0.1873,
-   "offense_dollars": 100062019.87,
-   "counted_dollars": 534191609.17,
+   "offense_share": 0.1876,
+   "offense_dollars": 100344733.87,
+   "counted_dollars": 534860065.17,
    "excluded_uncertain_dollars": 0,
    "races_in_play": 19,
    "party_footprint": 7,
-   "total": 534191609.17,
-   "last_7d": 123145565.65,
+   "total": 534860065.17,
+   "last_7d": 123788521.65,
    "coord_total": 2232274.0
   }
  },
  "cand_headline": {
   "H_DEM": {
-   "receipts": 449694258.65,
-   "coh": 214168690.88,
+   "receipts": 457568277.98,
+   "coh": 217271826.86,
    "late_48h": 0,
-   "from_party": 252382.73,
-   "nominees": 174,
-   "inferred": 77,
-   "cand_lead_races": 97,
+   "from_party": 262688.67,
+   "nominees": 179,
+   "inferred": 81,
+   "cand_lead_races": 101,
    "split_favoring": 14
   },
   "H_REP": {
-   "receipts": 358302767.03,
-   "coh": 187070661.81,
+   "receipts": 360957231.25,
+   "coh": 187733388.1,
    "late_48h": 0,
    "from_party": 205389.64,
-   "nominees": 167,
-   "inferred": 79,
-   "cand_lead_races": 77,
+   "nominees": 171,
+   "inferred": 83,
+   "cand_lead_races": 78,
    "split_favoring": 12
   },
   "S_DEM": {
@@ -104,7 +104,7 @@
  "api": {
   "key": true,
   "efile": {
-   "rows": 1399,
+   "rows": 1625,
    "filed_since": "2026-09-29"
   },
   "processed": {
@@ -113,28 +113,28 @@
   "sched_f": {
    "rows": 707
   },
-  "calls": 37
+  "calls": 40
  },
  "counts": {
   "bulk_rows": 21547,
-  "expenditures": 8953,
-  "races": 201,
-  "excluded_primary_or_other": 12628,
+  "expenditures": 9155,
+  "races": 206,
+  "excluded_primary_or_other": 12631,
   "excluded_other_cycle": 260,
-  "excluded_third_party": 248,
+  "excluded_third_party": 247,
   "excluded_not_congress": 693,
-  "excluded_unmatched": 123,
+  "excluded_unmatched": 127,
   "excluded_held": 6,
-  "excluded_primary_or_other_dollars": 10864861738.74,
+  "excluded_primary_or_other_dollars": 10864877262.74,
   "excluded_other_cycle_dollars": 3654130.8,
-  "excluded_third_party_dollars": 21676513.39,
+  "excluded_third_party_dollars": 20945486.39,
   "excluded_not_congress_dollars": 14527430400.93,
-  "excluded_unmatched_dollars": 4671865.63,
+  "excluded_unmatched_dollars": 4765321.86,
   "excluded_held_dollars": 14000000000.0,
-  "dedupe_future_dates_pinned_to_today": 126,
-  "dedupe_superseded_amendments": 15251,
+  "dedupe_future_dates_pinned_to_today": 134,
+  "dedupe_superseded_amendments": 15255,
   "dedupe_same_transaction": 1171,
-  "dedupe_notice_repeated_in_periodic": 1856
+  "dedupe_notice_repeated_in_periodic": 1870
  },
  "unmatched_share": 0.0046,
  "committee_gaps": [
