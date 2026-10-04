@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-03T21:09:48Z",
- "data_hash": "ad80521f53a6ff6e",
- "as_of": "2026-10-03",
+ "generated_at": "2026-10-04T00:33:06Z",
+ "data_hash": "6240200984646ba0",
+ "as_of": "2026-10-04",
  "bulk_last_modified": "Sat, 03 Oct 2026 10:14:27 GMT",
  "coord_through": "2026-08-31",
  "coord_banner": "Party coordinated spending reported through 2026-08-31. Monthly party reports add September on Oct. 20 and Oct. 1-14 on Oct. 22; spending after Oct. 14 isn't disclosed until Dec. 3.",
@@ -9,47 +9,47 @@
  "headline": {
   "H_DEM": {
    "offense_share": 0.74,
-   "offense_dollars": 99358674.33,
-   "counted_dollars": 134262186.64,
+   "offense_dollars": 99346353.0,
+   "counted_dollars": 134243309.32,
    "excluded_uncertain_dollars": 6206630.63,
    "races_in_play": 76,
    "party_footprint": 70,
-   "total": 140468817.27,
-   "last_7d": 36107557.61,
-   "coord_total": 7275851.0
+   "total": 140449939.95,
+   "last_7d": 36123116.67,
+   "coord_total": 7224333.0
   },
   "H_REP": {
-   "offense_share": 0.3477,
-   "offense_dollars": 55458255.6,
-   "counted_dollars": 159492987.91,
-   "excluded_uncertain_dollars": 12697165.27,
+   "offense_share": 0.3476,
+   "offense_dollars": 55729179.6,
+   "counted_dollars": 160344792.91,
+   "excluded_uncertain_dollars": 12776507.27,
    "races_in_play": 75,
    "party_footprint": 36,
-   "total": 172190153.18,
-   "last_7d": 53436624.4,
-   "coord_total": 8493696.0
+   "total": 173121300.18,
+   "last_7d": 54180731.92,
+   "coord_total": 8536662.0
   },
   "S_DEM": {
-   "offense_share": 0.7798,
-   "offense_dollars": 181521125.98,
-   "counted_dollars": 232784890.77,
+   "offense_share": 0.7861,
+   "offense_dollars": 188663552.26,
+   "counted_dollars": 239996450.89,
    "excluded_uncertain_dollars": 0,
    "races_in_play": 16,
    "party_footprint": 13,
-   "total": 232784890.77,
-   "last_7d": 59530223.47,
-   "coord_total": 6542999.0
+   "total": 239996450.89,
+   "last_7d": 66548208.23,
+   "coord_total": 6551013.0
   },
   "S_REP": {
-   "offense_share": 0.1863,
-   "offense_dollars": 107548510.71,
-   "counted_dollars": 577237950.74,
+   "offense_share": 0.1861,
+   "offense_dollars": 107584767.71,
+   "counted_dollars": 577956845.74,
    "excluded_uncertain_dollars": 0,
    "races_in_play": 22,
    "party_footprint": 7,
-   "total": 577237950.74,
-   "last_7d": 155596650.14,
-   "coord_total": 2231601.0
+   "total": 577956845.74,
+   "last_7d": 156312077.77,
+   "coord_total": 2232274.0
   }
  },
  "cand_headline": {
@@ -71,7 +71,7 @@
    "nominees": 171,
    "inferred": 81,
    "cand_lead_races": 79,
-   "split_favoring": 10
+   "split_favoring": 9
   },
   "S_DEM": {
    "receipts": 359788718.09,
@@ -104,39 +104,39 @@
  "api": {
   "key": true,
   "efile": {
-   "rows": 2089,
-   "filed_since": "2026-09-30"
+   "rows": 1867,
+   "filed_since": "2026-10-01"
   },
   "processed": {
-   "rows": 17552
+   "rows": 17605
   },
   "sched_f": {
-   "rows": 865
+   "rows": 867
   },
-  "calls": 44
+  "calls": 57
  },
  "counts": {
   "bulk_rows": 22265,
-  "expenditures": 9917,
+  "expenditures": 10010,
   "races": 207,
-  "excluded_primary_or_other": 12632,
-  "excluded_other_cycle": 261,
-  "excluded_third_party": 269,
-  "excluded_not_congress": 692,
-  "excluded_unmatched": 127,
+  "excluded_primary_or_other": 12621,
+  "excluded_other_cycle": 278,
+  "excluded_third_party": 268,
+  "excluded_not_congress": 691,
+  "excluded_unmatched": 122,
   "excluded_held": 6,
-  "excluded_primary_or_other_dollars": 10864996731.79,
-  "excluded_other_cycle_dollars": 3703390.81,
-  "excluded_third_party_dollars": 25432021.39,
-  "excluded_not_congress_dollars": 14527434400.93,
-  "excluded_unmatched_dollars": 2437282.65,
+  "excluded_primary_or_other_dollars": 10864161601.29,
+  "excluded_other_cycle_dollars": 3828627.81,
+  "excluded_third_party_dollars": 25395626.39,
+  "excluded_not_congress_dollars": 14527444428.93,
+  "excluded_unmatched_dollars": 2435477.65,
   "excluded_held_dollars": 14000000000.0,
-  "dedupe_future_dates_pinned_to_today": 152,
-  "dedupe_superseded_amendments": 15319,
-  "dedupe_same_transaction": 1687,
-  "dedupe_notice_repeated_in_periodic": 1861
+  "dedupe_future_dates_pinned_to_today": 135,
+  "dedupe_superseded_amendments": 15356,
+  "dedupe_same_transaction": 1406,
+  "dedupe_notice_repeated_in_periodic": 1846
  },
- "unmatched_share": 0.0022,
+ "unmatched_share": 0.0021,
  "committee_gaps": [
   {
    "committee_id": "C00492140",
@@ -144,13 +144,6 @@
    "notice_total": 1509955.0,
    "periodic_total": 1004833.0,
    "through": "2026-07-14"
-  },
-  {
-   "committee_id": "C90022427",
-   "name": "Progress North Carolina Action",
-   "notice_total": 966433.3,
-   "periodic_total": 757693.0,
-   "through": "2026-09-30"
   },
   {
    "committee_id": "C00761064",
@@ -179,13 +172,6 @@
    "notice_total": 50329.2,
    "periodic_total": 3631.44,
    "through": "2025-01-31"
-  },
-  {
-   "committee_id": "C00934059",
-   "name": "Seniors Empowering an Effective Democracy",
-   "notice_total": 55651.32,
-   "periodic_total": 84313.0,
-   "through": "2026-10-03"
   },
   {
    "committee_id": "C00835041",
