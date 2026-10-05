@@ -1,54 +1,54 @@
 {
- "generated_at": "2026-10-04T22:18:56Z",
- "data_hash": "2116bb758231d54d",
- "as_of": "2026-10-04",
+ "generated_at": "2026-10-05T01:54:44Z",
+ "data_hash": "7d4d9723c5e214bc",
+ "as_of": "2026-10-05",
  "bulk_last_modified": "Sun, 04 Oct 2026 10:13:57 GMT",
  "coord_through": "2026-08-31",
  "coord_banner": "Party coordinated spending reported through 2026-08-31. Monthly party reports add September on Oct. 20 and Oct. 1-14 on Oct. 22; spending after Oct. 14 isn't disclosed until Dec. 3.",
  "caveat": "Spending shows where parties and groups are placing bets, not why. Every number is a sum of FEC filings; nothing here is a forecast.",
  "headline": {
   "H_DEM": {
-   "offense_share": 0.741,
-   "offense_dollars": 99833985.17,
-   "counted_dollars": 134730942.14,
+   "offense_share": 0.7423,
+   "offense_dollars": 100496003.17,
+   "counted_dollars": 135392960.14,
    "excluded_uncertain_dollars": 6206630.63,
    "races_in_play": 76,
    "party_footprint": 70,
-   "total": 140937572.77,
-   "last_7d": 36610749.49,
-   "coord_total": 7224333.0
+   "total": 141599590.77,
+   "last_7d": 36130913.1,
+   "coord_total": 7275851.0
   },
   "H_REP": {
-   "offense_share": 0.3478,
-   "offense_dollars": 56030738.98,
-   "counted_dollars": 161087285.07,
-   "excluded_uncertain_dollars": 12813317.52,
+   "offense_share": 0.3469,
+   "offense_dollars": 56040040.98,
+   "counted_dollars": 161544638.07,
+   "excluded_uncertain_dollars": 12879097.52,
    "races_in_play": 76,
    "party_footprint": 36,
-   "total": 173900602.59,
-   "last_7d": 54955920.33,
-   "coord_total": 8536662.0
+   "total": 174423735.59,
+   "last_7d": 53391871.16,
+   "coord_total": 8527336.0
   },
   "S_DEM": {
-   "offense_share": 0.7882,
-   "offense_dollars": 191046766.75,
-   "counted_dollars": 242379665.38,
+   "offense_share": 0.7883,
+   "offense_dollars": 191188635.83,
+   "counted_dollars": 242524656.46,
    "excluded_uncertain_dollars": 0,
    "races_in_play": 16,
    "party_footprint": 13,
-   "total": 242379665.38,
-   "last_7d": 68926767.91,
-   "coord_total": 6551013.0
+   "total": 242524656.46,
+   "last_7d": 68186525.13,
+   "coord_total": 6566506.0
   },
   "S_REP": {
-   "offense_share": 0.1853,
-   "offense_dollars": 107599710.29,
-   "counted_dollars": 580810562.82,
+   "offense_share": 0.1857,
+   "offense_dollars": 107949170.29,
+   "counted_dollars": 581315170.82,
    "excluded_uncertain_dollars": 0,
    "races_in_play": 22,
    "party_footprint": 7,
-   "total": 580810562.82,
-   "last_7d": 159083294.85,
+   "total": 581315170.82,
+   "last_7d": 155779566.99,
    "coord_total": 2232274.0
   }
  },
@@ -104,37 +104,37 @@
  "api": {
   "key": true,
   "efile": {
-   "rows": 2011,
-   "filed_since": "2026-10-01"
+   "rows": 1354,
+   "filed_since": "2026-10-02"
   },
   "processed": {
    "rows": 17605
   },
   "sched_f": {
-   "rows": 867
+   "rows": 868
   },
-  "calls": 44
+  "calls": 52
  },
  "counts": {
   "bulk_rows": 22636,
-  "expenditures": 10146,
+  "expenditures": 10229,
   "races": 208,
   "excluded_primary_or_other": 12626,
   "excluded_other_cycle": 278,
-  "excluded_third_party": 270,
+  "excluded_third_party": 271,
   "excluded_not_congress": 691,
-  "excluded_unmatched": 120,
+  "excluded_unmatched": 121,
   "excluded_held": 6,
   "excluded_primary_or_other_dollars": 10864651901.29,
   "excluded_other_cycle_dollars": 3828635.17,
-  "excluded_third_party_dollars": 25608626.39,
-  "excluded_not_congress_dollars": 14527444428.93,
-  "excluded_unmatched_dollars": 2222477.65,
+  "excluded_third_party_dollars": 25613679.39,
+  "excluded_not_congress_dollars": 14527452928.93,
+  "excluded_unmatched_dollars": 2222536.65,
   "excluded_held_dollars": 14000000000.0,
-  "dedupe_future_dates_pinned_to_today": 140,
-  "dedupe_superseded_amendments": 15354,
-  "dedupe_same_transaction": 1778,
-  "dedupe_notice_repeated_in_periodic": 1850
+  "dedupe_future_dates_pinned_to_today": 84,
+  "dedupe_superseded_amendments": 15311,
+  "dedupe_same_transaction": 1082,
+  "dedupe_notice_repeated_in_periodic": 1848
  },
  "unmatched_share": 0.0019,
  "committee_gaps": [
