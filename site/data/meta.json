@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-10-05T01:54:44Z",
- "data_hash": "7d4d9723c5e214bc",
+ "generated_at": "2026-10-05T08:54:11Z",
+ "data_hash": "c1e2cbfbdceed984",
  "as_of": "2026-10-05",
  "bulk_last_modified": "Sun, 04 Oct 2026 10:13:57 GMT",
  "coord_through": "2026-08-31",
@@ -9,13 +9,13 @@
  "headline": {
   "H_DEM": {
    "offense_share": 0.7423,
-   "offense_dollars": 100496003.17,
-   "counted_dollars": 135392960.14,
+   "offense_dollars": 100505153.17,
+   "counted_dollars": 135397226.14,
    "excluded_uncertain_dollars": 6206630.63,
    "races_in_play": 76,
    "party_footprint": 70,
-   "total": 141599590.77,
-   "last_7d": 36130913.1,
+   "total": 141603856.77,
+   "last_7d": 36140063.1,
    "coord_total": 7275851.0
   },
   "H_REP": {
@@ -31,12 +31,12 @@
   },
   "S_DEM": {
    "offense_share": 0.7883,
-   "offense_dollars": 191188635.83,
-   "counted_dollars": 242524656.46,
+   "offense_dollars": 191188635.75,
+   "counted_dollars": 242524656.38,
    "excluded_uncertain_dollars": 0,
    "races_in_play": 16,
    "party_footprint": 13,
-   "total": 242524656.46,
+   "total": 242524656.38,
    "last_7d": 68186525.13,
    "coord_total": 6566506.0
   },
@@ -64,8 +64,8 @@
    "split_favoring": 17
   },
   "H_REP": {
-   "receipts": 363903768.43,
-   "coh": 189275984.57,
+   "receipts": 363944854.24,
+   "coh": 189312350.45,
    "late_48h": 0,
    "from_party": 205389.64,
    "nominees": 172,
@@ -104,7 +104,7 @@
  "api": {
   "key": true,
   "efile": {
-   "rows": 1354,
+   "rows": 1358,
    "filed_since": "2026-10-02"
   },
   "processed": {
@@ -113,7 +113,7 @@
   "sched_f": {
    "rows": 868
   },
-  "calls": 52
+  "calls": 37
  },
  "counts": {
   "bulk_rows": 22636,
@@ -132,9 +132,9 @@
   "excluded_unmatched_dollars": 2222536.65,
   "excluded_held_dollars": 14000000000.0,
   "dedupe_future_dates_pinned_to_today": 84,
-  "dedupe_superseded_amendments": 15311,
+  "dedupe_superseded_amendments": 15312,
   "dedupe_same_transaction": 1082,
-  "dedupe_notice_repeated_in_periodic": 1848
+  "dedupe_notice_repeated_in_periodic": 1851
  },
  "unmatched_share": 0.0019,
  "committee_gaps": [
