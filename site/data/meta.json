@@ -1,54 +1,54 @@
 {
- "generated_at": "2026-10-06T07:30:09Z",
- "data_hash": "253c2fdcd124f0c9",
+ "generated_at": "2026-10-06T15:04:48Z",
+ "data_hash": "557d12d3f7eeea3f",
  "as_of": "2026-10-06",
- "bulk_last_modified": "Mon, 05 Oct 2026 10:14:37 GMT",
+ "bulk_last_modified": "Tue, 06 Oct 2026 10:13:42 GMT",
  "coord_through": "2026-08-31",
  "coord_banner": "Party coordinated spending reported through 2026-08-31. Monthly party reports add September on Oct. 20 and Oct. 1-14 on Oct. 22; spending after Oct. 14 isn't disclosed until Dec. 3.",
  "caveat": "Spending shows where parties and groups are placing bets, not why. Every number is a sum of FEC filings; nothing here is a forecast.",
  "headline": {
   "H_DEM": {
    "offense_share": 0.7427,
-   "offense_dollars": 100881913.99,
-   "counted_dollars": 135839271.38,
+   "offense_dollars": 100881918.57,
+   "counted_dollars": 135839277.76,
    "excluded_uncertain_dollars": 6206630.63,
    "races_in_play": 76,
    "party_footprint": 70,
-   "total": 142045902.01,
-   "last_7d": 14025035.45,
+   "total": 142045908.39,
+   "last_7d": 14025040.45,
    "coord_total": 7237222.0
   },
   "H_REP": {
    "offense_share": 0.3456,
-   "offense_dollars": 56391544.06,
-   "counted_dollars": 163154177.05,
-   "excluded_uncertain_dollars": 12897978.83,
+   "offense_dollars": 56391552.31,
+   "counted_dollars": 163154203.07,
+   "excluded_uncertain_dollars": 12897980.14,
    "races_in_play": 76,
    "party_footprint": 36,
-   "total": 176052155.88,
-   "last_7d": 52398079.78,
+   "total": 176052183.21,
+   "last_7d": 52398106.93,
    "coord_total": 8496068.0
   },
   "S_DEM": {
    "offense_share": 0.7923,
-   "offense_dollars": 192931717.53,
-   "counted_dollars": 243494004.16,
+   "offense_dollars": 192934925.13,
+   "counted_dollars": 243497218.08,
    "excluded_uncertain_dollars": 0,
    "races_in_play": 17,
    "party_footprint": 13,
-   "total": 243494004.16,
-   "last_7d": 30275743.85,
+   "total": 243497218.08,
+   "last_7d": 30275755.13,
    "coord_total": 6496506.0
   },
   "S_REP": {
-   "offense_share": 0.184,
-   "offense_dollars": 108909040.02,
-   "counted_dollars": 591936787.15,
+   "offense_share": 0.1839,
+   "offense_dollars": 108931548.0,
+   "counted_dollars": 592319880.87,
    "excluded_uncertain_dollars": 0,
    "races_in_play": 22,
    "party_footprint": 7,
-   "total": 591936787.15,
-   "last_7d": 79046458.17,
+   "total": 592319880.87,
+   "last_7d": 79407050.97,
    "coord_total": 2232274.0
   }
  },
@@ -104,7 +104,7 @@
  "api": {
   "key": true,
   "efile": {
-   "rows": 988,
+   "rows": 991,
    "filed_since": "2026-10-03"
   },
   "processed": {
@@ -116,25 +116,25 @@
   "calls": 33
  },
  "counts": {
-  "bulk_rows": 22826,
-  "expenditures": 10474,
+  "bulk_rows": 23112,
+  "expenditures": 10485,
   "races": 213,
-  "excluded_primary_or_other": 12641,
+  "excluded_primary_or_other": 12652,
   "excluded_other_cycle": 278,
   "excluded_third_party": 272,
   "excluded_not_congress": 693,
-  "excluded_unmatched": 116,
+  "excluded_unmatched": 117,
   "excluded_held": 6,
-  "excluded_primary_or_other_dollars": 10865180245.25,
+  "excluded_primary_or_other_dollars": 10865307746.65,
   "excluded_other_cycle_dollars": 3828635.17,
-  "excluded_third_party_dollars": 25614553.59,
+  "excluded_third_party_dollars": 25614553.77,
   "excluded_not_congress_dollars": 14527447900.93,
-  "excluded_unmatched_dollars": 2209574.65,
+  "excluded_unmatched_dollars": 2210574.65,
   "excluded_held_dollars": 14000000000.0,
-  "dedupe_future_dates_pinned_to_today": 99,
+  "dedupe_future_dates_pinned_to_today": 143,
   "dedupe_superseded_amendments": 15366,
-  "dedupe_same_transaction": 571,
-  "dedupe_notice_repeated_in_periodic": 1869
+  "dedupe_same_transaction": 851,
+  "dedupe_notice_repeated_in_periodic": 1855
  },
  "unmatched_share": 0.0019,
  "committee_gaps": [
@@ -144,13 +144,6 @@
    "notice_total": 739311.13,
    "periodic_total": 1706777.0,
    "through": "2026-06-26"
-  },
-  {
-   "committee_id": "C00945824",
-   "name": "NEW ERA LEADERSHIP",
-   "notice_total": 150000.0,
-   "periodic_total": 811662.0,
-   "through": "2026-06-01"
   },
   {
    "committee_id": "C00492140",
