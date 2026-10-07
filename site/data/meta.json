@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-10-07T00:38:18Z",
- "data_hash": "a1fa77ffed4640df",
+ "generated_at": "2026-10-07T07:10:47Z",
+ "data_hash": "ebcf66c9885aa0fe",
  "as_of": "2026-10-07",
  "bulk_last_modified": "Tue, 06 Oct 2026 10:13:42 GMT",
  "coord_through": "2026-08-31",
@@ -11,44 +11,44 @@
    "offense_share": 0.7374,
    "offense_dollars": 102471837.01,
    "counted_dollars": 138959841.75,
-   "excluded_uncertain_dollars": 6206630.63,
+   "excluded_uncertain_dollars": 6351675.63,
    "races_in_play": 77,
    "party_footprint": 70,
-   "total": 145166472.38,
-   "last_7d": 15033280.9,
+   "total": 145311517.38,
+   "last_7d": 15178325.9,
    "coord_total": 6848620.0
   },
   "H_REP": {
-   "offense_share": 0.3455,
-   "offense_dollars": 56605637.31,
-   "counted_dollars": 163820502.07,
-   "excluded_uncertain_dollars": 12897980.14,
+   "offense_share": 0.344,
+   "offense_dollars": 56658329.31,
+   "counted_dollars": 164694107.07,
+   "excluded_uncertain_dollars": 12950575.14,
    "races_in_play": 76,
    "party_footprint": 36,
-   "total": 176718482.21,
-   "last_7d": 8828672.67,
+   "total": 177644682.21,
+   "last_7d": 10076740.67,
    "coord_total": 8504964.0
   },
   "S_DEM": {
    "offense_share": 0.789,
-   "offense_dollars": 194602533.87,
-   "counted_dollars": 246649915.06,
+   "offense_dollars": 194597533.87,
+   "counted_dollars": 246644915.06,
    "excluded_uncertain_dollars": 0,
    "races_in_play": 17,
    "party_footprint": 13,
-   "total": 246649915.06,
+   "total": 246644915.06,
    "last_7d": 26647828.62,
    "coord_total": 6585384.0
   },
   "S_REP": {
-   "offense_share": 0.191,
-   "offense_dollars": 122751003.0,
-   "counted_dollars": 642739001.87,
+   "offense_share": 0.1905,
+   "offense_dollars": 123417283.0,
+   "counted_dollars": 647877491.87,
    "excluded_uncertain_dollars": 0,
    "races_in_play": 22,
    "party_footprint": 10,
-   "total": 642739001.87,
-   "last_7d": 45331279.25,
+   "total": 647877491.87,
+   "last_7d": 50469769.25,
    "coord_total": 48147917.0
   }
  },
@@ -65,7 +65,7 @@
   },
   "H_REP": {
    "receipts": 368720377.14,
-   "coh": 193045768.69,
+   "coh": 193064006.08,
    "late_48h": 0,
    "from_party": 208364.64,
    "nominees": 180,
@@ -104,7 +104,7 @@
  "api": {
   "key": true,
   "efile": {
-   "rows": 871,
+   "rows": 1060,
    "filed_since": "2026-10-04"
   },
   "processed": {
@@ -113,31 +113,38 @@
   "sched_f": {
    "rows": 918
   },
-  "calls": 49
+  "calls": 34
  },
  "counts": {
   "bulk_rows": 23112,
-  "expenditures": 10687,
+  "expenditures": 10805,
   "races": 217,
-  "excluded_primary_or_other": 12683,
+  "excluded_primary_or_other": 12747,
   "excluded_other_cycle": 279,
   "excluded_third_party": 272,
   "excluded_not_congress": 691,
   "excluded_unmatched": 117,
   "excluded_held": 6,
-  "excluded_primary_or_other_dollars": 10870699158.98,
+  "excluded_primary_or_other_dollars": 10873555005.22,
   "excluded_other_cycle_dollars": 3978635.17,
   "excluded_third_party_dollars": 25614553.77,
   "excluded_not_congress_dollars": 14527433193.93,
   "excluded_unmatched_dollars": 2210574.65,
   "excluded_held_dollars": 14000000000.0,
-  "dedupe_future_dates_pinned_to_today": 142,
-  "dedupe_superseded_amendments": 15347,
-  "dedupe_same_transaction": 481,
-  "dedupe_notice_repeated_in_periodic": 1952
+  "dedupe_future_dates_pinned_to_today": 156,
+  "dedupe_superseded_amendments": 15349,
+  "dedupe_same_transaction": 487,
+  "dedupe_notice_repeated_in_periodic": 1951
  },
  "unmatched_share": 0.0018,
  "committee_gaps": [
+  {
+   "committee_id": "C00900993",
+   "name": "NEW LEADERSHIP NOW",
+   "notice_total": 67566.0,
+   "periodic_total": 2885785.0,
+   "through": "2026-06-01"
+  },
   {
    "committee_id": "C00946830",
    "name": "YOU CAN PUSH BACK",
@@ -158,6 +165,13 @@
    "notice_total": 1509955.0,
    "periodic_total": 1004833.0,
    "through": "2026-07-14"
+  },
+  {
+   "committee_id": "C00540203",
+   "name": "Defending Main Street SuperPAC Inc.",
+   "notice_total": 434829.16,
+   "periodic_total": 112959.0,
+   "through": "2026-09-29"
   },
   {
    "committee_id": "C00761064",
