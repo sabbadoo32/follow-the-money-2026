@@ -1,95 +1,95 @@
 {
- "generated_at": "2026-10-07T21:15:05Z",
- "data_hash": "74783f2cdfa00119",
- "as_of": "2026-10-07",
+ "generated_at": "2026-10-08T01:52:21Z",
+ "data_hash": "9ce9d91c01764322",
+ "as_of": "2026-10-08",
  "bulk_last_modified": "Wed, 07 Oct 2026 10:13:45 GMT",
  "coord_through": "2026-08-31",
  "coord_banner": "Party coordinated spending reported through 2026-08-31. Monthly party reports add September on Oct. 20 and Oct. 1-14 on Oct. 22; spending after Oct. 14 isn't disclosed until Dec. 3.",
  "caveat": "Spending shows where parties and groups are placing bets, not why. Every number is a sum of FEC filings; nothing here is a forecast.",
  "headline": {
   "H_DEM": {
-   "offense_share": 0.7442,
-   "offense_dollars": 106557458.26,
-   "counted_dollars": 143185340.02,
-   "excluded_uncertain_dollars": 6430568.82,
-   "races_in_play": 77,
+   "offense_share": 0.7345,
+   "offense_dollars": 110125284.0,
+   "counted_dollars": 149923117.76,
+   "excluded_uncertain_dollars": 6900320.82,
+   "races_in_play": 81,
    "party_footprint": 70,
-   "total": 149615908.84,
-   "last_7d": 19409510.74,
-   "coord_total": 6848620.0
+   "total": 156823438.58,
+   "last_7d": 20138530.57,
+   "coord_total": 6885086.0
   },
   "H_REP": {
-   "offense_share": 0.3405,
-   "offense_dollars": 58425614.61,
-   "counted_dollars": 171579892.67,
-   "excluded_uncertain_dollars": 13175822.83,
+   "offense_share": 0.3438,
+   "offense_dollars": 59655874.61,
+   "counted_dollars": 173501793.67,
+   "excluded_uncertain_dollars": 13261210.83,
    "races_in_play": 78,
    "party_footprint": 36,
-   "total": 184755715.5,
-   "last_7d": 16326535.96,
-   "coord_total": 8504964.0
+   "total": 186763004.5,
+   "last_7d": 15333478.24,
+   "coord_total": 8546964.0
   },
   "S_DEM": {
-   "offense_share": 0.7873,
-   "offense_dollars": 195437745.75,
-   "counted_dollars": 248245270.11,
+   "offense_share": 0.7807,
+   "offense_dollars": 206724808.69,
+   "counted_dollars": 264778609.05,
    "excluded_uncertain_dollars": 0,
-   "races_in_play": 17,
+   "races_in_play": 20,
    "party_footprint": 13,
-   "total": 248245270.11,
-   "last_7d": 28075775.36,
-   "coord_total": 6585384.0
+   "total": 264778609.05,
+   "last_7d": 26244424.76,
+   "coord_total": 6582884.0
   },
   "S_REP": {
-   "offense_share": 0.1902,
-   "offense_dollars": 123741811.1,
-   "counted_dollars": 650730354.57,
+   "offense_share": 0.1946,
+   "offense_dollars": 130078655.1,
+   "counted_dollars": 668385063.7,
    "excluded_uncertain_dollars": 0,
    "races_in_play": 24,
    "party_footprint": 10,
-   "total": 650730354.57,
-   "last_7d": 53278234.32,
-   "coord_total": 48147917.0
+   "total": 668385063.7,
+   "last_7d": 56483660.27,
+   "coord_total": 48148587.0
   }
  },
  "cand_headline": {
   "H_DEM": {
-   "receipts": 469913470.79,
-   "coh": 225291975.29,
+   "receipts": 469831011.48,
+   "coh": 226745870.03,
    "late_48h": 0,
-   "from_party": 276047.16,
+   "from_party": 281352.32,
    "nominees": 196,
-   "inferred": 94,
+   "inferred": 88,
    "cand_lead_races": 105,
    "split_favoring": 18
   },
   "H_REP": {
-   "receipts": 385439721.78,
-   "coh": 206832124.81,
+   "receipts": 387724469.34,
+   "coh": 209254244.44,
    "late_48h": 0,
-   "from_party": 208614.64,
+   "from_party": 208364.64,
    "nominees": 188,
    "inferred": 94,
    "cand_lead_races": 91,
-   "split_favoring": 8
+   "split_favoring": 11
   },
   "S_DEM": {
-   "receipts": 378658059.48,
-   "coh": 166682884.79,
+   "receipts": 388452770.1,
+   "coh": 175873023.1,
    "late_48h": 0,
    "from_party": 162676.23,
-   "nominees": 29,
+   "nominees": 31,
    "inferred": 12,
-   "cand_lead_races": 14,
+   "cand_lead_races": 16,
    "split_favoring": 8
   },
   "S_REP": {
-   "receipts": 187703112.36,
-   "coh": 107411822.54,
+   "receipts": 187896004.36,
+   "coh": 107522085.25,
    "late_48h": 0,
-   "from_party": 1365300.0,
-   "nominees": 29,
-   "inferred": 6,
+   "from_party": 1370300.0,
+   "nominees": 31,
+   "inferred": 8,
    "cand_lead_races": 15,
    "split_favoring": 1
   }
@@ -104,60 +104,46 @@
  "api": {
   "key": true,
   "efile": {
-   "rows": 1899,
-   "filed_since": "2026-10-04"
+   "rows": 2256,
+   "filed_since": "2026-10-05"
   },
   "processed": {
-   "rows": 17614
+   "rows": 17728
   },
   "sched_f": {
    "rows": 918
   },
-  "calls": 42
+  "calls": 64
  },
  "counts": {
   "bulk_rows": 23375,
-  "expenditures": 11441,
-  "races": 225,
-  "excluded_primary_or_other": 12768,
-  "excluded_other_cycle": 292,
-  "excluded_third_party": 278,
+  "expenditures": 11917,
+  "races": 227,
+  "excluded_primary_or_other": 12746,
+  "excluded_other_cycle": 295,
+  "excluded_third_party": 286,
   "excluded_not_congress": 691,
-  "excluded_unmatched": 118,
+  "excluded_unmatched": 122,
   "excluded_held": 6,
-  "excluded_primary_or_other_dollars": 10874761290.22,
-  "excluded_other_cycle_dollars": 4037627.17,
-  "excluded_third_party_dollars": 25764142.77,
-  "excluded_not_congress_dollars": 14527433193.93,
-  "excluded_unmatched_dollars": 2230574.65,
+  "excluded_primary_or_other_dollars": 10873798341.4,
+  "excluded_other_cycle_dollars": 4202413.17,
+  "excluded_third_party_dollars": 26238546.77,
+  "excluded_not_congress_dollars": 14527437852.93,
+  "excluded_unmatched_dollars": 2312137.65,
   "excluded_held_dollars": 14000000000.0,
-  "dedupe_future_dates_pinned_to_today": 187,
-  "dedupe_superseded_amendments": 15361,
-  "dedupe_same_transaction": 815,
-  "dedupe_notice_repeated_in_periodic": 2036
+  "dedupe_future_dates_pinned_to_today": 224,
+  "dedupe_superseded_amendments": 15498,
+  "dedupe_same_transaction": 693,
+  "dedupe_notice_repeated_in_periodic": 2023
  },
  "unmatched_share": 0.0018,
  "committee_gaps": [
-  {
-   "committee_id": "C00912865",
-   "name": "OHIO FLYER PAC",
-   "notice_total": 739311.13,
-   "periodic_total": 1706777.0,
-   "through": "2026-06-26"
-  },
   {
    "committee_id": "C00492140",
    "name": "AB PAC",
    "notice_total": 1509955.0,
    "periodic_total": 1004833.0,
    "through": "2026-07-14"
-  },
-  {
-   "committee_id": "C00875039",
-   "name": "HIGH PLAINS PAC",
-   "notice_total": 1810000.0,
-   "periodic_total": 1450000.0,
-   "through": "2026-09-17"
   },
   {
    "committee_id": "C00761064",
@@ -181,18 +167,18 @@
    "through": "2026-07-31"
   },
   {
+   "committee_id": "C00909994",
+   "name": "Field Team 6 Inc.",
+   "notice_total": 249105.29,
+   "periodic_total": 190998.0,
+   "through": "2026-09-29"
+  },
+  {
    "committee_id": "C00720029",
    "name": "Everyday People",
    "notice_total": 50329.2,
    "periodic_total": 3631.44,
    "through": "2025-01-31"
-  },
-  {
-   "committee_id": "C00647966",
-   "name": "RURAL FREEDOM NETWORK",
-   "notice_total": 146453.23,
-   "periodic_total": 177850.04,
-   "through": "2026-10-07"
   },
   {
    "committee_id": "C00835041",
