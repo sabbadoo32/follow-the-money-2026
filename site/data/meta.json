@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-10-09T02:05:16Z",
- "data_hash": "df422eea40601248",
+ "generated_at": "2026-10-09T08:58:46Z",
+ "data_hash": "75dbb92ac3f0db3d",
  "as_of": "2026-10-09",
  "bulk_last_modified": "Thu, 08 Oct 2026 10:13:52 GMT",
  "coord_through": "2026-08-31",
@@ -8,60 +8,60 @@
  "caveat": "Spending shows where parties and groups are placing bets, not why. Every number is a sum of FEC filings; nothing here is a forecast.",
  "headline": {
   "H_DEM": {
-   "offense_share": 0.7348,
-   "offense_dollars": 120981022.64,
-   "counted_dollars": 164654508.91,
-   "excluded_uncertain_dollars": 6962267.6,
-   "races_in_play": 87,
+   "offense_share": 0.7127,
+   "offense_dollars": 124980248.68,
+   "counted_dollars": 175370983.51,
+   "excluded_uncertain_dollars": 6996317.6,
+   "races_in_play": 88,
    "party_footprint": 69,
-   "total": 171616776.51,
-   "last_7d": 30750277.76,
+   "total": 182367301.11,
+   "last_7d": 41485320.76,
    "coord_total": 6827752.0
   },
   "H_REP": {
-   "offense_share": 0.3331,
-   "offense_dollars": 62681513.03,
-   "counted_dollars": 188157345.07,
-   "excluded_uncertain_dollars": 14324119.14,
-   "races_in_play": 81,
+   "offense_share": 0.335,
+   "offense_dollars": 61798716.03,
+   "counted_dollars": 184474821.07,
+   "excluded_uncertain_dollars": 14325682.14,
+   "races_in_play": 80,
    "party_footprint": 36,
-   "total": 202481464.21,
-   "last_7d": 28326320.77,
+   "total": 198800503.21,
+   "last_7d": 24798651.77,
    "coord_total": 8546964.0
   },
   "S_DEM": {
-   "offense_share": 0.772,
-   "offense_dollars": 232086052.33,
-   "counted_dollars": 300620313.75,
+   "offense_share": 0.7745,
+   "offense_dollars": 235114551.68,
+   "counted_dollars": 303572680.71,
    "excluded_uncertain_dollars": 0,
    "races_in_play": 20,
    "party_footprint": 13,
-   "total": 300620313.75,
-   "last_7d": 58900010.06,
+   "total": 303572680.71,
+   "last_7d": 65641269.06,
    "coord_total": 6432909.0
   },
   "S_REP": {
-   "offense_share": 0.2013,
-   "offense_dollars": 142315083.03,
-   "counted_dollars": 706957060.14,
+   "offense_share": 0.1981,
+   "offense_dollars": 136314350.03,
+   "counted_dollars": 688090718.14,
    "excluded_uncertain_dollars": 0,
    "races_in_play": 24,
    "party_footprint": 10,
-   "total": 706957060.14,
-   "last_7d": 88727681.31,
+   "total": 688090718.14,
+   "last_7d": 69861273.31,
    "coord_total": 48148587.0
   }
  },
  "cand_headline": {
   "H_DEM": {
-   "receipts": 474310994.82,
+   "receipts": 474305099.7,
    "coh": 226136995.87,
    "late_48h": 0,
-   "from_party": 284385.0,
+   "from_party": 286385.0,
    "nominees": 201,
-   "inferred": 92,
+   "inferred": 91,
    "cand_lead_races": 106,
-   "split_favoring": 18
+   "split_favoring": 19
   },
   "H_REP": {
    "receipts": 398287665.92,
@@ -71,7 +71,7 @@
    "nominees": 192,
    "inferred": 97,
    "cand_lead_races": 95,
-   "split_favoring": 12
+   "split_favoring": 13
   },
   "S_DEM": {
    "receipts": 388452770.1,
@@ -104,7 +104,7 @@
  "api": {
   "key": true,
   "efile": {
-   "rows": 3021,
+   "rows": 3432,
    "filed_since": "2026-10-06"
   },
   "processed": {
@@ -113,28 +113,28 @@
   "sched_f": {
    "rows": 915
   },
-  "calls": 74
+  "calls": 59
  },
  "counts": {
   "bulk_rows": 24689,
-  "expenditures": 12828,
+  "expenditures": 12905,
   "races": 232,
-  "excluded_primary_or_other": 12797,
-  "excluded_other_cycle": 294,
-  "excluded_third_party": 321,
+  "excluded_primary_or_other": 12794,
+  "excluded_other_cycle": 298,
+  "excluded_third_party": 318,
   "excluded_not_congress": 708,
-  "excluded_unmatched": 122,
+  "excluded_unmatched": 119,
   "excluded_held": 6,
-  "excluded_primary_or_other_dollars": 10871653646.8,
-  "excluded_other_cycle_dollars": 4337906.88,
-  "excluded_third_party_dollars": 27068711.31,
+  "excluded_primary_or_other_dollars": 10871654496.8,
+  "excluded_other_cycle_dollars": 6492310.88,
+  "excluded_third_party_dollars": 27015794.31,
   "excluded_not_congress_dollars": 14527612084.93,
-  "excluded_unmatched_dollars": 2338504.84,
+  "excluded_unmatched_dollars": 2337333.14,
   "excluded_held_dollars": 14000000000.0,
-  "dedupe_future_dates_pinned_to_today": 132,
-  "dedupe_superseded_amendments": 15708,
-  "dedupe_same_transaction": 1527,
-  "dedupe_notice_repeated_in_periodic": 2069
+  "dedupe_future_dates_pinned_to_today": 128,
+  "dedupe_superseded_amendments": 15882,
+  "dedupe_same_transaction": 1690,
+  "dedupe_notice_repeated_in_periodic": 2071
  },
  "unmatched_share": 0.0017,
  "committee_gaps": [
@@ -144,6 +144,13 @@
    "notice_total": 1509955.0,
    "periodic_total": 1004833.0,
    "through": "2026-07-14"
+  },
+  {
+   "committee_id": "C00489799",
+   "name": "Planned Parenthood Votes",
+   "notice_total": 2193284.29,
+   "periodic_total": 2489772.27,
+   "through": "2026-08-30"
   },
   {
    "committee_id": "C00761064",
@@ -170,7 +177,7 @@
    "committee_id": "C90020231",
    "name": "Thomas Paine Society, L.L.C.",
    "notice_total": 171269.05,
-   "periodic_total": 228173.0,
+   "periodic_total": 229769.0,
    "through": "2026-09-27"
   },
   {
