@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-10-09T16:08:25Z",
- "data_hash": "e7a4d941b2223038",
+ "generated_at": "2026-10-09T21:38:16Z",
+ "data_hash": "df6b02836b1078e3",
  "as_of": "2026-10-09",
  "bulk_last_modified": "Fri, 09 Oct 2026 10:13:52 GMT",
  "coord_through": "2026-08-31",
@@ -8,69 +8,69 @@
  "caveat": "Spending shows where parties and groups are placing bets, not why. Every number is a sum of FEC filings; nothing here is a forecast.",
  "headline": {
   "H_DEM": {
-   "offense_share": 0.7248,
-   "offense_dollars": 135995794.35,
-   "counted_dollars": 187631749.91,
-   "excluded_uncertain_dollars": 9136739.27,
-   "races_in_play": 89,
+   "offense_share": 0.726,
+   "offense_dollars": 138577455.68,
+   "counted_dollars": 190880136.34,
+   "excluded_uncertain_dollars": 9403883.27,
+   "races_in_play": 90,
    "party_footprint": 69,
-   "total": 196768489.18,
-   "last_7d": 55866693.6,
+   "total": 200284019.61,
+   "last_7d": 59128054.6,
    "coord_total": 6827752.0
   },
   "H_REP": {
-   "offense_share": 0.333,
-   "offense_dollars": 63054728.12,
-   "counted_dollars": 189332454.83,
-   "excluded_uncertain_dollars": 14624216.09,
-   "races_in_play": 83,
+   "offense_share": 0.3313,
+   "offense_dollars": 63422606.12,
+   "counted_dollars": 191433444.83,
+   "excluded_uncertain_dollars": 14947443.09,
+   "races_in_play": 84,
    "party_footprint": 36,
-   "total": 203956670.92,
-   "last_7d": 29762695.43,
+   "total": 206380887.92,
+   "last_7d": 32186912.43,
    "coord_total": 8546964.0
   },
   "S_DEM": {
-   "offense_share": 0.769,
-   "offense_dollars": 238741365.69,
-   "counted_dollars": 310456683.02,
+   "offense_share": 0.7737,
+   "offense_dollars": 244319449.81,
+   "counted_dollars": 315775101.75,
    "excluded_uncertain_dollars": 0,
    "races_in_play": 20,
    "party_footprint": 13,
-   "total": 310456683.02,
-   "last_7d": 68974433.99,
+   "total": 315775101.75,
+   "last_7d": 74575726.99,
    "coord_total": 6432909.0
   },
   "S_REP": {
-   "offense_share": 0.203,
-   "offense_dollars": 142612379.78,
-   "counted_dollars": 702440934.94,
+   "offense_share": 0.2036,
+   "offense_dollars": 143658809.78,
+   "counted_dollars": 705536956.94,
    "excluded_uncertain_dollars": 0,
    "races_in_play": 24,
    "party_footprint": 10,
-   "total": 702440934.94,
-   "last_7d": 84127037.27,
+   "total": 705536956.94,
+   "last_7d": 87223059.27,
    "coord_total": 48148587.0
   }
  },
  "cand_headline": {
   "H_DEM": {
-   "receipts": 474555951.3,
-   "coh": 226714050.69,
+   "receipts": 474519488.04,
+   "coh": 226653934.43,
    "late_48h": 0,
    "from_party": 288385.0,
-   "nominees": 208,
-   "inferred": 98,
+   "nominees": 207,
+   "inferred": 96,
    "cand_lead_races": 106,
-   "split_favoring": 18
+   "split_favoring": 17
   },
   "H_REP": {
-   "receipts": 410706263.17,
-   "coh": 226971977.17,
+   "receipts": 408957374.3,
+   "coh": 223894071.14,
    "late_48h": 0,
    "from_party": 211354.64,
-   "nominees": 199,
-   "inferred": 98,
-   "cand_lead_races": 102,
+   "nominees": 198,
+   "inferred": 96,
+   "cand_lead_races": 101,
    "split_favoring": 14
   },
   "S_DEM": {
@@ -84,8 +84,8 @@
    "split_favoring": 8
   },
   "S_REP": {
-   "receipts": 187896004.36,
-   "coh": 107522085.25,
+   "receipts": 187954490.46,
+   "coh": 107512176.65,
    "late_48h": 0,
    "from_party": 1370300.0,
    "nominees": 31,
@@ -104,7 +104,7 @@
  "api": {
   "key": true,
   "efile": {
-   "rows": 3699,
+   "rows": 4436,
    "filed_since": "2026-10-06"
   },
   "processed": {
@@ -113,28 +113,28 @@
   "sched_f": {
    "rows": 915
   },
-  "calls": 61
+  "calls": 69
  },
  "counts": {
   "bulk_rows": 25830,
-  "expenditures": 13369,
-  "races": 239,
-  "excluded_primary_or_other": 12768,
-  "excluded_other_cycle": 302,
-  "excluded_third_party": 326,
+  "expenditures": 13880,
+  "races": 238,
+  "excluded_primary_or_other": 12790,
+  "excluded_other_cycle": 300,
+  "excluded_third_party": 335,
   "excluded_not_congress": 708,
-  "excluded_unmatched": 124,
+  "excluded_unmatched": 129,
   "excluded_held": 6,
-  "excluded_primary_or_other_dollars": 10876765597.8,
-  "excluded_other_cycle_dollars": 6548260.9,
-  "excluded_third_party_dollars": 27567598.37,
+  "excluded_primary_or_other_dollars": 10876922490.93,
+  "excluded_other_cycle_dollars": 6548057.9,
+  "excluded_third_party_dollars": 28062436.37,
   "excluded_not_congress_dollars": 14527612084.93,
-  "excluded_unmatched_dollars": 2378998.81,
+  "excluded_unmatched_dollars": 2420995.81,
   "excluded_held_dollars": 14000000000.0,
-  "dedupe_future_dates_pinned_to_today": 149,
-  "dedupe_superseded_amendments": 15888,
-  "dedupe_same_transaction": 2634,
-  "dedupe_notice_repeated_in_periodic": 2074
+  "dedupe_future_dates_pinned_to_today": 154,
+  "dedupe_superseded_amendments": 15931,
+  "dedupe_same_transaction": 2655,
+  "dedupe_notice_repeated_in_periodic": 2202
  },
  "unmatched_share": 0.0017,
  "committee_gaps": [
@@ -146,18 +146,25 @@
    "through": "2026-07-14"
   },
   {
-   "committee_id": "C00489799",
-   "name": "Planned Parenthood Votes",
-   "notice_total": 2193294.49,
-   "periodic_total": 2489772.27,
-   "through": "2026-08-30"
-  },
-  {
    "committee_id": "C00761064",
    "name": "API PA Votes",
    "notice_total": 4777.5,
    "periodic_total": 146314.77,
    "through": "2025-10-20"
+  },
+  {
+   "committee_id": "C00897926",
+   "name": "PROGRESSIVE PROMISE",
+   "notice_total": 100000.0,
+   "periodic_total": 200000.0,
+   "through": "2026-08-08"
+  },
+  {
+   "committee_id": "C00745745",
+   "name": "IN UNION USA",
+   "notice_total": 270691.85,
+   "periodic_total": 362242.0,
+   "through": "2026-09-24"
   },
   {
    "committee_id": "C00897314",
@@ -177,7 +184,7 @@
    "committee_id": "C90020231",
    "name": "Thomas Paine Society, L.L.C.",
    "notice_total": 171269.05,
-   "periodic_total": 228394.0,
+   "periodic_total": 227192.0,
    "through": "2026-09-27"
   },
   {
@@ -186,6 +193,13 @@
    "notice_total": 50329.2,
    "periodic_total": 3631.44,
    "through": "2025-01-31"
+  },
+  {
+   "committee_id": "C00647966",
+   "name": "RURAL FREEDOM NETWORK",
+   "notice_total": 146457.08,
+   "periodic_total": 177340.04,
+   "through": "2026-10-09"
   },
   {
    "committee_id": "C00835041",
