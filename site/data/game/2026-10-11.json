@@ -1,0 +1,129 @@
+{
+ "day": "2026-10-11",
+ "number": 14,
+ "questions": [
+  {
+   "kind": "split",
+   "prompt": "In the TX Senate race, outside money favors Republicans by $176.7M. Whose nominee has raised more?",
+   "options": [
+    "The Democrat (Talarico)",
+    "The Republican (Paxton)"
+   ],
+   "answer": 0,
+   "why": "Outside money and candidate money point opposite ways here: the Democrat leads fundraising by $59.3M.",
+   "glossary": "split_signal",
+   "race_id": "S-TX"
+  },
+  {
+   "kind": "offense_defense",
+   "prompt": "Groups helping Republicans have spent $1.2M in OH's 10th District House race. Are Republicans playing offense or defense?",
+   "options": [
+    "Offense",
+    "Defense"
+   ],
+   "answer": 1,
+   "why": "Republicans hold this seat now, so money helping Republicans here is defense.",
+   "glossary": "offense",
+   "race_id": "H-OH-10"
+  },
+  {
+   "kind": "who_helps",
+   "prompt": "HMP (a super PAC) has spent $1.8M in FL's 14th District House race. Which party is it helping?",
+   "options": [
+    "Democrats",
+    "Republicans"
+   ],
+   "answer": 0,
+   "why": "Its spending supports the Democrat or attacks their opponent. Every group's filings list who it backs or opposes.",
+   "glossary": "support_oppose",
+   "race_id": "H-FL-14"
+  },
+  {
+   "kind": "bigger_bet",
+   "prompt": "Which race has drawn more outside money so far in the general election?",
+   "options": [
+    "IA's 2nd District",
+    "AR's 2nd District"
+   ],
+   "answer": 0,
+   "why": "IA's 2nd District: $9.5M. AR's 2nd District: $1.8M.",
+   "glossary": "helps",
+   "race_id": "H-IA-02"
+  },
+  {
+   "kind": "bigger_bet",
+   "prompt": "Which race has drawn more outside money so far in the general election?",
+   "options": [
+    "OH Senate",
+    "NH's 1st District"
+   ],
+   "answer": 0,
+   "why": "OH Senate: $209.8M. NH's 1st District: $1.0M.",
+   "glossary": "helps",
+   "race_id": "S-OH"
+  },
+  {
+   "kind": "who_helps",
+   "prompt": "NO GOING BACK PAC INC. (a super PAC) has spent $3.6M in IA's 2nd District House race. Which party is it helping?",
+   "options": [
+    "Democrats",
+    "Republicans"
+   ],
+   "answer": 1,
+   "why": "Its spending supports the Republican or attacks their opponent. Every group's filings list who it backs or opposes.",
+   "glossary": "support_oppose",
+   "race_id": "H-IA-02"
+  },
+  {
+   "kind": "rules",
+   "prompt": "What starts the clock on a 24- or 48-hour spending report?",
+   "options": [
+    "Paying for the ad",
+    "The ad reaching the public",
+    "Booking the airtime"
+   ],
+   "answer": 1,
+   "why": "The reporting clock starts on the dissemination date, when the ad first reaches the public.",
+   "glossary": "dissemination_date",
+   "race_id": null
+  },
+  {
+   "kind": "rules",
+   "prompt": "A hybrid PAC can do what a super PAC can't. What?",
+   "options": [
+    "Give directly to candidates from a limited account",
+    "Take unlimited corporate money",
+    "Keep its donors secret"
+   ],
+   "answer": 0,
+   "why": "A hybrid PAC keeps two accounts: a limited one for contributions to candidates and an unlimited one for independent spending.",
+   "glossary": "hybrid_pac",
+   "race_id": null
+  },
+  {
+   "kind": "offense_defense",
+   "prompt": "Groups helping Democrats have spent $3.2M in NY's 17th District House race. Are Democrats playing offense or defense?",
+   "options": [
+    "Offense",
+    "Defense"
+   ],
+   "answer": 0,
+   "why": "Republicans hold this seat now, so money helping Democrats here is offense.",
+   "glossary": "offense",
+   "race_id": "H-NY-17"
+  },
+  {
+   "kind": "rules",
+   "prompt": "A party's coordinated spending in the last three weeks before Nov. 3 is disclosed when?",
+   "options": [
+    "Within 24 hours",
+    "Oct. 22",
+    "Dec. 3"
+   ],
+   "answer": 2,
+   "why": "Coordinated spending appears only on regular reports. Anything after Oct. 14 lands on the post-general report, due Dec. 3.",
+   "glossary": "coordinated",
+   "race_id": null
+  }
+ ]
+}
