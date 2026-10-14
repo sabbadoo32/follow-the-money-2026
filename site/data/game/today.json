@@ -1,34 +1,96 @@
 {
- "day": "2026-10-13",
- "number": 16,
+ "day": "2026-10-14",
+ "number": 17,
  "questions": [
   {
-   "kind": "who_helps",
-   "prompt": "NEW LEADERSHIP NOW (a super PAC) has spent $1.4M in CA's 4th District House race. Which party is it helping?",
+   "kind": "bigger_bet",
+   "prompt": "Which race has drawn more outside money so far in the general election?",
    "options": [
-    "Democrats",
-    "Republicans"
+    "CA's 7th District",
+    "TN's 9th District"
    ],
-   "answer": 1,
-   "why": "Its spending supports the Republican or attacks their opponent. Every group's filings list who it backs or opposes.",
-   "glossary": "support_oppose",
-   "race_id": "H-CA-04"
+   "answer": 0,
+   "why": "CA's 7th District: $1.8M. TN's 9th District: $773K.",
+   "glossary": "helps",
+   "race_id": "H-CA-07"
   },
   {
    "kind": "offense_defense",
-   "prompt": "Groups helping Democrats have spent $1.4M in PA's 1st District House race. Are Democrats playing offense or defense?",
+   "prompt": "Groups helping Republicans have spent $8.9M in FL's 14th District House race. Are Republicans playing offense or defense?",
    "options": [
     "Offense",
     "Defense"
    ],
    "answer": 0,
-   "why": "Republicans hold this seat now, so money helping Democrats here is offense.",
+   "why": "Democrats hold this seat now, so money helping Republicans here is offense.",
    "glossary": "offense",
-   "race_id": "H-PA-01"
+   "race_id": "H-FL-14"
+  },
+  {
+   "kind": "bigger_bet",
+   "prompt": "Which race has drawn more outside money so far in the general election?",
+   "options": [
+    "OH's 15th District",
+    "CA's 11th District"
+   ],
+   "answer": 1,
+   "why": "CA's 11th District: $5.6M. OH's 15th District: $2.8M.",
+   "glossary": "helps",
+   "race_id": "H-CA-11"
+  },
+  {
+   "kind": "split",
+   "prompt": "In FL's 13th District House race, outside money favors Democrats by $547K. Whose nominee has raised more?",
+   "options": [
+    "The Democrat (Gray)",
+    "The Republican (Paulina Luna)"
+   ],
+   "answer": 1,
+   "why": "Outside money and candidate money point opposite ways here: the Republican leads fundraising by $2.0M.",
+   "glossary": "split_signal",
+   "race_id": "H-FL-13"
+  },
+  {
+   "kind": "rules",
+   "prompt": "A super PAC airs a $1,000 ad on Oct. 20. How fast must it tell the FEC?",
+   "options": [
+    "Within 24 hours",
+    "Within 48 hours",
+    "On its next monthly report"
+   ],
+   "answer": 0,
+   "why": "From Oct. 15 to Nov. 1, independent expenditures of $1,000 or more must be reported within 24 hours.",
+   "glossary": "notice_24_48",
+   "race_id": null
+  },
+  {
+   "kind": "rules",
+   "prompt": "Can a corporation give unlimited money to a super PAC?",
+   "options": [
+    "Yes",
+    "No"
+   ],
+   "answer": 0,
+   "why": "Since Citizens United and SpeechNow.org (2010), corporations, unions and individuals can give super PACs unlimited sums.",
+   "glossary": "super_pac",
+   "race_id": null
+  },
+  {
+   "kind": "rules",
+   "prompt": "How often do House and Senate campaigns file their regular reports in an election year?",
+   "options": [
+    "Monthly",
+    "Quarterly, plus pre- and post-election",
+    "Only after the election"
+   ],
+   "answer": 1,
+   "why": "Candidate committees file quarterly, plus 12 days before and 30 days after each election. Monthly filing is only an option for PACs and parties.",
+   "glossary": "periodic",
+   "race_id": null
   },
   {
    "kind": "who_helps",
-   "prompt": "Protect Progress (a super PAC) has spent $512K in NJ's 5th District House race. Which party is it helping?",
+   "prompt": "HMP (a super PAC) has spent $1.6M in OH's 7th District House race. Which party is it helping?",
    "options": [
     "Democrats",
     "Republicans"
@@ -36,94 +98,31 @@
    "answer": 0,
    "why": "Its spending supports the Democrat or attacks their opponent. Every group's filings list who it backs or opposes.",
    "glossary": "support_oppose",
-   "race_id": "H-NJ-05"
-  },
-  {
-   "kind": "rules",
-   "prompt": "What's the most one person can give a House candidate for the 2026 general election?",
-   "options": [
-    "$3,500",
-    "$10,000",
-    "Unlimited"
-   ],
-   "answer": 0,
-   "why": "The 2025-26 limit is $3,500 per election; the primary and general each count as separate elections.",
-   "glossary": "candidate_committee",
-   "race_id": null
-  },
-  {
-   "kind": "rules",
-   "prompt": "A party's coordinated spending in the last three weeks before Nov. 3 is disclosed when?",
-   "options": [
-    "Within 24 hours",
-    "Oct. 22",
-    "Dec. 3"
-   ],
-   "answer": 2,
-   "why": "Coordinated spending appears only on regular reports. Anything after Oct. 14 lands on the post-general report, due Dec. 3.",
-   "glossary": "coordinated",
-   "race_id": null
-  },
-  {
-   "kind": "bigger_bet",
-   "prompt": "Which race has drawn more outside money so far in the general election?",
-   "options": [
-    "KY's 6th District",
-    "CO's 8th District"
-   ],
-   "answer": 1,
-   "why": "CO's 8th District: $15.4M. KY's 6th District: $3.6M.",
-   "glossary": "helps",
-   "race_id": "H-CO-08"
-  },
-  {
-   "kind": "rules",
-   "prompt": "Does a 501(c)(4) nonprofit that runs election ads have to disclose its donors?",
-   "options": [
-    "Always",
-    "Generally no",
-    "Only if over $1M"
-   ],
-   "answer": 1,
-   "why": "It must report the ad spending, but generally not its donors unless they gave for that ad. That's why it's called dark money.",
-   "glossary": "nonprofit",
-   "race_id": null
-  },
-  {
-   "kind": "split",
-   "prompt": "In NC's 5th District House race, outside money favors Democrats by $375K. Whose nominee has raised more?",
-   "options": [
-    "The Democrat (Hubbard)",
-    "The Republican (Foxx)"
-   ],
-   "answer": 1,
-   "why": "Outside money and candidate money point opposite ways here: the Republican leads fundraising by $1.3M.",
-   "glossary": "split_signal",
-   "race_id": "H-NC-05"
+   "race_id": "H-OH-07"
   },
   {
    "kind": "offense_defense",
-   "prompt": "Groups helping Democrats have spent $6.1M in OH's 7th District House race. Are Democrats playing offense or defense?",
+   "prompt": "Groups helping Republicans have spent $871K in the LA Senate race. Are Republicans playing offense or defense?",
    "options": [
     "Offense",
     "Defense"
    ],
-   "answer": 0,
-   "why": "Republicans hold this seat now, so money helping Democrats here is offense.",
+   "answer": 1,
+   "why": "Republicans hold this seat now, so money helping Republicans here is defense.",
    "glossary": "offense",
-   "race_id": "H-OH-07"
+   "race_id": "S-LA"
   },
   {
-   "kind": "bigger_bet",
-   "prompt": "Which race has drawn more outside money so far in the general election?",
+   "kind": "who_helps",
+   "prompt": "SAFETY & AFFORDABILITY PAC INC. (a super PAC) has spent $434K in CO's 3rd District House race. Which party is it helping?",
    "options": [
-    "CA's 7th District",
-    "MS Senate"
+    "Democrats",
+    "Republicans"
    ],
    "answer": 1,
-   "why": "MS Senate: $5.1M. CA's 7th District: $1.7M.",
-   "glossary": "helps",
-   "race_id": "S-MS"
+   "why": "Its spending supports the Republican or attacks their opponent. Every group's filings list who it backs or opposes.",
+   "glossary": "support_oppose",
+   "race_id": "H-CO-03"
   }
  ]
 }
