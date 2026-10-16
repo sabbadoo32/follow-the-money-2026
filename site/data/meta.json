@@ -1,81 +1,81 @@
 {
- "generated_at": "2026-10-15T23:14:19Z",
- "data_hash": "9a2814b101dc9965",
- "as_of": "2026-10-15",
+ "generated_at": "2026-10-16T01:15:39Z",
+ "data_hash": "7ad07b27b78b826b",
+ "as_of": "2026-10-16",
  "bulk_last_modified": "Thu, 15 Oct 2026 10:13:40 GMT",
  "coord_through": "2026-08-31",
  "coord_banner": "Party coordinated spending reported through 2026-08-31. Monthly party reports add September on Oct. 20 and Oct. 1-14 on Oct. 22; spending after Oct. 14 isn't disclosed until Dec. 3.",
  "caveat": "Spending shows where parties and groups are placing bets, not why. Every number is a sum of FEC filings; nothing here is a forecast.",
  "headline": {
   "H_DEM": {
-   "offense_share": 0.7246,
-   "offense_dollars": 168773605.71,
-   "counted_dollars": 232934564.21,
-   "excluded_uncertain_dollars": 11212533.97,
-   "races_in_play": 99,
+   "offense_share": 0.7253,
+   "offense_dollars": 176798935.27,
+   "counted_dollars": 243744044.85,
+   "excluded_uncertain_dollars": 11587333.41,
+   "races_in_play": 101,
    "party_footprint": 71,
-   "total": 244147098.18,
-   "last_7d": 30991022.91,
-   "coord_total": 6698297.0
+   "total": 255331378.26,
+   "last_7d": 36344829.17,
+   "coord_total": 6886888.0
   },
   "H_REP": {
-   "offense_share": 0.3224,
-   "offense_dollars": 83676174.79,
-   "counted_dollars": 259574995.1,
-   "excluded_uncertain_dollars": 22457447.72,
-   "races_in_play": 96,
+   "offense_share": 0.3286,
+   "offense_dollars": 90854410.35,
+   "counted_dollars": 276527209.99,
+   "excluded_uncertain_dollars": 24855691.58,
+   "races_in_play": 100,
    "party_footprint": 36,
-   "total": 282032442.82,
-   "last_7d": 25311866.4,
-   "coord_total": 8546964.0
+   "total": 301382901.57,
+   "last_7d": 39012815.97,
+   "coord_total": 8504964.0
   },
   "S_DEM": {
    "offense_share": 0.7879,
-   "offense_dollars": 295255426.23,
-   "counted_dollars": 374721253.63,
+   "offense_dollars": 328701801.43,
+   "counted_dollars": 417180761.7,
    "excluded_uncertain_dollars": 0,
    "races_in_play": 21,
    "party_footprint": 14,
-   "total": 374721253.63,
-   "last_7d": 42882185.69,
-   "coord_total": 6331344.0
+   "total": 417180761.7,
+   "last_7d": 71172651.44,
+   "coord_total": 6585384.0
   },
   "S_REP": {
-   "offense_share": 0.1801,
-   "offense_dollars": 182096634.88,
-   "counted_dollars": 1010991803.05,
+   "offense_share": 0.1872,
+   "offense_dollars": 191489784.94,
+   "counted_dollars": 1023053886.28,
    "excluded_uncertain_dollars": 0,
    "races_in_play": 25,
    "party_footprint": 10,
-   "total": 1010991803.05,
-   "last_7d": 78380568.43,
+   "total": 1023053886.28,
+   "last_7d": 79153547.09,
    "coord_total": 48148587.0
   }
  },
  "cand_headline": {
   "H_DEM": {
-   "receipts": 620187936.7,
-   "coh": 263874891.23,
+   "receipts": 664637341.65,
+   "coh": 263215301.16,
    "late_48h": 0,
-   "from_party": 322127.16,
-   "nominees": 266,
-   "inferred": 138,
-   "cand_lead_races": 135,
-   "split_favoring": 22
+   "from_party": 321127.16,
+   "nominees": 264,
+   "inferred": 135,
+   "cand_lead_races": 140,
+   "split_favoring": 24
   },
   "H_REP": {
-   "receipts": 565012963.15,
-   "coh": 230530992.23,
+   "receipts": 579340082.93,
+   "coh": 222920627.25,
    "late_48h": 0,
    "from_party": 214204.64,
-   "nominees": 252,
-   "inferred": 127,
-   "cand_lead_races": 131,
-   "split_favoring": 12
+   "nominees": 250,
+   "inferred": 123,
+   "cand_lead_races": 124,
+   "split_favoring": 10
   },
   "S_DEM": {
-   "receipts": 480328602.36,
-   "coh": 174944985.91,
+   "receipts": 617034152.3,
+   "coh": 140139987.49,
    "late_48h": 0,
    "from_party": 224676.23,
    "nominees": 33,
@@ -84,8 +84,8 @@
    "split_favoring": 8
   },
   "S_REP": {
-   "receipts": 244201942.71,
-   "coh": 83997080.28,
+   "receipts": 255856773.26,
+   "coh": 77587366.15,
    "late_48h": 0,
    "from_party": 1370650.0,
    "nominees": 33,
@@ -104,53 +104,67 @@
  "api": {
   "key": true,
   "efile": {
-   "rows": 8350,
-   "filed_since": "2026-10-12"
+   "rows": 9973,
+   "filed_since": "2026-10-13"
   },
   "processed": {
    "rows": 18148
   },
   "sched_f": {
-   "rows": 919
+   "rows": 917
   },
-  "calls": 125
+  "calls": 158
  },
  "counts": {
   "bulk_rows": 29260,
-  "expenditures": 18990,
-  "races": 299,
-  "excluded_primary_or_other": 13500,
-  "excluded_other_cycle": 321,
-  "excluded_third_party": 453,
-  "excluded_not_congress": 694,
-  "excluded_unmatched": 365,
+  "expenditures": 19945,
+  "races": 297,
+  "excluded_primary_or_other": 13531,
+  "excluded_other_cycle": 324,
+  "excluded_third_party": 468,
+  "excluded_not_congress": 693,
+  "excluded_unmatched": 465,
   "excluded_held": 6,
-  "excluded_primary_or_other_dollars": 10886768485.77,
-  "excluded_other_cycle_dollars": 6897159.43,
-  "excluded_third_party_dollars": 46270935.63,
-  "excluded_not_congress_dollars": 14527456648.93,
-  "excluded_unmatched_dollars": 3631762.6,
+  "excluded_primary_or_other_dollars": 10886526408.55,
+  "excluded_other_cycle_dollars": 6898323.43,
+  "excluded_third_party_dollars": 46658302.39,
+  "excluded_not_congress_dollars": 14527447473.93,
+  "excluded_unmatched_dollars": 4046063.6,
   "excluded_held_dollars": 14000000000.0,
-  "dedupe_future_dates_pinned_to_today": 168,
-  "dedupe_superseded_amendments": 16574,
-  "dedupe_same_transaction": 1655,
-  "dedupe_notice_repeated_in_periodic": 4119
+  "dedupe_future_dates_pinned_to_today": 134,
+  "dedupe_superseded_amendments": 16778,
+  "dedupe_same_transaction": 1501,
+  "dedupe_notice_repeated_in_periodic": 4587
  },
- "unmatched_share": 0.0019,
+ "unmatched_share": 0.002,
  "committee_gaps": [
   {
    "committee_id": "C00879510",
    "name": "America PAC",
-   "notice_total": 51276237.89,
-   "periodic_total": 23233496.0,
-   "through": "2026-10-15"
+   "notice_total": 53456507.89,
+   "periodic_total": 23015685.0,
+   "through": "2026-10-16"
+  },
+  {
+   "committee_id": "C00894709",
+   "name": "PINE TREE RESULTS PAC",
+   "notice_total": 17962616.0,
+   "periodic_total": 10978093.0,
+   "through": "2026-09-29"
   },
   {
    "committee_id": "C00573733",
    "name": "Security Is Strength PAC",
    "notice_total": 185602.09,
-   "periodic_total": 3501817.0,
+   "periodic_total": 3470809.0,
    "through": "2026-09-29"
+  },
+  {
+   "committee_id": "C00739771",
+   "name": "UNITE TO WIN",
+   "notice_total": 700000.0,
+   "periodic_total": 3960523.0,
+   "through": "2026-07-29"
   },
   {
    "committee_id": "C00911610",
@@ -163,14 +177,14 @@
    "committee_id": "C00844530",
    "name": "ROLLING SEA ACTION FUND",
    "notice_total": 1620000.0,
-   "periodic_total": 4421015.0,
-   "through": "2026-10-15"
+   "periodic_total": 4371015.0,
+   "through": "2026-10-16"
   },
   {
    "committee_id": "C00953588",
    "name": "CIVIC RENEWAL FUND INC.",
-   "notice_total": 3335995.67,
-   "periodic_total": 1002947.0,
+   "notice_total": 3333825.67,
+   "periodic_total": 1005591.0,
    "through": "2026-10-13"
   },
   {
@@ -181,6 +195,13 @@
    "through": "2026-10-06"
   },
   {
+   "committee_id": "C00904482",
+   "name": "FIGHT ON IOWA",
+   "notice_total": 6385010.39,
+   "periodic_total": 4453609.0,
+   "through": "2026-10-02"
+  },
+  {
    "committee_id": "C00728667",
    "name": "America One",
    "notice_total": 3210825.03,
@@ -188,17 +209,24 @@
    "through": "2026-10-07"
   },
   {
-   "committee_id": "C00739771",
-   "name": "UNITE TO WIN",
-   "notice_total": 2787047.0,
-   "periodic_total": 3987047.0,
-   "through": "2026-07-29"
+   "committee_id": "C00844613",
+   "name": "Win it Back PAC",
+   "notice_total": 6418459.06,
+   "periodic_total": 4815660.0,
+   "through": "2026-09-30"
+  },
+  {
+   "committee_id": "C00853861",
+   "name": "GLCF, INC.",
+   "notice_total": 7155672.73,
+   "periodic_total": 8746424.0,
+   "through": "2026-09-23"
   },
   {
    "committee_id": "C00875278",
    "name": "LAST FRONTIER PAC",
    "notice_total": 3186525.38,
-   "periodic_total": 4125852.0,
+   "periodic_total": 4101725.0,
    "through": "2026-09-29"
   },
   {
@@ -209,25 +237,32 @@
    "through": "2026-10-09"
   },
   {
+   "committee_id": "C00693838",
+   "name": "MORE JOBS, LESS GOVERNMENT",
+   "notice_total": 1915426.6,
+   "periodic_total": 1049353.0,
+   "through": "2026-09-30"
+  },
+  {
    "committee_id": "C00897314",
    "name": "SF SOLIDARITY PAC",
    "notice_total": 425000.0,
-   "periodic_total": 1170702.7,
+   "periodic_total": 1234383.7,
    "through": "2026-09-02"
   },
   {
-   "committee_id": "C90023581",
-   "name": "907 INITIATIVE INC.",
-   "notice_total": 820997.59,
-   "periodic_total": 137470.0,
-   "through": "2026-09-19"
+   "committee_id": "C00956292",
+   "name": "NEBRASKA VALUES PAC",
+   "notice_total": 3420325.0,
+   "periodic_total": 2682092.0,
+   "through": "2026-10-01"
   },
   {
-   "committee_id": "C00944389",
-   "name": "WHEEL DOG PAC",
-   "notice_total": 1911765.87,
-   "periodic_total": 2478165.0,
-   "through": "2026-09-29"
+   "committee_id": "C90023565",
+   "name": "AMERICAS CREDIT UNIONS",
+   "notice_total": 1096939.34,
+   "periodic_total": 459726.0,
+   "through": "2026-09-30"
   },
   {
    "committee_id": "C00492140",
@@ -237,82 +272,49 @@
    "through": "2026-07-14"
   },
   {
+   "committee_id": "C00752691",
+   "name": "One For All Committee",
+   "notice_total": 2791791.08,
+   "periodic_total": 2296601.0,
+   "through": "2026-10-09"
+  },
+  {
    "committee_id": "C00955104",
    "name": "RETIRED AMERICANS ACTION",
    "notice_total": 2078522.03,
    "periodic_total": 1600767.0,
-   "through": "2026-10-15"
+   "through": "2026-10-16"
   },
   {
-   "committee_id": "C00544387",
-   "name": "American Principles Project PAC",
-   "notice_total": 925555.0,
-   "periodic_total": 575555.0,
-   "through": "2026-09-29"
-  },
-  {
-   "committee_id": "C00922294",
-   "name": "STRONGER MAINE",
-   "notice_total": 2001525.0,
-   "periodic_total": 1667443.0,
-   "through": "2026-10-06"
-  },
-  {
-   "committee_id": "C00946921",
-   "name": "Lead Maine Committee, Inc.",
-   "notice_total": 1438123.51,
-   "periodic_total": 1119869.0,
-   "through": "2026-10-04"
+   "committee_id": "C00957175",
+   "name": "COMMITTEE FOR AMERICAN LEADERSHIP",
+   "notice_total": 486854.14,
+   "periodic_total": 81104.0,
+   "through": "2026-09-25"
   },
   {
    "committee_id": "C00800995",
    "name": "DEMOCRATIC MESSAGING PROJECT",
    "notice_total": 164937.5,
-   "periodic_total": 469434.0,
-   "through": "2026-10-15"
+   "periodic_total": 507496.0,
+   "through": "2026-10-16"
   },
   {
-   "committee_id": "C00960385",
-   "name": "UNITED FUTURES PAC",
-   "notice_total": 1548295.39,
-   "periodic_total": 1248645.0,
-   "through": "2026-09-29"
+   "committee_id": "C00923516",
+   "name": "THANK YOU FOR YOUR ATTENTION TO THIS MATTER PAC",
+   "notice_total": 1089000.0,
+   "periodic_total": 1420636.0,
+   "through": "2026-09-15"
   },
   {
-   "committee_id": "C00489799",
-   "name": "Planned Parenthood Votes",
-   "notice_total": 2204324.95,
-   "periodic_total": 2489772.27,
-   "through": "2026-08-30"
-  },
-  {
-   "committee_id": "C00760801",
-   "name": "THE TURNOUT PROJECT",
-   "notice_total": 278000.0,
-   "periodic_total": 0.0,
-   "through": "2026-09-22"
-  },
-  {
-   "committee_id": "C00909994",
-   "name": "Field Team 6 Inc.",
-   "notice_total": 285327.42,
-   "periodic_total": 62606.0,
-   "through": "2026-10-13"
-  },
-  {
-   "committee_id": "C90011578",
-   "name": "AMERICAN CHEMISTRY COUNCIL INC",
-   "notice_total": 569230.0,
-   "periodic_total": 788706.0,
-   "through": "2026-08-21"
-  },
-  {
-   "committee_id": "C00657866",
-   "name": "Protect Freedom Political Action Committee",
-   "notice_total": 459000.0,
-   "periodic_total": 670349.0,
-   "through": "2026-09-28"
+   "committee_id": "C00946921",
+   "name": "Lead Maine Committee, Inc.",
+   "notice_total": 1438123.51,
+   "periodic_total": 1109721.0,
+   "through": "2026-10-04"
   }
  ],
- "notes": []
+ "notes": [
+  "48-hour contribution notices partial (resumes next run): 158 calls used, 14 remaining"
+ ]
 }
