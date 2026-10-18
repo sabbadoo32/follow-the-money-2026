@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-10-18T19:35:58Z",
- "data_hash": "1d6e16a7a9c06de3",
+ "generated_at": "2026-10-18T20:35:21Z",
+ "data_hash": "844f565a78311cba",
  "as_of": "2026-10-18",
  "bulk_last_modified": "Sun, 18 Oct 2026 10:14:26 GMT",
  "coord_through": "2026-08-31",
@@ -8,54 +8,54 @@
  "caveat": "Spending shows where parties and groups are placing bets, not why. Every number is a sum of FEC filings; nothing here is a forecast.",
  "headline": {
   "H_DEM": {
-   "offense_share": 0.7264,
-   "offense_dollars": 222601607.69,
-   "counted_dollars": 306439753.75,
-   "excluded_uncertain_dollars": 17502376.13,
+   "offense_share": 0.7265,
+   "offense_dollars": 222675046.03,
+   "counted_dollars": 306513253.09,
+   "excluded_uncertain_dollars": 17500376.13,
    "races_in_play": 103,
    "party_footprint": 69,
-   "total": 323942129.88,
-   "last_7d": 100878350.31,
+   "total": 324013629.22,
+   "last_7d": 100952610.31,
    "coord_total": 6646696.0
   },
   "H_REP": {
    "offense_share": 0.3381,
-   "offense_dollars": 134825135.68,
-   "counted_dollars": 398796597.39,
+   "offense_dollars": 134825039.67,
+   "counted_dollars": 398796290.19,
    "excluded_uncertain_dollars": 29481797.49,
    "races_in_play": 105,
    "party_footprint": 37,
-   "total": 428278394.88,
+   "total": 428278087.68,
    "last_7d": 96428818.12,
    "coord_total": 8565215.0
   },
   "S_DEM": {
    "offense_share": 0.7782,
-   "offense_dollars": 362743457.73,
-   "counted_dollars": 466144589.32,
+   "offense_dollars": 362746178.12,
+   "counted_dollars": 466147309.71,
    "excluded_uncertain_dollars": 0,
    "races_in_play": 21,
    "party_footprint": 14,
-   "total": 466144589.32,
-   "last_7d": 101745783.16,
+   "total": 466147309.71,
+   "last_7d": 101753535.16,
    "coord_total": 6580355.0
   },
   "S_REP": {
    "offense_share": 0.1868,
-   "offense_dollars": 202517041.81,
-   "counted_dollars": 1084062233.02,
+   "offense_dollars": 202513631.17,
+   "counted_dollars": 1084110571.11,
    "excluded_uncertain_dollars": 0,
    "races_in_play": 25,
    "party_footprint": 10,
-   "total": 1084062233.02,
+   "total": 1084110571.11,
    "last_7d": 126800641.09,
    "coord_total": 47998587.0
   }
  },
  "cand_headline": {
   "H_DEM": {
-   "receipts": 718341492.95,
-   "coh": 268799092.79,
+   "receipts": 718368192.44,
+   "coh": 268772734.56,
    "late_48h": 1976496.16,
    "from_party": 585674.22,
    "nominees": 269,
@@ -104,7 +104,7 @@
  "api": {
   "key": true,
   "efile": {
-   "rows": 12932,
+   "rows": 12936,
    "filed_since": "2026-10-15"
   },
   "processed": {
@@ -113,28 +113,28 @@
   "sched_f": {
    "rows": 914
   },
-  "calls": 178
+  "calls": 170
  },
  "counts": {
   "bulk_rows": 33279,
-  "expenditures": 23455,
+  "expenditures": 23464,
   "races": 301,
-  "excluded_primary_or_other": 13750,
+  "excluded_primary_or_other": 13758,
   "excluded_other_cycle": 364,
-  "excluded_third_party": 517,
+  "excluded_third_party": 513,
   "excluded_not_congress": 703,
   "excluded_unmatched": 464,
   "excluded_held": 6,
-  "excluded_primary_or_other_dollars": 10889848642.35,
+  "excluded_primary_or_other_dollars": 10890201315.19,
   "excluded_other_cycle_dollars": 11926170.21,
-  "excluded_third_party_dollars": 50216776.21,
+  "excluded_third_party_dollars": 50372783.96,
   "excluded_not_congress_dollars": 14527446374.93,
-  "excluded_unmatched_dollars": 3932754.58,
+  "excluded_unmatched_dollars": 3940243.58,
   "excluded_held_dollars": 14000000000.0,
   "dedupe_future_dates_pinned_to_today": 234,
   "dedupe_superseded_amendments": 16949,
-  "dedupe_same_transaction": 4170,
-  "dedupe_notice_repeated_in_periodic": 4918
+  "dedupe_same_transaction": 4165,
+  "dedupe_notice_repeated_in_periodic": 4914
  },
  "unmatched_share": 0.0017,
  "committee_gaps": [
@@ -156,14 +156,14 @@
    "committee_id": "C00894709",
    "name": "PINE TREE RESULTS PAC",
    "notice_total": 17962616.0,
-   "periodic_total": 13100080.0,
+   "periodic_total": 11238068.0,
    "through": "2026-09-29"
   },
   {
    "committee_id": "C00573733",
    "name": "Security Is Strength PAC",
    "notice_total": 185602.09,
-   "periodic_total": 3964263.0,
+   "periodic_total": 4001993.0,
    "through": "2026-09-29"
   },
   {
@@ -191,7 +191,7 @@
    "committee_id": "C00935015",
    "name": "SD 2026",
    "notice_total": 2016469.19,
-   "periodic_total": 3891332.0,
+   "periodic_total": 3919604.0,
    "through": "2026-10-06"
   },
   {
@@ -240,15 +240,8 @@
    "committee_id": "C00946921",
    "name": "Lead Maine Committee, Inc.",
    "notice_total": 1438123.51,
-   "periodic_total": 870164.0,
+   "periodic_total": 906536.0,
    "through": "2026-10-04"
-  },
-  {
-   "committee_id": "C00944389",
-   "name": "WHEEL DOG PAC",
-   "notice_total": 1911765.87,
-   "periodic_total": 2478165.0,
-   "through": "2026-09-29"
   },
   {
    "committee_id": "C00550970",
@@ -279,6 +272,13 @@
    "through": "2026-10-18"
   },
   {
+   "committee_id": "C00944389",
+   "name": "WHEEL DOG PAC",
+   "notice_total": 1911765.87,
+   "periodic_total": 2391198.0,
+   "through": "2026-09-29"
+  },
+  {
    "committee_id": "C90023474",
    "name": "RISING TIDE COLLECTIVE",
    "notice_total": 600000.0,
@@ -293,10 +293,17 @@
    "through": "2026-10-03"
   },
   {
+   "committee_id": "C00923516",
+   "name": "THANK YOU FOR YOUR ATTENTION TO THIS MATTER PAC",
+   "notice_total": 1089000.0,
+   "periodic_total": 1420636.0,
+   "through": "2026-09-15"
+  },
+  {
    "committee_id": "C00341396",
    "name": "MoveOn.Org Political Action",
    "notice_total": 14401.85,
-   "periodic_total": 316507.0,
+   "periodic_total": 316229.0,
    "through": "2026-09-29"
   },
   {
@@ -305,14 +312,10 @@
    "notice_total": 1548295.39,
    "periodic_total": 1248645.0,
    "through": "2026-09-29"
-  },
-  {
-   "committee_id": "C00923516",
-   "name": "THANK YOU FOR YOUR ATTENTION TO THIS MATTER PAC",
-   "notice_total": 1089000.0,
-   "periodic_total": 1382554.0,
-   "through": "2026-09-15"
   }
  ],
- "notes": []
+ "notes": [
+  "candidate e-filed reports: 3 batch(es) failed this run, retried next run (170 calls used, 14 remaining)",
+  "48-hour contribution notices partial (resumes next run): 170 calls used, 14 remaining"
+ ]
 }
