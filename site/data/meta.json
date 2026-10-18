@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-10-18T05:02:58Z",
- "data_hash": "f566cc72458ba984",
+ "generated_at": "2026-10-18T05:49:28Z",
+ "data_hash": "377dfd30ede3f6ec",
  "as_of": "2026-10-18",
  "bulk_last_modified": "Sat, 17 Oct 2026 10:14:43 GMT",
  "coord_through": "2026-08-31",
@@ -54,7 +54,7 @@
  },
  "cand_headline": {
   "H_DEM": {
-   "receipts": 718342044.95,
+   "receipts": 718341492.95,
    "coh": 268799092.79,
    "late_48h": 1688309.0,
    "from_party": 585674.22,
@@ -64,7 +64,7 @@
    "split_favoring": 32
   },
   "H_REP": {
-   "receipts": 624376902.23,
+   "receipts": 624377002.23,
    "coh": 222785687.2,
    "late_48h": 1304761.91,
    "from_party": 434733.64,
@@ -77,7 +77,7 @@
    "receipts": 649462373.07,
    "coh": 132438453.17,
    "late_48h": 942148.18,
-   "from_party": 432757.48,
+   "from_party": 433782.48,
    "nominees": 32,
    "inferred": 13,
    "cand_lead_races": 18,
