@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-10-18T21:50:01Z",
- "data_hash": "12a54e9e6f2869b2",
+ "generated_at": "2026-10-18T23:04:48Z",
+ "data_hash": "4678a711f425ef4f",
  "as_of": "2026-10-18",
  "bulk_last_modified": "Sun, 18 Oct 2026 10:14:26 GMT",
  "coord_through": "2026-08-31",
@@ -9,46 +9,46 @@
  "headline": {
   "H_DEM": {
    "offense_share": 0.7262,
-   "offense_dollars": 222675632.28,
-   "counted_dollars": 306624341.34,
-   "excluded_uncertain_dollars": 17501190.38,
+   "offense_dollars": 222687208.61,
+   "counted_dollars": 306633476.67,
+   "excluded_uncertain_dollars": 17500810.38,
    "races_in_play": 103,
    "party_footprint": 69,
-   "total": 324125531.72,
-   "last_7d": 101064759.31,
+   "total": 324134287.05,
+   "last_7d": 101081588.31,
    "coord_total": 6646696.0
   },
   "H_REP": {
-   "offense_share": 0.338,
-   "offense_dollars": 134826008.13,
-   "counted_dollars": 398863677.1,
+   "offense_share": 0.3392,
+   "offense_dollars": 135539476.87,
+   "counted_dollars": 399577428.84,
    "excluded_uncertain_dollars": 29481797.49,
    "races_in_play": 105,
    "party_footprint": 37,
-   "total": 428345474.59,
-   "last_7d": 96505436.12,
+   "total": 429059226.33,
+   "last_7d": 97218541.12,
    "coord_total": 8565215.0
   },
   "S_DEM": {
-   "offense_share": 0.7782,
-   "offense_dollars": 362759070.12,
-   "counted_dollars": 466160951.71,
+   "offense_share": 0.7785,
+   "offense_dollars": 363428709.12,
+   "counted_dollars": 466830590.71,
    "excluded_uncertain_dollars": 0,
-   "races_in_play": 21,
+   "races_in_play": 22,
    "party_footprint": 14,
-   "total": 466160951.71,
-   "last_7d": 101767202.16,
+   "total": 466830590.71,
+   "last_7d": 102438276.16,
    "coord_total": 6580355.0
   },
   "S_REP": {
-   "offense_share": 0.1868,
-   "offense_dollars": 202514254.04,
-   "counted_dollars": 1084058280.4,
+   "offense_share": 0.1899,
+   "offense_dollars": 207245542.85,
+   "counted_dollars": 1091550353.14,
    "excluded_uncertain_dollars": 0,
    "races_in_play": 25,
    "party_footprint": 10,
-   "total": 1084058280.4,
-   "last_7d": 126823271.09,
+   "total": 1091550353.14,
+   "last_7d": 134305269.09,
    "coord_total": 47998587.0
   }
  },
@@ -56,7 +56,7 @@
   "H_DEM": {
    "receipts": 719413291.79,
    "coh": 269025791.99,
-   "late_48h": 2164674.49,
+   "late_48h": 2203174.49,
    "from_party": 585674.22,
    "nominees": 270,
    "inferred": 136,
@@ -66,7 +66,7 @@
   "H_REP": {
    "receipts": 624387966.53,
    "coh": 222790969.72,
-   "late_48h": 1651556.32,
+   "late_48h": 1671347.34,
    "from_party": 434733.64,
    "nominees": 257,
    "inferred": 118,
@@ -76,7 +76,7 @@
   "S_DEM": {
    "receipts": 649462373.07,
    "coh": 132438453.17,
-   "late_48h": 1137349.18,
+   "late_48h": 1151349.18,
    "from_party": 433782.48,
    "nominees": 32,
    "inferred": 13,
@@ -104,7 +104,7 @@
  "api": {
   "key": true,
   "efile": {
-   "rows": 12966,
+   "rows": 12990,
    "filed_since": "2026-10-15"
   },
   "processed": {
@@ -117,24 +117,24 @@
  },
  "counts": {
   "bulk_rows": 33279,
-  "expenditures": 23494,
+  "expenditures": 23490,
   "races": 302,
   "excluded_primary_or_other": 13745,
   "excluded_other_cycle": 364,
-  "excluded_third_party": 515,
+  "excluded_third_party": 514,
   "excluded_not_congress": 703,
-  "excluded_unmatched": 464,
+  "excluded_unmatched": 463,
   "excluded_held": 6,
-  "excluded_primary_or_other_dollars": 10890013202.95,
+  "excluded_primary_or_other_dollars": 10890056024.35,
   "excluded_other_cycle_dollars": 11926170.21,
-  "excluded_third_party_dollars": 50356020.41,
+  "excluded_third_party_dollars": 50358582.96,
   "excluded_not_congress_dollars": 14527446374.93,
-  "excluded_unmatched_dollars": 3881417.58,
+  "excluded_unmatched_dollars": 3939998.58,
   "excluded_held_dollars": 14000000000.0,
   "dedupe_future_dates_pinned_to_today": 234,
   "dedupe_superseded_amendments": 16949,
-  "dedupe_same_transaction": 4181,
-  "dedupe_notice_repeated_in_periodic": 4909
+  "dedupe_same_transaction": 4205,
+  "dedupe_notice_repeated_in_periodic": 4915
  },
  "unmatched_share": 0.0017,
  "committee_gaps": [
@@ -163,7 +163,7 @@
    "committee_id": "C00573733",
    "name": "Security Is Strength PAC",
    "notice_total": 185602.09,
-   "periodic_total": 3964263.0,
+   "periodic_total": 4001993.0,
    "through": "2026-09-29"
   },
   {
@@ -174,18 +174,18 @@
    "through": "2026-10-01"
   },
   {
-   "committee_id": "C00844530",
-   "name": "ROLLING SEA ACTION FUND",
-   "notice_total": 1620000.0,
-   "periodic_total": 4421015.0,
-   "through": "2026-10-18"
-  },
-  {
    "committee_id": "C00953588",
    "name": "CIVIC RENEWAL FUND INC.",
    "notice_total": 3335997.17,
    "periodic_total": 1005591.0,
    "through": "2026-10-13"
+  },
+  {
+   "committee_id": "C00844530",
+   "name": "ROLLING SEA ACTION FUND",
+   "notice_total": 1620000.0,
+   "periodic_total": 3521063.0,
+   "through": "2026-10-18"
   },
   {
    "committee_id": "C00935015",
@@ -205,7 +205,7 @@
    "committee_id": "C00875278",
    "name": "LAST FRONTIER PAC",
    "notice_total": 3186525.38,
-   "periodic_total": 4252852.0,
+   "periodic_total": 4275852.0,
    "through": "2026-09-29"
   },
   {
@@ -233,7 +233,7 @@
    "committee_id": "C00897314",
    "name": "SF SOLIDARITY PAC",
    "notice_total": 425000.0,
-   "periodic_total": 1214935.7,
+   "periodic_total": 1234383.7,
    "through": "2026-09-02"
   },
   {
@@ -251,13 +251,6 @@
    "through": "2026-10-04"
   },
   {
-   "committee_id": "C00550970",
-   "name": "Equality PAC",
-   "notice_total": 45000.0,
-   "periodic_total": 572217.0,
-   "through": "2026-09-09"
-  },
-  {
    "committee_id": "C00890343",
    "name": "Wisconsin Working PAC",
    "notice_total": 629755.1,
@@ -270,6 +263,13 @@
    "notice_total": 1509955.0,
    "periodic_total": 1004833.0,
    "through": "2026-07-14"
+  },
+  {
+   "committee_id": "C00550970",
+   "name": "Equality PAC",
+   "notice_total": 45000.0,
+   "periodic_total": 537109.0,
+   "through": "2026-09-09"
   },
   {
    "committee_id": "C00955104",
@@ -293,13 +293,6 @@
    "through": "2026-10-03"
   },
   {
-   "committee_id": "C00923516",
-   "name": "THANK YOU FOR YOUR ATTENTION TO THIS MATTER PAC",
-   "notice_total": 1089000.0,
-   "periodic_total": 1416576.0,
-   "through": "2026-09-15"
-  },
-  {
    "committee_id": "C00341396",
    "name": "MoveOn.Org Political Action",
    "notice_total": 14401.85,
@@ -312,6 +305,13 @@
    "notice_total": 1548295.39,
    "periodic_total": 1248645.0,
    "through": "2026-09-29"
+  },
+  {
+   "committee_id": "C00923516",
+   "name": "THANK YOU FOR YOUR ATTENTION TO THIS MATTER PAC",
+   "notice_total": 1089000.0,
+   "periodic_total": 1382554.0,
+   "through": "2026-09-15"
   }
  ],
  "notes": []
