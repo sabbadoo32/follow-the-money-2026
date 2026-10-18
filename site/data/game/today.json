@@ -1,7 +1,68 @@
 {
- "day": "2026-10-17",
- "number": 20,
+ "day": "2026-10-18",
+ "number": 21,
  "questions": [
+  {
+   "kind": "rules",
+   "prompt": "How often do House and Senate campaigns file their regular reports in an election year?",
+   "options": [
+    "Monthly",
+    "Quarterly, plus pre- and post-election",
+    "Only after the election"
+   ],
+   "answer": 1,
+   "why": "Candidate committees file quarterly, plus 12 days before and 30 days after each election. Monthly filing is only an option for PACs and parties.",
+   "glossary": "periodic",
+   "race_id": null
+  },
+  {
+   "kind": "bigger_bet",
+   "prompt": "Which race has drawn more outside money so far in the general election?",
+   "options": [
+    "NV's 4th District",
+    "WA's 3rd District"
+   ],
+   "answer": 1,
+   "why": "WA's 3rd District: $16.6M. NV's 4th District: $1.9M.",
+   "glossary": "helps",
+   "race_id": "H-WA-03"
+  },
+  {
+   "kind": "bigger_bet",
+   "prompt": "Which race has drawn more outside money so far in the general election?",
+   "options": [
+    "AL's 2nd District",
+    "CO's 3rd District"
+   ],
+   "answer": 0,
+   "why": "AL's 2nd District: $4.5M. CO's 3rd District: $2.5M.",
+   "glossary": "helps",
+   "race_id": "H-AL-02"
+  },
+  {
+   "kind": "who_helps",
+   "prompt": "PEOPLE OVER POLITICS ACTION FUND (a super PAC) has spent $8.0M in the KS Senate race. Which party is it helping?",
+   "options": [
+    "Democrats",
+    "Republicans"
+   ],
+   "answer": 0,
+   "why": "Its spending supports the Democrat or attacks their opponent. Every group's filings list who it backs or opposes.",
+   "glossary": "support_oppose",
+   "race_id": "S-KS"
+  },
+  {
+   "kind": "offense_defense",
+   "prompt": "Groups helping Republicans have spent $1.2M in the KY Senate race. Are Republicans playing offense or defense?",
+   "options": [
+    "Offense",
+    "Defense"
+   ],
+   "answer": 1,
+   "why": "Republicans hold this seat now, so money helping Republicans here is defense.",
+   "glossary": "offense",
+   "race_id": "S-KY"
+  },
   {
    "kind": "rules",
    "prompt": "What's the most one person can give a House candidate for the 2026 general election?",
@@ -16,69 +77,8 @@
    "race_id": null
   },
   {
-   "kind": "bigger_bet",
-   "prompt": "Which race has drawn more outside money so far in the general election?",
-   "options": [
-    "AR's 2nd District",
-    "NC's 3rd District"
-   ],
-   "answer": 0,
-   "why": "AR's 2nd District: $3.1M. NC's 3rd District: $1.0M.",
-   "glossary": "helps",
-   "race_id": "H-AR-02"
-  },
-  {
-   "kind": "split",
-   "prompt": "In NJ's 9th District House race, outside money favors Republicans by $260K. Whose nominee has raised more?",
-   "options": [
-    "The Democrat (Pou)",
-    "The Republican (Pino)"
-   ],
-   "answer": 0,
-   "why": "Outside money and candidate money point opposite ways here: the Democrat leads fundraising by $2.5M.",
-   "glossary": "split_signal",
-   "race_id": "H-NJ-09"
-  },
-  {
-   "kind": "rules",
-   "prompt": "In the final 20 days, a campaign gets a $2,000 check. What must it do?",
-   "options": [
-    "Nothing until the next report",
-    "Report it within 48 hours",
-    "Return it"
-   ],
-   "answer": 1,
-   "why": "Contributions of $1,000 or more received in the last 20 days must be reported within 48 hours on Form 6.",
-   "glossary": "f6",
-   "race_id": null
-  },
-  {
-   "kind": "who_helps",
-   "prompt": "NATIONAL NURSES UNITED FOR PATIENT PROTECTION (a super PAC) has spent $350K in CA's 7th District House race. Which party is it helping?",
-   "options": [
-    "Democrats",
-    "Republicans"
-   ],
-   "answer": 0,
-   "why": "Its spending supports the Democrat or attacks their opponent. Every group's filings list who it backs or opposes.",
-   "glossary": "support_oppose",
-   "race_id": "H-CA-07"
-  },
-  {
-   "kind": "bigger_bet",
-   "prompt": "Which race has drawn more outside money so far in the general election?",
-   "options": [
-    "MI's 10th District",
-    "OH's 7th District"
-   ],
-   "answer": 0,
-   "why": "MI's 10th District: $18.9M. OH's 7th District: $14.5M.",
-   "glossary": "helps",
-   "race_id": "H-MI-10"
-  },
-  {
    "kind": "offense_defense",
-   "prompt": "Groups helping Republicans have spent $3.4M in NE's 2nd District House race. Are Republicans playing offense or defense?",
+   "prompt": "Groups helping Republicans have spent $3.6M in CO's 5th District House race. Are Republicans playing offense or defense?",
    "options": [
     "Offense",
     "Defense"
@@ -86,11 +86,11 @@
    "answer": 1,
    "why": "Republicans hold this seat now, so money helping Republicans here is defense.",
    "glossary": "offense",
-   "race_id": "H-NE-02"
+   "race_id": "H-CO-05"
   },
   {
    "kind": "who_helps",
-   "prompt": "NEW LEADERSHIP NOW (a super PAC) has spent $3.2M in CA's 4th District House race. Which party is it helping?",
+   "prompt": "NO GOING BACK PAC INC. (a super PAC) has spent $1.4M in IA's 3rd District House race. Which party is it helping?",
    "options": [
     "Democrats",
     "Republicans"
@@ -98,32 +98,32 @@
    "answer": 1,
    "why": "Its spending supports the Republican or attacks their opponent. Every group's filings list who it backs or opposes.",
    "glossary": "support_oppose",
-   "race_id": "H-CA-04"
+   "race_id": "H-IA-03"
+  },
+  {
+   "kind": "split",
+   "prompt": "In NY's 21st District House race, outside money favors Democrats by $1.6M. Whose nominee has raised more?",
+   "options": [
+    "The Democrat (Gendebien)",
+    "The Republican (Constantino)"
+   ],
+   "answer": 1,
+   "why": "Outside money and candidate money point opposite ways here: the Republican leads fundraising by $7.2M.",
+   "glossary": "split_signal",
+   "race_id": "H-NY-21"
   },
   {
    "kind": "rules",
-   "prompt": "A hybrid PAC can do what a super PAC can't. What?",
+   "prompt": "A party's coordinated spending in the last three weeks before Nov. 3 is disclosed when?",
    "options": [
-    "Give directly to candidates from a limited account",
-    "Take unlimited corporate money",
-    "Keep its donors secret"
+    "Within 24 hours",
+    "Oct. 22",
+    "Dec. 3"
    ],
-   "answer": 0,
-   "why": "A hybrid PAC keeps two accounts: a limited one for contributions to candidates and an unlimited one for independent spending.",
-   "glossary": "hybrid_pac",
+   "answer": 2,
+   "why": "Coordinated spending appears only on regular reports. Anything after Oct. 14 lands on the post-general report, due Dec. 3.",
+   "glossary": "coordinated",
    "race_id": null
-  },
-  {
-   "kind": "offense_defense",
-   "prompt": "Groups helping Republicans have spent $9.6M in AZ's 6th District House race. Are Republicans playing offense or defense?",
-   "options": [
-    "Offense",
-    "Defense"
-   ],
-   "answer": 1,
-   "why": "Republicans hold this seat now, so money helping Republicans here is defense.",
-   "glossary": "offense",
-   "race_id": "H-AZ-06"
   }
  ]
 }
