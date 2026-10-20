@@ -1,0 +1,129 @@
+{
+ "day": "2026-10-20",
+ "number": 23,
+ "questions": [
+  {
+   "kind": "who_helps",
+   "prompt": "HMP (a super PAC) has spent $3.4M in WA's 3rd District House race. Which party is it helping?",
+   "options": [
+    "Democrats",
+    "Republicans"
+   ],
+   "answer": 0,
+   "why": "Its spending supports the Democrat or attacks their opponent. Every group's filings list who it backs or opposes.",
+   "glossary": "support_oppose",
+   "race_id": "H-WA-03"
+  },
+  {
+   "kind": "bigger_bet",
+   "prompt": "Which race has drawn more outside money so far in the general election?",
+   "options": [
+    "AR Senate",
+    "IA's 2nd District"
+   ],
+   "answer": 1,
+   "why": "IA's 2nd District: $12.9M. AR Senate: $4.5M.",
+   "glossary": "helps",
+   "race_id": "H-IA-02"
+  },
+  {
+   "kind": "rules",
+   "prompt": "In the final 20 days, a campaign gets a $2,000 check. What must it do?",
+   "options": [
+    "Nothing until the next report",
+    "Report it within 48 hours",
+    "Return it"
+   ],
+   "answer": 1,
+   "why": "Contributions of $1,000 or more received in the last 20 days must be reported within 48 hours on Form 6.",
+   "glossary": "f6",
+   "race_id": null
+  },
+  {
+   "kind": "offense_defense",
+   "prompt": "Groups helping Republicans have spent $1.5M in MN's 1st District House race. Are Republicans playing offense or defense?",
+   "options": [
+    "Offense",
+    "Defense"
+   ],
+   "answer": 1,
+   "why": "Republicans hold this seat now, so money helping Republicans here is defense.",
+   "glossary": "offense",
+   "race_id": "H-MN-01"
+  },
+  {
+   "kind": "rules",
+   "prompt": "Does a 501(c)(4) nonprofit that runs election ads have to disclose its donors?",
+   "options": [
+    "Always",
+    "Generally no",
+    "Only if over $1M"
+   ],
+   "answer": 1,
+   "why": "It must report the ad spending, but generally not its donors unless they gave for that ad. That's why it's called dark money.",
+   "glossary": "nonprofit",
+   "race_id": null
+  },
+  {
+   "kind": "who_helps",
+   "prompt": "Fairshake (a super PAC) has spent $1.0M in AR's 2nd District House race. Which party is it helping?",
+   "options": [
+    "Democrats",
+    "Republicans"
+   ],
+   "answer": 1,
+   "why": "Its spending supports the Republican or attacks their opponent. Every group's filings list who it backs or opposes.",
+   "glossary": "support_oppose",
+   "race_id": "H-AR-02"
+  },
+  {
+   "kind": "split",
+   "prompt": "In WA's 3rd District House race, outside money favors Republicans by $6.7M. Whose nominee has raised more?",
+   "options": [
+    "The Democrat (Gluesenkamp Perez)",
+    "The Republican (Braun)"
+   ],
+   "answer": 0,
+   "why": "Outside money and candidate money point opposite ways here: the Democrat leads fundraising by $5.6M.",
+   "glossary": "split_signal",
+   "race_id": "H-WA-03"
+  },
+  {
+   "kind": "bigger_bet",
+   "prompt": "Which race has drawn more outside money so far in the general election?",
+   "options": [
+    "AL's 2nd District",
+    "AZ's 1st District"
+   ],
+   "answer": 1,
+   "why": "AZ's 1st District: $17.8M. AL's 2nd District: $4.4M.",
+   "glossary": "helps",
+   "race_id": "H-AZ-01"
+  },
+  {
+   "kind": "rules",
+   "prompt": "A hybrid PAC can do what a super PAC can't. What?",
+   "options": [
+    "Give directly to candidates from a limited account",
+    "Take unlimited corporate money",
+    "Keep its donors secret"
+   ],
+   "answer": 0,
+   "why": "A hybrid PAC keeps two accounts: a limited one for contributions to candidates and an unlimited one for independent spending.",
+   "glossary": "hybrid_pac",
+   "race_id": null
+  },
+  {
+   "kind": "offense_defense",
+   "prompt": "Groups helping Republicans have spent $52.7M in the NC Senate race. Are Republicans playing offense or defense?",
+   "options": [
+    "Offense",
+    "Defense"
+   ],
+   "answer": 1,
+   "why": "Republicans hold this seat now, so money helping Republicans here is defense.",
+   "glossary": "offense",
+   "race_id": "S-NC"
+  }
+ ]
+}
