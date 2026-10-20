@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-10-20T05:58:05Z",
- "data_hash": "5017f371f1ba0070",
+ "generated_at": "2026-10-20T06:30:56Z",
+ "data_hash": "9d471b1509341edc",
  "as_of": "2026-10-20",
  "bulk_last_modified": "Mon, 19 Oct 2026 10:13:29 GMT",
  "coord_through": "2026-08-31",
@@ -76,7 +76,7 @@
   "S_DEM": {
    "receipts": 649462373.07,
    "coh": 132438453.17,
-   "late_48h": 1886404.35,
+   "late_48h": 1889404.35,
    "from_party": 433782.48,
    "nominees": 32,
    "inferred": 13,
