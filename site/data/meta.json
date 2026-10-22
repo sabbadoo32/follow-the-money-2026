@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-10-22T22:41:34Z",
- "data_hash": "d2c809454b9f03a0",
+ "generated_at": "2026-10-22T23:17:44Z",
+ "data_hash": "094af412dbc13821",
  "as_of": "2026-10-22",
  "bulk_last_modified": "Thu, 22 Oct 2026 10:14:39 GMT",
  "coord_through": "2026-08-31",
@@ -8,88 +8,88 @@
  "caveat": "Spending shows where parties and groups are placing bets, not why. Every number is a sum of FEC filings; nothing here is a forecast.",
  "headline": {
   "H_DEM": {
-   "offense_share": 0.7238,
-   "offense_dollars": 308918182.57,
-   "counted_dollars": 426814953.45,
-   "excluded_uncertain_dollars": 27972762.17,
+   "offense_share": 0.7266,
+   "offense_dollars": 316038342.62,
+   "counted_dollars": 434948254.62,
+   "excluded_uncertain_dollars": 28752940.67,
    "races_in_play": 113,
    "party_footprint": 73,
-   "total": 454787715.62,
-   "last_7d": 116276093.52,
+   "total": 463701195.29,
+   "last_7d": 118702084.23,
    "coord_total": 6786615.0
   },
   "H_REP": {
-   "offense_share": 0.3229,
-   "offense_dollars": 120934006.33,
-   "counted_dollars": 374572875.81,
-   "excluded_uncertain_dollars": 31081479.57,
+   "offense_share": 0.32,
+   "offense_dollars": 125328942.97,
+   "counted_dollars": 391653751.43,
+   "excluded_uncertain_dollars": 30996042.8,
    "races_in_play": 121,
    "party_footprint": 37,
-   "total": 405654355.38,
-   "last_7d": 38711223.72,
+   "total": 422649794.23,
+   "last_7d": 56128868.22,
    "coord_total": 8565215.0
   },
   "S_DEM": {
-   "offense_share": 0.7898,
-   "offense_dollars": 482423446.48,
-   "counted_dollars": 610783429.63,
+   "offense_share": 0.7904,
+   "offense_dollars": 483959263.87,
+   "counted_dollars": 612322221.21,
    "excluded_uncertain_dollars": 0,
    "races_in_play": 22,
    "party_footprint": 15,
-   "total": 610783429.63,
-   "last_7d": 109151698.47,
+   "total": 612322221.21,
+   "last_7d": 109594545.81,
    "coord_total": 6394284.0
   },
   "S_REP": {
-   "offense_share": 0.199,
-   "offense_dollars": 221790868.09,
-   "counted_dollars": 1114480057.92,
+   "offense_share": 0.1992,
+   "offense_dollars": 222734550.18,
+   "counted_dollars": 1118387151.84,
    "excluded_uncertain_dollars": 0,
    "races_in_play": 26,
    "party_footprint": 10,
-   "total": 1114480057.92,
-   "last_7d": 132278803.34,
+   "total": 1118387151.84,
+   "last_7d": 140751951.34,
    "coord_total": 48148587.0
   }
  },
  "cand_headline": {
   "H_DEM": {
-   "receipts": 799463471.81,
-   "coh": 273406479.54,
-   "late_48h": 8599363.27,
-   "from_party": 635628.49,
-   "nominees": 319,
-   "inferred": 182,
-   "cand_lead_races": 169,
+   "receipts": 804612288.14,
+   "coh": 271740042.11,
+   "late_48h": 8769626.81,
+   "from_party": 635648.04,
+   "nominees": 323,
+   "inferred": 186,
+   "cand_lead_races": 171,
    "split_favoring": 20
   },
   "H_REP": {
-   "receipts": 657567895.27,
-   "coh": 199038246.29,
-   "late_48h": 6842522.5,
-   "from_party": 439483.64,
-   "nominees": 299,
-   "inferred": 134,
-   "cand_lead_races": 150,
-   "split_favoring": 14
+   "receipts": 669692926.91,
+   "coh": 200872316.02,
+   "late_48h": 6860063.52,
+   "from_party": 444483.64,
+   "nominees": 302,
+   "inferred": 137,
+   "cand_lead_races": 152,
+   "split_favoring": 13
   },
   "S_DEM": {
-   "receipts": 719376118.17,
-   "coh": 114111397.98,
-   "late_48h": 6010877.47,
+   "receipts": 731567818.46,
+   "coh": 119293112.31,
+   "late_48h": 6252897.47,
    "from_party": 495782.48,
-   "nominees": 33,
-   "inferred": 14,
-   "cand_lead_races": 20,
+   "nominees": 34,
+   "inferred": 15,
+   "cand_lead_races": 21,
    "split_favoring": 10
   },
   "S_REP": {
-   "receipts": 290413324.35,
-   "coh": 55227959.53,
-   "late_48h": 2890842.35,
+   "receipts": 290724498.0,
+   "coh": 55272157.22,
+   "late_48h": 2962567.95,
    "from_party": 1374500.0,
-   "nominees": 33,
-   "inferred": 8,
+   "nominees": 34,
+   "inferred": 9,
    "cand_lead_races": 13,
    "split_favoring": 1
   }
@@ -104,7 +104,7 @@
  "api": {
   "key": true,
   "efile": {
-   "rows": 12477,
+   "rows": 12803,
    "filed_since": "2026-10-19"
   },
   "processed": {
@@ -113,28 +113,28 @@
   "sched_f": {
    "rows": 918
   },
-  "calls": 179
+  "calls": 183
  },
  "counts": {
   "bulk_rows": 36504,
-  "expenditures": 26742,
-  "races": 352,
-  "excluded_primary_or_other": 12790,
-  "excluded_other_cycle": 398,
-  "excluded_third_party": 583,
+  "expenditures": 26908,
+  "races": 357,
+  "excluded_primary_or_other": 12789,
+  "excluded_other_cycle": 422,
+  "excluded_third_party": 590,
   "excluded_not_congress": 693,
-  "excluded_unmatched": 250,
+  "excluded_unmatched": 249,
   "excluded_held": 6,
-  "excluded_primary_or_other_dollars": 10853382666.0,
-  "excluded_other_cycle_dollars": 14815049.0,
-  "excluded_third_party_dollars": 69390887.07,
+  "excluded_primary_or_other_dollars": 10853170262.78,
+  "excluded_other_cycle_dollars": 14872022.0,
+  "excluded_third_party_dollars": 69424311.17,
   "excluded_not_congress_dollars": 14527428448.93,
-  "excluded_unmatched_dollars": 4220158.81,
+  "excluded_unmatched_dollars": 4213214.81,
   "excluded_held_dollars": 14000000000.0,
-  "dedupe_future_dates_pinned_to_today": 260,
+  "dedupe_future_dates_pinned_to_today": 266,
   "dedupe_superseded_amendments": 17265,
-  "dedupe_same_transaction": 3217,
-  "dedupe_notice_repeated_in_periodic": 6282
+  "dedupe_same_transaction": 3235,
+  "dedupe_notice_repeated_in_periodic": 6395
  },
  "unmatched_share": 0.0016,
  "committee_gaps": [
@@ -156,21 +156,21 @@
    "committee_id": "C00879510",
    "name": "America PAC",
    "notice_total": 68472000.8,
-   "periodic_total": 27376506.0,
+   "periodic_total": 27663782.0,
    "through": "2026-10-22"
+  },
+  {
+   "committee_id": "C00901223",
+   "name": "LONE STAR LIBERTY PAC",
+   "notice_total": 20074795.0,
+   "periodic_total": 110000.0,
+   "through": "2026-10-17"
   },
   {
    "committee_id": "C00687103",
    "name": "Americans for Prosperity Action, Inc. (AFP Action) DBA CVA Action and DBA LIBRE Action",
    "notice_total": 42875580.77,
-   "periodic_total": 23014957.0,
-   "through": "2026-09-30"
-  },
-  {
-   "committee_id": "C00865444",
-   "name": "WinSenate",
-   "notice_total": 103156455.01,
-   "periodic_total": 83853455.0,
+   "periodic_total": 22912106.0,
    "through": "2026-09-30"
   },
   {
@@ -184,8 +184,15 @@
    "committee_id": "C00486845",
    "name": "LCV Victory Fund",
    "notice_total": 38444391.17,
-   "periodic_total": 21276788.0,
+   "periodic_total": 21325626.0,
    "through": "2026-10-20"
+  },
+  {
+   "committee_id": "C00865444",
+   "name": "WinSenate",
+   "notice_total": 103156455.01,
+   "periodic_total": 87127985.0,
+   "through": "2026-09-30"
   },
   {
    "committee_id": "C00836221",
@@ -198,7 +205,7 @@
    "committee_id": "C00492140",
    "name": "AB PAC",
    "notice_total": 42399856.68,
-   "periodic_total": 33622623.0,
+   "periodic_total": 33035138.0,
    "through": "2026-10-22"
   },
   {
@@ -305,13 +312,6 @@
    "notice_total": 4409365.03,
    "periodic_total": 1198540.0,
    "through": "2026-10-14"
-  },
-  {
-   "committee_id": "C00875278",
-   "name": "LAST FRONTIER PAC",
-   "notice_total": 4438037.28,
-   "periodic_total": 1251511.0,
-   "through": "2026-10-10"
   }
  ],
  "notes": []
