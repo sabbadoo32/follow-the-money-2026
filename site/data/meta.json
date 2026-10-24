@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-10-24T11:30:28Z",
- "data_hash": "f8a74bd6b0884d82",
+ "generated_at": "2026-10-24T12:38:14Z",
+ "data_hash": "0d671733290d88c6",
  "as_of": "2026-10-24",
  "bulk_last_modified": "Sat, 24 Oct 2026 10:15:16 GMT",
  "coord_through": "2026-09-22",
@@ -56,7 +56,7 @@
   "H_DEM": {
    "receipts": 822647702.72,
    "coh": 262262111.12,
-   "late_48h": 11951011.78,
+   "late_48h": 11958011.78,
    "from_party": 673545.5,
    "nominees": 321,
    "inferred": 183,
@@ -66,7 +66,7 @@
   "H_REP": {
    "receipts": 687197482.48,
    "coh": 189525206.63,
-   "late_48h": 10289262.53,
+   "late_48h": 10373762.53,
    "from_party": 476969.4,
    "nominees": 301,
    "inferred": 133,
@@ -86,7 +86,7 @@
   "S_REP": {
    "receipts": 272213779.62,
    "coh": 55052252.34,
-   "late_48h": 3352338.77,
+   "late_48h": 3362838.77,
    "from_party": 1313625.0,
    "nominees": 33,
    "inferred": 8,
