@@ -1,7 +1,117 @@
 {
- "day": "2026-10-23",
- "number": 26,
+ "day": "2026-10-24",
+ "number": 27,
  "questions": [
+  {
+   "kind": "rules",
+   "prompt": "In the final 20 days, a campaign gets a $2,000 check. What must it do?",
+   "options": [
+    "Nothing until the next report",
+    "Report it within 48 hours",
+    "Return it"
+   ],
+   "answer": 1,
+   "why": "Contributions of $1,000 or more received in the last 20 days must be reported within 48 hours on Form 6.",
+   "glossary": "f6",
+   "race_id": null
+  },
+  {
+   "kind": "who_helps",
+   "prompt": "HMP (a super PAC) has spent $1.7M in NY's 17th District House race. Which party is it helping?",
+   "options": [
+    "Democrats",
+    "Republicans"
+   ],
+   "answer": 0,
+   "why": "Its spending supports the Democrat or attacks their opponent. Every group's filings list who it backs or opposes.",
+   "glossary": "support_oppose",
+   "race_id": "H-NY-17"
+  },
+  {
+   "kind": "bigger_bet",
+   "prompt": "Which race has drawn more outside money so far in the general election?",
+   "options": [
+    "TX's 32nd District",
+    "CO's 4th District"
+   ],
+   "answer": 1,
+   "why": "CO's 4th District: $2.4M. TX's 32nd District: $951K.",
+   "glossary": "helps",
+   "race_id": "H-CO-04"
+  },
+  {
+   "kind": "who_helps",
+   "prompt": "NO GOING BACK PAC INC. (a super PAC) has spent $6.6M in NY's 3rd District House race. Which party is it helping?",
+   "options": [
+    "Democrats",
+    "Republicans"
+   ],
+   "answer": 1,
+   "why": "Its spending supports the Republican or attacks their opponent. Every group's filings list who it backs or opposes.",
+   "glossary": "support_oppose",
+   "race_id": "H-NY-03"
+  },
+  {
+   "kind": "rules",
+   "prompt": "In the final 60 days, who pays less for the same TV spot?",
+   "options": [
+    "The candidate",
+    "A super PAC",
+    "They pay the same"
+   ],
+   "answer": 0,
+   "why": "Stations must sell candidates airtime at the lowest unit charge. Outside groups pay market rates, which climb near Election Day.",
+   "glossary": "lowest_unit_charge",
+   "race_id": null
+  },
+  {
+   "kind": "offense_defense",
+   "prompt": "Groups helping Republicans have spent $838K in NV's 1st District House race. Are Republicans playing offense or defense?",
+   "options": [
+    "Offense",
+    "Defense"
+   ],
+   "answer": 0,
+   "why": "Democrats hold this seat now, so money helping Republicans here is offense.",
+   "glossary": "offense",
+   "race_id": "H-NV-01"
+  },
+  {
+   "kind": "bigger_bet",
+   "prompt": "Which race has drawn more outside money so far in the general election?",
+   "options": [
+    "NV's 1st District",
+    "KS Senate"
+   ],
+   "answer": 1,
+   "why": "KS Senate: $55.6M. NV's 1st District: $913K.",
+   "glossary": "helps",
+   "race_id": "S-KS"
+  },
+  {
+   "kind": "split",
+   "prompt": "In OR's 4th District House race, outside money favors Republicans by $564K. Whose nominee has raised more?",
+   "options": [
+    "The Democrat (Hoyle)",
+    "The Republican (Despain)"
+   ],
+   "answer": 0,
+   "why": "Outside money and candidate money point opposite ways here: the Democrat leads fundraising by $726K.",
+   "glossary": "split_signal",
+   "race_id": "H-OR-04"
+  },
+  {
+   "kind": "offense_defense",
+   "prompt": "Groups helping Republicans have spent $2.5M in MI's 8th District House race. Are Republicans playing offense or defense?",
+   "options": [
+    "Offense",
+    "Defense"
+   ],
+   "answer": 0,
+   "why": "Democrats hold this seat now, so money helping Republicans here is offense.",
+   "glossary": "offense",
+   "race_id": "H-MI-08"
+  },
   {
    "kind": "rules",
    "prompt": "Can a super PAC give $10,000 directly to a House candidate's campaign?",
@@ -13,116 +123,6 @@
    "why": "Super PACs can raise unlimited money but can't give to candidates or coordinate with them. They can only spend independently.",
    "glossary": "super_pac",
    "race_id": null
-  },
-  {
-   "kind": "who_helps",
-   "prompt": "KENTUCKIANS NOT CORRUPTION (a super PAC) has spent $1.0M in KY's 6th District House race. Which party is it helping?",
-   "options": [
-    "Democrats",
-    "Republicans"
-   ],
-   "answer": 0,
-   "why": "Its spending supports the Democrat or attacks their opponent. Every group's filings list who it backs or opposes.",
-   "glossary": "support_oppose",
-   "race_id": "H-KY-06"
-  },
-  {
-   "kind": "offense_defense",
-   "prompt": "Groups helping Democrats have spent $374K in MI's 1st District House race. Are Democrats playing offense or defense?",
-   "options": [
-    "Offense",
-    "Defense"
-   ],
-   "answer": 0,
-   "why": "Republicans hold this seat now, so money helping Democrats here is offense.",
-   "glossary": "offense",
-   "race_id": "H-MI-01"
-  },
-  {
-   "kind": "split",
-   "prompt": "In MI's 10th District House race, outside money favors Republicans by $3.5M. Whose nominee has raised more?",
-   "options": [
-    "The Democrat (Hines)",
-    "The Republican (Bouchard)"
-   ],
-   "answer": 0,
-   "why": "Outside money and candidate money point opposite ways here: the Democrat leads fundraising by $1.6M.",
-   "glossary": "split_signal",
-   "race_id": "H-MI-10"
-  },
-  {
-   "kind": "bigger_bet",
-   "prompt": "Which race has drawn more outside money so far in the general election?",
-   "options": [
-    "KY Senate",
-    "NJ's 7th District"
-   ],
-   "answer": 1,
-   "why": "NJ's 7th District: $15.6M. KY Senate: $1.5M.",
-   "glossary": "helps",
-   "race_id": "H-NJ-07"
-  },
-  {
-   "kind": "bigger_bet",
-   "prompt": "Which race has drawn more outside money so far in the general election?",
-   "options": [
-    "SC's 1st District",
-    "NV's 4th District"
-   ],
-   "answer": 0,
-   "why": "SC's 1st District: $8.2M. NV's 4th District: $2.8M.",
-   "glossary": "helps",
-   "race_id": "H-SC-01"
-  },
-  {
-   "kind": "rules",
-   "prompt": "A party's coordinated spending in the last three weeks before Nov. 3 is disclosed when?",
-   "options": [
-    "Within 24 hours",
-    "Oct. 22",
-    "Dec. 3"
-   ],
-   "answer": 2,
-   "why": "Coordinated spending appears only on regular reports. Anything after Oct. 14 lands on the post-general report, due Dec. 3.",
-   "glossary": "coordinated",
-   "race_id": null
-  },
-  {
-   "kind": "offense_defense",
-   "prompt": "Groups helping Democrats have spent $2.5M in OH's 1st District House race. Are Democrats playing offense or defense?",
-   "options": [
-    "Offense",
-    "Defense"
-   ],
-   "answer": 1,
-   "why": "Democrats hold this seat now, so money helping Democrats here is defense.",
-   "glossary": "offense",
-   "race_id": "H-OH-01"
-  },
-  {
-   "kind": "rules",
-   "prompt": "What starts the clock on a 24- or 48-hour spending report?",
-   "options": [
-    "Paying for the ad",
-    "The ad reaching the public",
-    "Booking the airtime"
-   ],
-   "answer": 1,
-   "why": "The reporting clock starts on the dissemination date, when the ad first reaches the public.",
-   "glossary": "dissemination_date",
-   "race_id": null
-  },
-  {
-   "kind": "who_helps",
-   "prompt": "CLF (a super PAC) has spent $8.6M in FL's 14th District House race. Which party is it helping?",
-   "options": [
-    "Democrats",
-    "Republicans"
-   ],
-   "answer": 1,
-   "why": "Its spending supports the Republican or attacks their opponent. Every group's filings list who it backs or opposes.",
-   "glossary": "support_oppose",
-   "race_id": "H-FL-14"
   }
  ]
 }
