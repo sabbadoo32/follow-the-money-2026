@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-28T00:42:00Z",
- "data_hash": "2b2143ae5e49783b",
+ "generated_at": "2026-10-28T14:25:34Z",
+ "data_hash": "231ec6d4e816552c",
  "as_of": "2026-10-28",
- "bulk_last_modified": "Tue, 27 Oct 2026 10:15:11 GMT",
+ "bulk_last_modified": "Wed, 28 Oct 2026 10:14:39 GMT",
  "coord_through": "2026-09-30",
  "coord_banner": "Party coordinated spending reported through 2026-09-30. Monthly party reports add September on Oct. 20 and Oct. 1-14 on Oct. 22; spending after Oct. 14 isn't disclosed until Dec. 3.",
  "caveat": "Spending shows where parties and groups are placing bets, not why. Every number is a sum of FEC filings; nothing here is a forecast.",
@@ -113,7 +113,7 @@
   "sched_f": {
    "rows": 1264
   },
-  "calls": 46
+  "calls": 58
  },
  "counts": {
   "bulk_rows": 40946,
@@ -202,8 +202,5 @@
    "through": "2026-10-17"
   }
  ],
- "notes": [
-  "candidate e-filed reports: 19 batch(es) failed this run, retried next run (46 calls used, 14 remaining)",
-  "48-hour contribution notices partial (resumes next run): 46 calls used, 14 remaining"
- ]
+ "notes": []
 }
