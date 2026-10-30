@@ -1,7 +1,80 @@
 {
- "day": "2026-10-29",
- "number": 32,
+ "day": "2026-10-30",
+ "number": 33,
  "questions": [
+  {
+   "kind": "rules",
+   "prompt": "In the final 60 days, who pays less for the same TV spot?",
+   "options": [
+    "The candidate",
+    "A super PAC",
+    "They pay the same"
+   ],
+   "answer": 0,
+   "why": "Stations must sell candidates airtime at the lowest unit charge. Outside groups pay market rates, which climb near Election Day.",
+   "glossary": "lowest_unit_charge",
+   "race_id": null
+  },
+  {
+   "kind": "bigger_bet",
+   "prompt": "Which race has drawn more outside money so far in the general election?",
+   "options": [
+    "NE Senate",
+    "AR's 2nd District"
+   ],
+   "answer": 0,
+   "why": "NE Senate: $23.4M. AR's 2nd District: $6.2M.",
+   "glossary": "helps",
+   "race_id": "S-NE"
+  },
+  {
+   "kind": "split",
+   "prompt": "In the GA Senate race, outside money favors Republicans by $1.9M. Whose nominee has raised more?",
+   "options": [
+    "The Democrat (Ossoff)",
+    "The Republican (Collins)"
+   ],
+   "answer": 0,
+   "why": "Outside money and candidate money point opposite ways here: the Democrat leads fundraising by $105.5M.",
+   "glossary": "split_signal",
+   "race_id": "S-GA"
+  },
+  {
+   "kind": "who_helps",
+   "prompt": "NO GOING BACK PAC INC. (a super PAC) has spent $1.7M in FL's 13th District House race. Which party is it helping?",
+   "options": [
+    "Democrats",
+    "Republicans"
+   ],
+   "answer": 1,
+   "why": "Its spending supports the Republican or attacks their opponent. Every group's filings list who it backs or opposes.",
+   "glossary": "support_oppose",
+   "race_id": "H-FL-13"
+  },
+  {
+   "kind": "offense_defense",
+   "prompt": "Groups helping Democrats have spent $12.0M in MI's 4th District House race. Are Democrats playing offense or defense?",
+   "options": [
+    "Offense",
+    "Defense"
+   ],
+   "answer": 0,
+   "why": "Republicans hold this seat now, so money helping Democrats here is offense.",
+   "glossary": "offense",
+   "race_id": "H-MI-04"
+  },
+  {
+   "kind": "offense_defense",
+   "prompt": "Groups helping Democrats have spent $13.4M in IA's 3rd District House race. Are Democrats playing offense or defense?",
+   "options": [
+    "Offense",
+    "Defense"
+   ],
+   "answer": 0,
+   "why": "Republicans hold this seat now, so money helping Democrats here is offense.",
+   "glossary": "offense",
+   "race_id": "H-IA-03"
+  },
   {
    "kind": "rules",
    "prompt": "Can a corporation give unlimited money to a super PAC?",
@@ -12,103 +85,6 @@
    "answer": 0,
    "why": "Since Citizens United and SpeechNow.org (2010), corporations, unions and individuals can give super PACs unlimited sums.",
    "glossary": "super_pac",
-   "race_id": null
-  },
-  {
-   "kind": "split",
-   "prompt": "In the NH Senate race, outside money favors Republicans by $22.1M. Whose nominee has raised more?",
-   "options": [
-    "The Democrat (Pappas)",
-    "The Republican (Sununu)"
-   ],
-   "answer": 0,
-   "why": "Outside money and candidate money point opposite ways here: the Democrat leads fundraising by $18.2M.",
-   "glossary": "split_signal",
-   "race_id": "S-NH"
-  },
-  {
-   "kind": "offense_defense",
-   "prompt": "Groups helping Republicans have spent $794K in the NE Senate race. Are Republicans playing offense or defense?",
-   "options": [
-    "Offense",
-    "Defense"
-   ],
-   "answer": 1,
-   "why": "Republicans hold this seat now, so money helping Republicans here is defense.",
-   "glossary": "offense",
-   "race_id": "S-NE"
-  },
-  {
-   "kind": "who_helps",
-   "prompt": "HMP (a super PAC) has spent $2.2M in IA's 3rd District House race. Which party is it helping?",
-   "options": [
-    "Democrats",
-    "Republicans"
-   ],
-   "answer": 0,
-   "why": "Its spending supports the Democrat or attacks their opponent. Every group's filings list who it backs or opposes.",
-   "glossary": "support_oppose",
-   "race_id": "H-IA-03"
-  },
-  {
-   "kind": "offense_defense",
-   "prompt": "Groups helping Democrats have spent $1.2M in NE's 1st District House race. Are Democrats playing offense or defense?",
-   "options": [
-    "Offense",
-    "Defense"
-   ],
-   "answer": 0,
-   "why": "Republicans hold this seat now, so money helping Democrats here is offense.",
-   "glossary": "offense",
-   "race_id": "H-NE-01"
-  },
-  {
-   "kind": "bigger_bet",
-   "prompt": "Which race has drawn more outside money so far in the general election?",
-   "options": [
-    "MI Senate",
-    "MI's 8th District"
-   ],
-   "answer": 0,
-   "why": "MI Senate: $221.9M. MI's 8th District: $3.4M.",
-   "glossary": "helps",
-   "race_id": "S-MI"
-  },
-  {
-   "kind": "who_helps",
-   "prompt": "THANK YOU FOR YOUR ATTENTION TO THIS MATTER PAC (a super PAC) has spent $1.2M in MN's 1st District House race. Which party is it helping?",
-   "options": [
-    "Democrats",
-    "Republicans"
-   ],
-   "answer": 1,
-   "why": "Its spending supports the Republican or attacks their opponent. Every group's filings list who it backs or opposes.",
-   "glossary": "support_oppose",
-   "race_id": "H-MN-01"
-  },
-  {
-   "kind": "bigger_bet",
-   "prompt": "Which race has drawn more outside money so far in the general election?",
-   "options": [
-    "OR's 4th District",
-    "OH Senate"
-   ],
-   "answer": 1,
-   "why": "OH Senate: $337.5M. OR's 4th District: $589K.",
-   "glossary": "helps",
-   "race_id": "S-OH"
-  },
-  {
-   "kind": "rules",
-   "prompt": "What's the most one person can give a House candidate for the 2026 general election?",
-   "options": [
-    "$3,500",
-    "$10,000",
-    "Unlimited"
-   ],
-   "answer": 0,
-   "why": "The 2025-26 limit is $3,500 per election; the primary and general each count as separate elections.",
-   "glossary": "candidate_committee",
    "race_id": null
   },
   {
@@ -123,6 +99,30 @@
    "why": "The reporting clock starts on the dissemination date, when the ad first reaches the public.",
    "glossary": "dissemination_date",
    "race_id": null
+  },
+  {
+   "kind": "bigger_bet",
+   "prompt": "Which race has drawn more outside money so far in the general election?",
+   "options": [
+    "WA's 3rd District",
+    "WI's 1st District"
+   ],
+   "answer": 0,
+   "why": "WA's 3rd District: $25.7M. WI's 1st District: $17.7M.",
+   "glossary": "helps",
+   "race_id": "H-WA-03"
+  },
+  {
+   "kind": "who_helps",
+   "prompt": "National Nurses United for Patient Protection (a super PAC) has spent $445K in CA's 7th District House race. Which party is it helping?",
+   "options": [
+    "Democrats",
+    "Republicans"
+   ],
+   "answer": 0,
+   "why": "Its spending supports the Democrat or attacks their opponent. Every group's filings list who it backs or opposes.",
+   "glossary": "support_oppose",
+   "race_id": "H-CA-07"
   }
  ]
 }
