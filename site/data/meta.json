@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-10-31T15:51:25Z",
- "data_hash": "6c24ab0013800b53",
+ "generated_at": "2026-10-31T17:40:28Z",
+ "data_hash": "7ff4c1b8869c1490",
  "as_of": "2026-10-31",
  "bulk_last_modified": "Sat, 31 Oct 2026 10:13:32 GMT",
  "coord_through": "2026-09-30",
@@ -9,46 +9,46 @@
  "headline": {
   "H_DEM": {
    "offense_share": 0.7246,
-   "offense_dollars": 408528274.21,
-   "counted_dollars": 563779565.06,
+   "offense_dollars": 408587950.54,
+   "counted_dollars": 563882497.39,
    "excluded_uncertain_dollars": 39967432.35,
    "races_in_play": 118,
    "party_footprint": 78,
-   "total": 603746997.41,
-   "last_7d": 147501824.78,
+   "total": 603849929.74,
+   "last_7d": 147605548.78,
    "coord_total": 9226639.0
   },
   "H_REP": {
    "offense_share": 0.3125,
-   "offense_dollars": 185643607.46,
-   "counted_dollars": 594068092.71,
-   "excluded_uncertain_dollars": 51589410.89,
+   "offense_dollars": 185645568.46,
+   "counted_dollars": 594093407.64,
+   "excluded_uncertain_dollars": 51589410.56,
    "races_in_play": 131,
    "party_footprint": 60,
-   "total": 645657503.6,
-   "last_7d": 115602433.06,
+   "total": 645682818.2,
+   "last_7d": 115627747.06,
    "coord_total": 52429552.0
   },
   "S_DEM": {
-   "offense_share": 0.8116,
-   "offense_dollars": 621676790.78,
-   "counted_dollars": 766008257.42,
+   "offense_share": 0.8117,
+   "offense_dollars": 622626604.78,
+   "counted_dollars": 767036071.42,
    "excluded_uncertain_dollars": 0,
    "races_in_play": 22,
    "party_footprint": 15,
-   "total": 766008257.42,
-   "last_7d": 142759635.6,
+   "total": 767036071.42,
+   "last_7d": 143788699.6,
    "coord_total": 13622229.0
   },
   "S_REP": {
    "offense_share": 0.2102,
-   "offense_dollars": 256994477.87,
-   "counted_dollars": 1222634663.88,
+   "offense_dollars": 257009656.53,
+   "counted_dollars": 1222815968.49,
    "excluded_uncertain_dollars": 0,
    "races_in_play": 26,
    "party_footprint": 12,
-   "total": 1222634663.88,
-   "last_7d": 127741907.17,
+   "total": 1222815968.49,
+   "last_7d": 127923707.17,
    "coord_total": 82113227.0
   }
  },
@@ -56,7 +56,7 @@
   "H_DEM": {
    "receipts": 775401846.59,
    "coh": 234097047.22,
-   "late_48h": 22834398.22,
+   "late_48h": 23027438.89,
    "from_party": 644020.57,
    "nominees": 287,
    "inferred": 138,
@@ -66,7 +66,7 @@
   "H_REP": {
    "receipts": 670040516.1,
    "coh": 183568229.36,
-   "late_48h": 25780466.04,
+   "late_48h": 25963642.05,
    "from_party": 469369.4,
    "nominees": 273,
    "inferred": 101,
@@ -76,7 +76,7 @@
   "S_DEM": {
    "receipts": 732859694.94,
    "coh": 105574421.97,
-   "late_48h": 14754173.14,
+   "late_48h": 14984215.4,
    "from_party": 562836.01,
    "nominees": 33,
    "inferred": 12,
@@ -86,7 +86,7 @@
   "S_REP": {
    "receipts": 271526241.96,
    "coh": 53960908.91,
-   "late_48h": 9704472.02,
+   "late_48h": 9717054.06,
    "from_party": 1375625.0,
    "nominees": 33,
    "inferred": 8,
@@ -104,7 +104,7 @@
  "api": {
   "key": true,
   "efile": {
-   "rows": 6758,
+   "rows": 6833,
    "filed_since": "2026-10-28"
   },
   "processed": {
@@ -113,28 +113,28 @@
   "sched_f": {
    "rows": 1392
   },
-  "calls": 119
+  "calls": 121
  },
  "counts": {
   "bulk_rows": 47329,
-  "expenditures": 32420,
+  "expenditures": 32491,
   "races": 320,
   "excluded_primary_or_other": 12710,
   "excluded_other_cycle": 472,
-  "excluded_third_party": 895,
+  "excluded_third_party": 897,
   "excluded_not_congress": 695,
   "excluded_unmatched": 329,
   "excluded_held": 6,
   "excluded_primary_or_other_dollars": 10877573359.21,
-  "excluded_other_cycle_dollars": 20817247.89,
-  "excluded_third_party_dollars": 81884106.57,
+  "excluded_other_cycle_dollars": 20817244.89,
+  "excluded_third_party_dollars": 81887751.57,
   "excluded_not_congress_dollars": 14527488671.93,
   "excluded_unmatched_dollars": 6165581.62,
   "excluded_held_dollars": 14000000000.0,
   "dedupe_future_dates_pinned_to_today": 95,
   "dedupe_superseded_amendments": 18759,
-  "dedupe_same_transaction": 6340,
-  "dedupe_notice_repeated_in_periodic": 2160
+  "dedupe_same_transaction": 6339,
+  "dedupe_notice_repeated_in_periodic": 2163
  },
  "unmatched_share": 0.0019,
  "committee_gaps": [
@@ -170,7 +170,7 @@
    "committee_id": "C00606962",
    "name": "Working Families Party PAC",
    "notice_total": 2179687.65,
-   "periodic_total": 2519801.95,
+   "periodic_total": 2475676.95,
    "through": "2026-10-13"
   },
   {
@@ -184,7 +184,7 @@
    "committee_id": "C00448696",
    "name": "SENATE CONSERVATIVES FUND",
    "notice_total": 549972.5,
-   "periodic_total": 366874.0,
+   "periodic_total": 372780.0,
    "through": "2026-10-14"
   },
   {
@@ -226,7 +226,7 @@
    "committee_id": "C00752147",
    "name": "MAINE PEOPLE",
    "notice_total": 131290.96,
-   "periodic_total": 168971.0,
+   "periodic_total": 167721.0,
    "through": "2026-10-30"
   },
   {
