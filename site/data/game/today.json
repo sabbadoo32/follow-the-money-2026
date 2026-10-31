@@ -1,47 +1,59 @@
 {
- "day": "2026-10-30",
- "number": 33,
+ "day": "2026-10-31",
+ "number": 34,
  "questions": [
   {
    "kind": "rules",
-   "prompt": "In the final 60 days, who pays less for the same TV spot?",
+   "prompt": "A party's coordinated spending in the last three weeks before Nov. 3 is disclosed when?",
    "options": [
-    "The candidate",
-    "A super PAC",
-    "They pay the same"
+    "Within 24 hours",
+    "Oct. 22",
+    "Dec. 3"
    ],
-   "answer": 0,
-   "why": "Stations must sell candidates airtime at the lowest unit charge. Outside groups pay market rates, which climb near Election Day.",
-   "glossary": "lowest_unit_charge",
+   "answer": 2,
+   "why": "Coordinated spending appears only on regular reports. Anything after Oct. 14 lands on the post-general report, due Dec. 3.",
+   "glossary": "coordinated",
    "race_id": null
   },
   {
    "kind": "bigger_bet",
    "prompt": "Which race has drawn more outside money so far in the general election?",
    "options": [
-    "NE Senate",
-    "AR's 2nd District"
+    "SC's 1st District",
+    "SC Senate"
    ],
-   "answer": 0,
-   "why": "NE Senate: $23.4M. AR's 2nd District: $6.2M.",
+   "answer": 1,
+   "why": "SC Senate: $42.3M. SC's 1st District: $11.5M.",
    "glossary": "helps",
-   "race_id": "S-NE"
+   "race_id": "S-SC"
   },
   {
    "kind": "split",
-   "prompt": "In the GA Senate race, outside money favors Republicans by $1.9M. Whose nominee has raised more?",
+   "prompt": "In the NC Senate race, outside money favors Republicans by $16.1M. Whose nominee has raised more?",
    "options": [
-    "The Democrat (Ossoff)",
-    "The Republican (Collins)"
+    "The Democrat (Cooper)",
+    "The Republican (Whatley)"
    ],
    "answer": 0,
-   "why": "Outside money and candidate money point opposite ways here: the Democrat leads fundraising by $105.5M.",
+   "why": "Outside money and candidate money point opposite ways here: the Democrat leads fundraising by $36.3M.",
    "glossary": "split_signal",
-   "race_id": "S-GA"
+   "race_id": "S-NC"
+  },
+  {
+   "kind": "rules",
+   "prompt": "Can a super PAC give $10,000 directly to a House candidate's campaign?",
+   "options": [
+    "Yes",
+    "No"
+   ],
+   "answer": 1,
+   "why": "Super PACs can raise unlimited money but can't give to candidates or coordinate with them. They can only spend independently.",
+   "glossary": "super_pac",
+   "race_id": null
   },
   {
    "kind": "who_helps",
-   "prompt": "NO GOING BACK PAC INC. (a super PAC) has spent $1.7M in FL's 13th District House race. Which party is it helping?",
+   "prompt": "Affordable Florida (a super PAC) has spent $354K in FL's 12th District House race. Which party is it helping?",
    "options": [
     "Democrats",
     "Republicans"
@@ -49,11 +61,11 @@
    "answer": 1,
    "why": "Its spending supports the Republican or attacks their opponent. Every group's filings list who it backs or opposes.",
    "glossary": "support_oppose",
-   "race_id": "H-FL-13"
+   "race_id": "H-FL-12"
   },
   {
    "kind": "offense_defense",
-   "prompt": "Groups helping Democrats have spent $12.0M in MI's 4th District House race. Are Democrats playing offense or defense?",
+   "prompt": "Groups helping Democrats have spent $6.3M in OH's 15th District House race. Are Democrats playing offense or defense?",
    "options": [
     "Offense",
     "Defense"
@@ -61,19 +73,7 @@
    "answer": 0,
    "why": "Republicans hold this seat now, so money helping Democrats here is offense.",
    "glossary": "offense",
-   "race_id": "H-MI-04"
-  },
-  {
-   "kind": "offense_defense",
-   "prompt": "Groups helping Democrats have spent $13.4M in IA's 3rd District House race. Are Democrats playing offense or defense?",
-   "options": [
-    "Offense",
-    "Defense"
-   ],
-   "answer": 0,
-   "why": "Republicans hold this seat now, so money helping Democrats here is offense.",
-   "glossary": "offense",
-   "race_id": "H-IA-03"
+   "race_id": "H-OH-15"
   },
   {
    "kind": "rules",
@@ -88,33 +88,32 @@
    "race_id": null
   },
   {
-   "kind": "rules",
-   "prompt": "What starts the clock on a 24- or 48-hour spending report?",
+   "kind": "offense_defense",
+   "prompt": "Groups helping Republicans have spent $13.3M in PA's 8th District House race. Are Republicans playing offense or defense?",
    "options": [
-    "Paying for the ad",
-    "The ad reaching the public",
-    "Booking the airtime"
+    "Offense",
+    "Defense"
    ],
    "answer": 1,
-   "why": "The reporting clock starts on the dissemination date, when the ad first reaches the public.",
-   "glossary": "dissemination_date",
-   "race_id": null
+   "why": "Republicans hold this seat now, so money helping Republicans here is defense.",
+   "glossary": "offense",
+   "race_id": "H-PA-08"
   },
   {
    "kind": "bigger_bet",
    "prompt": "Which race has drawn more outside money so far in the general election?",
    "options": [
-    "WA's 3rd District",
-    "WI's 1st District"
+    "CA's 4th District",
+    "MI's 1st District"
    ],
    "answer": 0,
-   "why": "WA's 3rd District: $25.7M. WI's 1st District: $17.7M.",
+   "why": "CA's 4th District: $6.7M. MI's 1st District: $571K.",
    "glossary": "helps",
-   "race_id": "H-WA-03"
+   "race_id": "H-CA-04"
   },
   {
    "kind": "who_helps",
-   "prompt": "National Nurses United for Patient Protection (a super PAC) has spent $445K in CA's 7th District House race. Which party is it helping?",
+   "prompt": "YOUR COMMUNITY PAC (a super PAC) has spent $1.8M in VA's 1st District House race. Which party is it helping?",
    "options": [
     "Democrats",
     "Republicans"
@@ -122,7 +121,7 @@
    "answer": 0,
    "why": "Its spending supports the Democrat or attacks their opponent. Every group's filings list who it backs or opposes.",
    "glossary": "support_oppose",
-   "race_id": "H-CA-07"
+   "race_id": "H-VA-01"
   }
  ]
 }
