@@ -1,54 +1,54 @@
 {
- "generated_at": "2026-11-01T06:44:59Z",
- "data_hash": "9864c21460621601",
+ "generated_at": "2026-11-01T14:27:48Z",
+ "data_hash": "ee1a69487cb69b51",
  "as_of": "2026-11-01",
- "bulk_last_modified": "Sat, 31 Oct 2026 10:13:32 GMT",
+ "bulk_last_modified": "Sun, 01 Nov 2026 10:14:33 GMT",
  "coord_through": "2026-09-30",
  "coord_banner": "Party coordinated spending reported through 2026-09-30. Monthly party reports add September on Oct. 20 and Oct. 1-14 on Oct. 22; spending after Oct. 14 isn't disclosed until Dec. 3.",
  "caveat": "Spending shows where parties and groups are placing bets, not why. Every number is a sum of FEC filings; nothing here is a forecast.",
  "headline": {
   "H_DEM": {
-   "offense_share": 0.7244,
-   "offense_dollars": 410803369.21,
-   "counted_dollars": 567122569.06,
-   "excluded_uncertain_dollars": 40031815.35,
+   "offense_share": 0.7243,
+   "offense_dollars": 410814786.24,
+   "counted_dollars": 567158089.18,
+   "excluded_uncertain_dollars": 40031817.8,
    "races_in_play": 118,
    "party_footprint": 79,
-   "total": 607154384.41,
-   "last_7d": 149000948.18,
+   "total": 607189906.98,
+   "last_7d": 149034169.83,
    "coord_total": 9146537.0
   },
   "H_REP": {
    "offense_share": 0.3113,
-   "offense_dollars": 185412524.46,
-   "counted_dollars": 595654210.76,
-   "excluded_uncertain_dollars": 51731900.56,
+   "offense_dollars": 185412531.48,
+   "counted_dollars": 595658958.33,
+   "excluded_uncertain_dollars": 51731901.44,
    "races_in_play": 131,
    "party_footprint": 61,
-   "total": 647386111.32,
-   "last_7d": 115168319.17,
+   "total": 647390859.77,
+   "last_7d": 115173067.47,
    "coord_total": 53770802.0
   },
   "S_DEM": {
    "offense_share": 0.8133,
-   "offense_dollars": 634118229.78,
-   "counted_dollars": 779681235.42,
+   "offense_dollars": 634146674.64,
+   "counted_dollars": 779709687.86,
    "excluded_uncertain_dollars": 0,
    "races_in_play": 22,
    "party_footprint": 15,
-   "total": 779681235.42,
-   "last_7d": 150139060.55,
+   "total": 779709687.86,
+   "last_7d": 150175977.49,
    "coord_total": 13623042.0
   },
   "S_REP": {
-   "offense_share": 0.2102,
-   "offense_dollars": 257189653.53,
-   "counted_dollars": 1223622851.15,
+   "offense_share": 0.2104,
+   "offense_dollars": 257589658.54,
+   "counted_dollars": 1224064988.49,
    "excluded_uncertain_dollars": 0,
    "races_in_play": 26,
    "party_footprint": 12,
-   "total": 1223622851.15,
-   "last_7d": 127042464.22,
+   "total": 1224064988.49,
+   "last_7d": 127484600.71,
    "coord_total": 82113227.0
   }
  },
@@ -56,7 +56,7 @@
   "H_DEM": {
    "receipts": 775648965.95,
    "coh": 234159901.65,
-   "late_48h": 24019949.65,
+   "late_48h": 24042249.65,
    "from_party": 644070.57,
    "nominees": 288,
    "inferred": 138,
@@ -66,7 +66,7 @@
   "H_REP": {
    "receipts": 671455450.67,
    "coh": 184607421.76,
-   "late_48h": 27287851.47,
+   "late_48h": 27340995.03,
    "from_party": 469369.4,
    "nominees": 274,
    "inferred": 102,
@@ -86,7 +86,7 @@
   "S_REP": {
    "receipts": 271526241.96,
    "coh": 53960908.91,
-   "late_48h": 10169424.32,
+   "late_48h": 10194924.32,
    "from_party": 1375625.0,
    "nominees": 33,
    "inferred": 8,
@@ -104,7 +104,7 @@
  "api": {
   "key": true,
   "efile": {
-   "rows": 5998,
+   "rows": 6018,
    "filed_since": "2026-10-29"
   },
   "processed": {
@@ -113,28 +113,28 @@
   "sched_f": {
    "rows": 1391
   },
-  "calls": 110
+  "calls": 111
  },
  "counts": {
-  "bulk_rows": 47329,
-  "expenditures": 33194,
+  "bulk_rows": 48211,
+  "expenditures": 33225,
   "races": 321,
-  "excluded_primary_or_other": 12711,
-  "excluded_other_cycle": 475,
+  "excluded_primary_or_other": 12709,
+  "excluded_other_cycle": 477,
   "excluded_third_party": 946,
   "excluded_not_congress": 694,
   "excluded_unmatched": 343,
   "excluded_held": 6,
-  "excluded_primary_or_other_dollars": 10877574779.21,
-  "excluded_other_cycle_dollars": 20818429.89,
-  "excluded_third_party_dollars": 81227756.57,
+  "excluded_primary_or_other_dollars": 10877573348.71,
+  "excluded_other_cycle_dollars": 20818446.51,
+  "excluded_third_party_dollars": 81227782.3,
   "excluded_not_congress_dollars": 14527494906.93,
-  "excluded_unmatched_dollars": 6504710.62,
+  "excluded_unmatched_dollars": 6504716.36,
   "excluded_held_dollars": 14000000000.0,
-  "dedupe_future_dates_pinned_to_today": 53,
-  "dedupe_superseded_amendments": 18761,
-  "dedupe_same_transaction": 4726,
-  "dedupe_notice_repeated_in_periodic": 2169
+  "dedupe_future_dates_pinned_to_today": 62,
+  "dedupe_superseded_amendments": 18763,
+  "dedupe_same_transaction": 5599,
+  "dedupe_notice_repeated_in_periodic": 2165
  },
  "unmatched_share": 0.002,
  "committee_gaps": [
@@ -142,7 +142,7 @@
    "committee_id": "C00954503",
    "name": "WORKING CLASS MAJORITY PAC, INC",
    "notice_total": 7544006.23,
-   "periodic_total": 2428956.0,
+   "periodic_total": 2371240.0,
    "through": "2026-10-15"
   },
   {
@@ -170,7 +170,7 @@
    "committee_id": "C00606962",
    "name": "Working Families Party PAC",
    "notice_total": 2179687.65,
-   "periodic_total": 2658312.95,
+   "periodic_total": 2660612.95,
    "through": "2026-10-13"
   },
   {
@@ -184,7 +184,7 @@
    "committee_id": "C00448696",
    "name": "SENATE CONSERVATIVES FUND",
    "notice_total": 549972.5,
-   "periodic_total": 384431.0,
+   "periodic_total": 383579.0,
    "through": "2026-10-14"
   },
   {
@@ -216,18 +216,18 @@
    "through": "2025-01-31"
   },
   {
-   "committee_id": "C00752147",
-   "name": "MAINE PEOPLE",
-   "notice_total": 131290.96,
-   "periodic_total": 168971.0,
-   "through": "2026-10-30"
-  },
-  {
    "committee_id": "C00556860",
    "name": "Planned Parenthood Affiliates of California VOTES PAC",
    "notice_total": 164000.0,
    "periodic_total": 194000.0,
    "through": "2026-09-30"
+  },
+  {
+   "committee_id": "C00752147",
+   "name": "MAINE PEOPLE",
+   "notice_total": 131290.96,
+   "periodic_total": 159086.0,
+   "through": "2026-10-30"
   },
   {
    "committee_id": "C00835041",
