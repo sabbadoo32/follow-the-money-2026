@@ -1,43 +1,91 @@
 {
- "day": "2026-10-31",
- "number": 34,
+ "day": "2026-11-01",
+ "number": 35,
  "questions": [
   {
-   "kind": "rules",
-   "prompt": "A party's coordinated spending in the last three weeks before Nov. 3 is disclosed when?",
+   "kind": "offense_defense",
+   "prompt": "Groups helping Democrats have spent $52.7M in the ME Senate race. Are Democrats playing offense or defense?",
    "options": [
-    "Within 24 hours",
-    "Oct. 22",
-    "Dec. 3"
+    "Offense",
+    "Defense"
    ],
-   "answer": 2,
-   "why": "Coordinated spending appears only on regular reports. Anything after Oct. 14 lands on the post-general report, due Dec. 3.",
-   "glossary": "coordinated",
+   "answer": 0,
+   "why": "Republicans hold this seat now, so money helping Democrats here is offense.",
+   "glossary": "offense",
+   "race_id": "S-ME"
+  },
+  {
+   "kind": "who_helps",
+   "prompt": "HMP (a super PAC) has spent $11.3M in NC's 1st District House race. Which party is it helping?",
+   "options": [
+    "Democrats",
+    "Republicans"
+   ],
+   "answer": 0,
+   "why": "Its spending supports the Democrat or attacks their opponent. Every group's filings list who it backs or opposes.",
+   "glossary": "support_oppose",
+   "race_id": "H-NC-01"
+  },
+  {
+   "kind": "rules",
+   "prompt": "A hybrid PAC can do what a super PAC can't. What?",
+   "options": [
+    "Give directly to candidates from a limited account",
+    "Take unlimited corporate money",
+    "Keep its donors secret"
+   ],
+   "answer": 0,
+   "why": "A hybrid PAC keeps two accounts: a limited one for contributions to candidates and an unlimited one for independent spending.",
+   "glossary": "hybrid_pac",
    "race_id": null
   },
   {
    "kind": "bigger_bet",
    "prompt": "Which race has drawn more outside money so far in the general election?",
    "options": [
-    "SC's 1st District",
-    "SC Senate"
+    "TX's 23rd District",
+    "MI's 4th District"
    ],
    "answer": 1,
-   "why": "SC Senate: $42.3M. SC's 1st District: $11.5M.",
+   "why": "MI's 4th District: $25.7M. TX's 23rd District: $8.3M.",
    "glossary": "helps",
-   "race_id": "S-SC"
+   "race_id": "H-MI-04"
   },
   {
    "kind": "split",
-   "prompt": "In the NC Senate race, outside money favors Republicans by $16.1M. Whose nominee has raised more?",
+   "prompt": "In the NH Senate race, outside money favors Republicans by $23.4M. Whose nominee has raised more?",
    "options": [
-    "The Democrat (Cooper)",
-    "The Republican (Whatley)"
+    "The Democrat (Pappas)",
+    "The Republican (Sununu)"
    ],
    "answer": 0,
-   "why": "Outside money and candidate money point opposite ways here: the Democrat leads fundraising by $36.3M.",
+   "why": "Outside money and candidate money point opposite ways here: the Democrat leads fundraising by $18.5M.",
    "glossary": "split_signal",
-   "race_id": "S-NC"
+   "race_id": "S-NH"
+  },
+  {
+   "kind": "offense_defense",
+   "prompt": "Groups helping Democrats have spent $2.0M in LA's 6th District House race. Are Democrats playing offense or defense?",
+   "options": [
+    "Offense",
+    "Defense"
+   ],
+   "answer": 1,
+   "why": "Democrats hold this seat now, so money helping Democrats here is defense.",
+   "glossary": "offense",
+   "race_id": "H-LA-06"
+  },
+  {
+   "kind": "bigger_bet",
+   "prompt": "Which race has drawn more outside money so far in the general election?",
+   "options": [
+    "OH's 13th District",
+    "MS Senate"
+   ],
+   "answer": 1,
+   "why": "MS Senate: $17.2M. OH's 13th District: $1.3M.",
+   "glossary": "helps",
+   "race_id": "S-MS"
   },
   {
    "kind": "rules",
@@ -53,7 +101,7 @@
   },
   {
    "kind": "who_helps",
-   "prompt": "Affordable Florida (a super PAC) has spent $354K in FL's 12th District House race. Which party is it helping?",
+   "prompt": "NRCC (a party committee) has spent $1.9M in NM's 2nd District House race. Which party is it helping?",
    "options": [
     "Democrats",
     "Republicans"
@@ -61,67 +109,20 @@
    "answer": 1,
    "why": "Its spending supports the Republican or attacks their opponent. Every group's filings list who it backs or opposes.",
    "glossary": "support_oppose",
-   "race_id": "H-FL-12"
-  },
-  {
-   "kind": "offense_defense",
-   "prompt": "Groups helping Democrats have spent $6.3M in OH's 15th District House race. Are Democrats playing offense or defense?",
-   "options": [
-    "Offense",
-    "Defense"
-   ],
-   "answer": 0,
-   "why": "Republicans hold this seat now, so money helping Democrats here is offense.",
-   "glossary": "offense",
-   "race_id": "H-OH-15"
+   "race_id": "H-NM-02"
   },
   {
    "kind": "rules",
-   "prompt": "Can a corporation give unlimited money to a super PAC?",
+   "prompt": "A party's coordinated spending in the last three weeks before Nov. 3 is disclosed when?",
    "options": [
-    "Yes",
-    "No"
+    "Within 24 hours",
+    "Oct. 22",
+    "Dec. 3"
    ],
-   "answer": 0,
-   "why": "Since Citizens United and SpeechNow.org (2010), corporations, unions and individuals can give super PACs unlimited sums.",
-   "glossary": "super_pac",
+   "answer": 2,
+   "why": "Coordinated spending appears only on regular reports. Anything after Oct. 14 lands on the post-general report, due Dec. 3.",
+   "glossary": "coordinated",
    "race_id": null
-  },
-  {
-   "kind": "offense_defense",
-   "prompt": "Groups helping Republicans have spent $13.3M in PA's 8th District House race. Are Republicans playing offense or defense?",
-   "options": [
-    "Offense",
-    "Defense"
-   ],
-   "answer": 1,
-   "why": "Republicans hold this seat now, so money helping Republicans here is defense.",
-   "glossary": "offense",
-   "race_id": "H-PA-08"
-  },
-  {
-   "kind": "bigger_bet",
-   "prompt": "Which race has drawn more outside money so far in the general election?",
-   "options": [
-    "CA's 4th District",
-    "MI's 1st District"
-   ],
-   "answer": 0,
-   "why": "CA's 4th District: $6.7M. MI's 1st District: $571K.",
-   "glossary": "helps",
-   "race_id": "H-CA-04"
-  },
-  {
-   "kind": "who_helps",
-   "prompt": "YOUR COMMUNITY PAC (a super PAC) has spent $1.8M in VA's 1st District House race. Which party is it helping?",
-   "options": [
-    "Democrats",
-    "Republicans"
-   ],
-   "answer": 0,
-   "why": "Its spending supports the Democrat or attacks their opponent. Every group's filings list who it backs or opposes.",
-   "glossary": "support_oppose",
-   "race_id": "H-VA-01"
   }
  ]
 }
