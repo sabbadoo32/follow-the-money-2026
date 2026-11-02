@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-11-02T02:42:47Z",
- "data_hash": "8e6789a9e7193e31",
+ "generated_at": "2026-11-02T05:53:53Z",
+ "data_hash": "d888dca7ef7766aa",
  "as_of": "2026-11-02",
  "bulk_last_modified": "Sun, 01 Nov 2026 10:14:33 GMT",
  "coord_through": "2026-09-30",
@@ -9,46 +9,46 @@
  "headline": {
   "H_DEM": {
    "offense_share": 0.7252,
-   "offense_dollars": 412387570.55,
-   "counted_dollars": 568669641.69,
+   "offense_dollars": 412407713.55,
+   "counted_dollars": 568715285.69,
    "excluded_uncertain_dollars": 40037020.8,
    "races_in_play": 118,
    "party_footprint": 78,
-   "total": 608706662.49,
-   "last_7d": 144354506.54,
+   "total": 608752306.49,
+   "last_7d": 144400150.54,
    "coord_total": 9323257.0
   },
   "H_REP": {
-   "offense_share": 0.3126,
-   "offense_dollars": 186147971.48,
-   "counted_dollars": 595490449.47,
+   "offense_share": 0.3127,
+   "offense_dollars": 186232023.48,
+   "counted_dollars": 595588369.47,
    "excluded_uncertain_dollars": 51731305.2,
-   "races_in_play": 131,
+   "races_in_play": 132,
    "party_footprint": 61,
-   "total": 647221754.67,
-   "last_7d": 108867774.54,
+   "total": 647319674.67,
+   "last_7d": 108965694.54,
    "coord_total": 53456777.0
   },
   "S_DEM": {
-   "offense_share": 0.8144,
-   "offense_dollars": 638175274.1,
-   "counted_dollars": 783648738.51,
+   "offense_share": 0.8145,
+   "offense_dollars": 638776274.1,
+   "counted_dollars": 784251954.51,
    "excluded_uncertain_dollars": 0,
    "races_in_play": 22,
    "party_footprint": 15,
-   "total": 783648738.51,
-   "last_7d": 143503936.05,
+   "total": 784251954.51,
+   "last_7d": 144107152.05,
    "coord_total": 13297565.0
   },
   "S_REP": {
-   "offense_share": 0.2103,
+   "offense_share": 0.2104,
    "offense_dollars": 257912691.9,
-   "counted_dollars": 1226197764.72,
+   "counted_dollars": 1226034964.72,
    "excluded_uncertain_dollars": 0,
    "races_in_play": 25,
    "party_footprint": 12,
-   "total": 1226197764.72,
-   "last_7d": 119542728.09,
+   "total": 1226034964.72,
+   "last_7d": 119379928.09,
    "coord_total": 82113227.0
   }
  },
@@ -56,7 +56,7 @@
   "H_DEM": {
    "receipts": 768710927.37,
    "coh": 226220589.61,
-   "late_48h": 25151463.57,
+   "late_48h": 25369963.57,
    "from_party": 640457.58,
    "nominees": 285,
    "inferred": 135,
@@ -66,7 +66,7 @@
   "H_REP": {
    "receipts": 671455450.66,
    "coh": 184592481.74,
-   "late_48h": 27934326.18,
+   "late_48h": 27966826.18,
    "from_party": 469369.4,
    "nominees": 273,
    "inferred": 101,
@@ -76,7 +76,7 @@
   "S_DEM": {
    "receipts": 732859694.94,
    "coh": 105574421.97,
-   "late_48h": 16711626.39,
+   "late_48h": 16816752.39,
    "from_party": 562836.01,
    "nominees": 33,
    "inferred": 12,
@@ -104,7 +104,7 @@
  "api": {
   "key": true,
   "efile": {
-   "rows": 3413,
+   "rows": 3504,
    "filed_since": "2026-10-30"
   },
   "processed": {
@@ -113,27 +113,27 @@
   "sched_f": {
    "rows": 1398
   },
-  "calls": 107
+  "calls": 86
  },
  "counts": {
   "bulk_rows": 48211,
-  "expenditures": 33510,
+  "expenditures": 33593,
   "races": 318,
   "excluded_primary_or_other": 12718,
   "excluded_other_cycle": 412,
-  "excluded_third_party": 1099,
+  "excluded_third_party": 1101,
   "excluded_not_congress": 694,
-  "excluded_unmatched": 350,
+  "excluded_unmatched": 352,
   "excluded_held": 6,
   "excluded_primary_or_other_dollars": 10877563368.01,
   "excluded_other_cycle_dollars": 20859491.51,
-  "excluded_third_party_dollars": 81750379.56,
+  "excluded_third_party_dollars": 82435529.56,
   "excluded_not_congress_dollars": 14527494906.93,
-  "excluded_unmatched_dollars": 6677903.36,
+  "excluded_unmatched_dollars": 6688936.36,
   "excluded_held_dollars": 14000000000.0,
   "dedupe_future_dates_pinned_to_today": 36,
   "dedupe_superseded_amendments": 18767,
-  "dedupe_same_transaction": 2815,
+  "dedupe_same_transaction": 2819,
   "dedupe_notice_repeated_in_periodic": 1958
  },
  "unmatched_share": 0.002,
