@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-11-03T03:40:19Z",
- "data_hash": "d40d2fbc3899051e",
+ "generated_at": "2026-11-03T06:39:16Z",
+ "data_hash": "40f050be03af3c70",
  "as_of": "2026-11-03",
  "bulk_last_modified": "Mon, 02 Nov 2026 10:13:29 GMT",
  "coord_through": "2026-09-30",
@@ -9,46 +9,46 @@
  "headline": {
   "H_DEM": {
    "offense_share": 0.7253,
-   "offense_dollars": 413029868.35,
-   "counted_dollars": 569480090.48,
+   "offense_dollars": 413040521.35,
+   "counted_dollars": 569490743.48,
    "excluded_uncertain_dollars": 40101522.14,
    "races_in_play": 118,
    "party_footprint": 79,
-   "total": 609581612.62,
-   "last_7d": 42957660.7,
+   "total": 609592265.62,
+   "last_7d": 42968313.7,
    "coord_total": 9086102.0
   },
   "H_REP": {
-   "offense_share": 0.3123,
-   "offense_dollars": 186046434.63,
-   "counted_dollars": 595638403.93,
+   "offense_share": 0.3124,
+   "offense_dollars": 186074046.63,
+   "counted_dollars": 595680082.93,
    "excluded_uncertain_dollars": 51668143.2,
    "races_in_play": 132,
    "party_footprint": 60,
-   "total": 647306547.13,
-   "last_7d": 99916597.66,
+   "total": 647348226.13,
+   "last_7d": 99958276.66,
    "coord_total": 53181894.0
   },
   "S_DEM": {
    "offense_share": 0.8156,
    "offense_dollars": 644019901.41,
-   "counted_dollars": 789662025.98,
+   "counted_dollars": 789662814.98,
    "excluded_uncertain_dollars": 0,
    "races_in_play": 22,
    "party_footprint": 15,
-   "total": 789662025.98,
-   "last_7d": 49254576.36,
+   "total": 789662814.98,
+   "last_7d": 49254661.36,
    "coord_total": 13450040.0
   },
   "S_REP": {
    "offense_share": 0.2105,
-   "offense_dollars": 258574243.9,
-   "counted_dollars": 1228175775.79,
+   "offense_dollars": 258577743.9,
+   "counted_dollars": 1228178105.79,
    "excluded_uncertain_dollars": 0,
    "races_in_play": 25,
    "party_footprint": 12,
-   "total": 1228175775.79,
-   "last_7d": 89866810.71,
+   "total": 1228178105.79,
+   "last_7d": 89869140.71,
    "coord_total": 82113227.0
   }
  },
@@ -56,7 +56,7 @@
   "H_DEM": {
    "receipts": 770750838.08,
    "coh": 227498754.7,
-   "late_48h": 25619863.57,
+   "late_48h": 25652363.57,
    "from_party": 644070.57,
    "nominees": 286,
    "inferred": 136,
@@ -76,7 +76,7 @@
   "S_DEM": {
    "receipts": 732859694.94,
    "coh": 105574421.97,
-   "late_48h": 17042509.39,
+   "late_48h": 17241580.72,
    "from_party": 562836.01,
    "nominees": 33,
    "inferred": 11,
@@ -104,7 +104,7 @@
  "api": {
   "key": true,
   "efile": {
-   "rows": 2393,
+   "rows": 2420,
    "filed_since": "2026-10-31"
   },
   "processed": {
@@ -113,11 +113,11 @@
   "sched_f": {
    "rows": 1385
   },
-  "calls": 94
+  "calls": 73
  },
  "counts": {
   "bulk_rows": 48933,
-  "expenditures": 34208,
+  "expenditures": 34223,
   "races": 319,
   "excluded_primary_or_other": 12725,
   "excluded_other_cycle": 414,
@@ -133,7 +133,7 @@
   "excluded_held_dollars": 14000000000.0,
   "dedupe_future_dates_pinned_to_today": 9,
   "dedupe_superseded_amendments": 18872,
-  "dedupe_same_transaction": 1585,
+  "dedupe_same_transaction": 1597,
   "dedupe_notice_repeated_in_periodic": 1976
  },
  "unmatched_share": 0.0021,
