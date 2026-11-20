@@ -1,76 +1,76 @@
 {
- "generated_at": "2026-11-16T11:01:34Z",
- "data_hash": "ef595dd4558fc30c",
- "as_of": "2026-11-16",
- "bulk_last_modified": "Mon, 16 Nov 2026 10:13:23 GMT",
+ "generated_at": "2026-11-20T11:27:44Z",
+ "data_hash": "3e45973176499ea6",
+ "as_of": "2026-11-20",
+ "bulk_last_modified": "Fri, 20 Nov 2026 10:14:04 GMT",
  "coord_through": "2026-10-14",
  "coord_banner": "Party coordinated spending reported through 2026-10-14. Monthly party reports add September on Oct. 20 and Oct. 1-14 on Oct. 22; spending after Oct. 14 isn't disclosed until Dec. 3.",
  "caveat": "Spending shows where parties and groups are placing bets, not why. Every number is a sum of FEC filings; nothing here is a forecast.",
  "headline": {
   "H_DEM": {
-   "offense_share": 0.7122,
-   "offense_dollars": 453566708.21,
-   "counted_dollars": 636839774.76,
-   "excluded_uncertain_dollars": 45021771.47,
-   "races_in_play": 127,
-   "party_footprint": 136,
-   "total": 681861546.23,
-   "last_7d": 2490.0,
-   "coord_total": 78725730.0
+   "offense_share": 0.7148,
+   "offense_dollars": 450825010.76,
+   "counted_dollars": 630707539.88,
+   "excluded_uncertain_dollars": 45105119.47,
+   "races_in_play": 128,
+   "party_footprint": 135,
+   "total": 675812659.35,
+   "last_7d": 2512.68,
+   "coord_total": 74154968.0
   },
   "H_REP": {
-   "offense_share": 0.3111,
-   "offense_dollars": 192401541.32,
-   "counted_dollars": 618417745.7,
-   "excluded_uncertain_dollars": 54653181.12,
+   "offense_share": 0.3109,
+   "offense_dollars": 191946196.32,
+   "counted_dollars": 617446085.0,
+   "excluded_uncertain_dollars": 54629267.12,
    "races_in_play": 134,
-   "party_footprint": 77,
-   "total": 673070926.82,
+   "party_footprint": 75,
+   "total": 672075352.12,
    "last_7d": 12000.0,
-   "coord_total": 76724829.0
+   "coord_total": 76826346.0
   },
   "S_DEM": {
-   "offense_share": 0.8126,
-   "offense_dollars": 677370522.06,
-   "counted_dollars": 833631994.22,
+   "offense_share": 0.8121,
+   "offense_dollars": 680009047.24,
+   "counted_dollars": 837374192.98,
    "excluded_uncertain_dollars": 0,
-   "races_in_play": 22,
+   "races_in_play": 23,
    "party_footprint": 20,
-   "total": 833631994.22,
-   "last_7d": 35640.0,
-   "coord_total": 56484977.0
+   "total": 837374192.98,
+   "last_7d": 35656.34,
+   "coord_total": 60228763.0
   },
   "S_REP": {
-   "offense_share": 0.209,
-   "offense_dollars": 257223698.73,
-   "counted_dollars": 1230943876.88,
+   "offense_share": 0.2085,
+   "offense_dollars": 257561136.73,
+   "counted_dollars": 1235325947.88,
    "excluded_uncertain_dollars": 0,
    "races_in_play": 25,
    "party_footprint": 14,
-   "total": 1230943876.88,
+   "total": 1235325947.88,
    "last_7d": 0.0,
-   "coord_total": 83135569.0
+   "coord_total": 87517640.0
   }
  },
  "cand_headline": {
   "H_DEM": {
-   "receipts": 790265301.49,
-   "coh": 241506435.35,
-   "late_48h": 26033443.04,
+   "receipts": 793799954.63,
+   "coh": 241479408.46,
+   "late_48h": 26032443.04,
    "from_party": 644070.57,
    "nominees": 298,
-   "inferred": 149,
-   "cand_lead_races": 154,
-   "split_favoring": 20
+   "inferred": 148,
+   "cand_lead_races": 155,
+   "split_favoring": 21
   },
   "H_REP": {
-   "receipts": 691490276.92,
-   "coh": 191618079.1,
-   "late_48h": 28689093.07,
+   "receipts": 690949698.23,
+   "coh": 191494117.23,
+   "late_48h": 28694576.73,
    "from_party": 469569.4,
    "nominees": 284,
    "inferred": 113,
-   "cand_lead_races": 144,
+   "cand_lead_races": 143,
    "split_favoring": 13
   },
   "S_DEM": {
@@ -81,7 +81,7 @@
    "nominees": 33,
    "inferred": 11,
    "cand_lead_races": 20,
-   "split_favoring": 12
+   "split_favoring": 11
   },
   "S_REP": {
    "receipts": 259078833.15,
@@ -104,47 +104,40 @@
  "api": {
   "key": true,
   "efile": {
-   "rows": 187,
-   "filed_since": "2026-11-13"
+   "rows": 86,
+   "filed_since": "2026-11-17"
   },
   "processed": {
    "rows": 19307
   },
   "sched_f": {
-   "rows": 2609
+   "rows": 2646
   },
-  "calls": 84
+  "calls": 57
  },
  "counts": {
-  "bulk_rows": 51338,
-  "expenditures": 36322,
+  "bulk_rows": 51383,
+  "expenditures": 36340,
   "races": 331,
-  "excluded_primary_or_other": 12760,
-  "excluded_other_cycle": 433,
-  "excluded_third_party": 1274,
+  "excluded_primary_or_other": 12747,
+  "excluded_other_cycle": 434,
+  "excluded_third_party": 1271,
   "excluded_not_congress": 698,
-  "excluded_unmatched": 433,
+  "excluded_unmatched": 414,
   "excluded_held": 6,
-  "excluded_primary_or_other_dollars": 10879201727.33,
-  "excluded_other_cycle_dollars": 21383160.84,
-  "excluded_third_party_dollars": 83859818.8,
+  "excluded_primary_or_other_dollars": 10878610156.93,
+  "excluded_other_cycle_dollars": 21422610.84,
+  "excluded_third_party_dollars": 83739157.8,
   "excluded_not_congress_dollars": 14527502023.93,
-  "excluded_unmatched_dollars": 9263587.68,
+  "excluded_unmatched_dollars": 7937066.48,
   "excluded_held_dollars": 14000000000.0,
-  "dedupe_future_dates_pinned_to_today": 9,
-  "dedupe_superseded_amendments": 19478,
-  "dedupe_same_transaction": 79,
-  "dedupe_notice_repeated_in_periodic": 1958
+  "dedupe_future_dates_pinned_to_today": 8,
+  "dedupe_superseded_amendments": 19476,
+  "dedupe_same_transaction": 42,
+  "dedupe_notice_repeated_in_periodic": 1994
  },
- "unmatched_share": 0.0027,
+ "unmatched_share": 0.0023,
  "committee_gaps": [
-  {
-   "committee_id": "C00923417",
-   "name": "THINK BIG",
-   "notice_total": 5000.0,
-   "periodic_total": 4284166.0,
-   "through": "2026-06-17"
-  },
   {
    "committee_id": "C00608943",
    "name": "CLEARPATH ACTION FUND, INC.",
@@ -160,10 +153,10 @@
    "through": "2026-07-14"
   },
   {
-   "committee_id": "C00922229",
-   "name": "Abundant Future",
-   "notice_total": 2326584.18,
-   "periodic_total": 2753155.0,
+   "committee_id": "C00859355",
+   "name": "Battleground New York",
+   "notice_total": 653197.2,
+   "periodic_total": 341473.0,
    "through": "2026-10-14"
   },
   {
@@ -207,14 +200,10 @@
    "notice_total": 116719.0,
    "periodic_total": 136173.63,
    "through": "2026-07-25"
-  },
-  {
-   "committee_id": "C00963496",
-   "name": "PEACE NJ",
-   "notice_total": 73143.76,
-   "periodic_total": 84139.0,
-   "through": "2026-11-03"
   }
  ],
- "notes": []
+ "notes": [
+  "candidate e-filed reports: 13 batch(es) failed this run, retried next run (57 calls used, 14 remaining)",
+  "48-hour contribution notices partial (resumes next run): 57 calls used, 14 remaining"
+ ]
 }
